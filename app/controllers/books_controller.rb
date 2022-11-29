@@ -10,5 +10,16 @@ class BooksController < ApplicationController
         render json: book
     end
 
+    def create
+        book = Book.create!(book_params)
+        render json: book, status: :created
+    end
+
+    private
+
+    def book_params
+        params.permit(:title, :author, :image_url, :genre)
+    end
+
 
 end

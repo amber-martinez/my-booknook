@@ -10,4 +10,14 @@ class ReviewsController < ApplicationController
         render json: review
     end
 
+    def create
+        review = Review.create(review_params)
+    end
+
+    private
+
+    def review_params
+        params.permit(:rating, :review_body, :user_id, :book_id)
+    end
+
 end
