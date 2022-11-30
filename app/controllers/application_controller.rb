@@ -8,7 +8,7 @@ class ApplicationController < ActionController::API
 
   def authorize
     @user = User.find_by(id: session[:user_id])
-    render json: { error: ['oops! you\'re not logged in!'] }, status: :unauthorized, unless @user
+    render json: { error: ['oops! you\'re not logged in!'] }, status: :unauthorized unless @user
   end
 
   def render_not_found_response(e)

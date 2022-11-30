@@ -1,13 +1,120 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+
+.App {
+  font-family: 'Catamaran', sans-serif;
+  color: #362c24;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#searchButton:hover {
+  background-color: white;
+}
+
+#genreBubble {
+  border: solid 1px #362c24;
+  display: inline-flex;
+  align-items: center; 
+  justify-content: center;
+}
+
+#bubbleContainer {
+  display: inline-flex;
+  padding: 8px;
+}
+
+#genreBubbleText {
+  text-align: center;
+  margin: 0;
+}
+
+#headerLink:hover {
+  color: #362c24;
+}
+
+#headerLink {
+  color: #362c24;
+}
+
+#searchField {
+  color:#362c24;
+  border-color: #362c24;
+}
+
+#topPicksHeader {
+  padding-top: 20px;
+  /* padding-bottom: 3px; */
+}
+
+#topPicksContainer {
+  margin-top: 30px;
+}
+
+#topPicksShelfImg {
+  width: 260px;
+  padding-bottom: 20px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+#homepageGenreBubbles {
+  background-color: #e9e5dc;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 10px;
+}
+
+#bookCardBody {
+  font-size: 11px;
+  text-align: center;
+}
+
+#bookCardTitle {
+  font-size: 13px;
+}
+
+#homepageBookImg {
+  height: 135px;
+  width: 90px;
+  object-fit: cover;
+  margin: auto;
+}
+
+#bookCardGroup {
+  margin-top: 8px;
+}
+
+#homepageBookListItem {
+  border-color: transparent;
+}
+
+#navbar {
+  padding: 18px;
+  background-color: #e9e5dc;
+}
+
+#navbarLoginButton {
+  color: white;
+  margin-left: 10px;
+  border: solid 1px #6f5b4b;
+  border-radius: 5px;
+  padding-left: 11px;
+  padding-right: 11px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  background-color: #6f5b4b;
+}
+
+#headerTitle {
+  color: #6f5b4b;
+  font-family: 'Catamaran', sans-serif;
+  font-weight: 400;
+  font-size: 45px;
+}
+
+#popGenresHeader {
+  padding-top: 20px;
+}
+
+#searchButton {
+  color: #6f5b4b;
+  border-color: #6f5b4b;
 }
