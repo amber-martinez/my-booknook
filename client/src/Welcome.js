@@ -30,7 +30,6 @@ function Welcome({ setUser }) {
         setProfilePic(e.target.value)
     }
 
-
     function handleSignUpSubmit(e) {
         e.preventDefault()
         setLoadingStatus(true)

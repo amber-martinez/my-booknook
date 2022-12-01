@@ -1,21 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-function RecentReviews({ allReviews }) {
-
-    const [reviewsSortByNew, setreviewsSortByNew] = useState([])
-
-    console.log(allReviews)
-
-    useEffect(() => {
-        fetch('/newest-reviews')
-        .then(r => r.json())
-        .then(data => setreviewsSortByNew(data))
-    }, [])
+function RecentReviews({ reviewsSortByNew }) {
 
     const newestReviews = reviewsSortByNew.map(review => {
         if (review.rating == 1) {
             return (
-                <div>
+                <div key={review.id}>
                     <h5>{review.book.title} – {review.book.author}</h5>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star"></span>
@@ -28,7 +18,7 @@ function RecentReviews({ allReviews }) {
             )
         } else if (review.rating == 2) {
             return (
-                <div>
+                <div key={review.id}>
                     <h5>{review.book.title} – {review.book.author}</h5>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
@@ -41,7 +31,7 @@ function RecentReviews({ allReviews }) {
             )
         } else if (review.rating == 3) {
             return (
-                <div>
+                <div key={review.id}>
                     <h5>{review.book.title} – {review.book.author}</h5>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
@@ -54,7 +44,7 @@ function RecentReviews({ allReviews }) {
             )
         } else if (review.rating == 4) {
             return (
-                <div>
+                <div key={review.id}>
                     <h5>{review.book.title} – {review.book.author}</h5>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
@@ -67,7 +57,7 @@ function RecentReviews({ allReviews }) {
             )
         } else if (review.rating == 5) {
             return (
-                <div>
+                <div key={review.id}>
                     <h5>{review.book.title} – {review.book.author}</h5>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
@@ -80,8 +70,6 @@ function RecentReviews({ allReviews }) {
             )
         }
     })
-
-    console.log(reviewsSortByNew)
 
     return (
         <div>

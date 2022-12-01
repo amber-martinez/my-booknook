@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-function HomeContent({ allBooks, setUser }) {
+function HomeContent({ allBooks, setUser, reviewsSortByNew }) {
 
     return (
         <Container>
@@ -16,7 +16,7 @@ function HomeContent({ allBooks, setUser }) {
                 <Col><Welcome setUser={setUser}/></Col>
             </Row>
             <Row>
-                <Col><RecentReviews/></Col>
+                <Col><RecentReviews reviewsSortByNew={reviewsSortByNew}/></Col>
                 <Col><GenreBubbles allBooks={allBooks}/></Col>
             </Row>
         </Container>
