@@ -7,11 +7,11 @@ function RecentReviews({ reviewsSortByNew }) {
             return (
                 <div key={review.id}>
                     <h5>{review.book.title} – {review.book.author}</h5>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
+                    <span className="fa fa-star checked"></span>
+                    <span className="fa fa-star"></span>
+                    <span className="fa fa-star"></span>
+                    <span className="fa fa-star"></span>
+                    <span className="fa fa-star"></span>
                     <p>by {review.user.username}</p>
                     <p>{review.review_body}</p>
                 </div>
@@ -20,11 +20,11 @@ function RecentReviews({ reviewsSortByNew }) {
             return (
                 <div key={review.id}>
                     <h5>{review.book.title} – {review.book.author}</h5>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
+                    <span className="fa fa-star checked"></span>
+                    <span className="fa fa-star checked"></span>
+                    <span className="fa fa-star"></span>
+                    <span className="fa fa-star"></span>
+                    <span className="fa fa-star"></span>
                     <p>by {review.user.username}</p>
                     <p>{review.review_body}</p>
                 </div>
@@ -33,11 +33,11 @@ function RecentReviews({ reviewsSortByNew }) {
             return (
                 <div key={review.id}>
                     <h5>{review.book.title} – {review.book.author}</h5>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
+                    <span className="fa fa-star checked"></span>
+                    <span className="fa fa-star checked"></span>
+                    <span className="fa fa-star checked"></span>
+                    <span className="fa fa-star"></span>
+                    <span className="fa fa-star"></span>
                     <p>by {review.user.username}</p>
                     <p>{review.review_body}</p>
                 </div>
@@ -46,11 +46,11 @@ function RecentReviews({ reviewsSortByNew }) {
             return (
                 <div key={review.id}>
                     <h5>{review.book.title} – {review.book.author}</h5>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
+                    <span className="fa fa-star checked"></span>
+                    <span className="fa fa-star checked"></span>
+                    <span className="fa fa-star checked"></span>
+                    <span className="fa fa-star checked"></span>
+                    <span className="fa fa-star"></span>
                     <p>by {review.user.username}</p>
                     <p>{review.review_body}</p>
                 </div>
@@ -59,11 +59,11 @@ function RecentReviews({ reviewsSortByNew }) {
             return (
                 <div key={review.id}>
                     <h5>{review.book.title} – {review.book.author}</h5>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
+                    <span className="fa fa-star checked"></span>
+                    <span className="fa fa-star checked"></span>
+                    <span className="fa fa-star checked"></span>
+                    <span className="fa fa-star checked"></span>
+                    <span className="fa fa-star checked"></span>
                     <p>by {review.user.username}</p>
                     <p>{review.review_body}</p>
                 </div>
@@ -78,7 +78,9 @@ function RecentReviews({ reviewsSortByNew }) {
                 <p>Quite the critic makes quite the taste.</p>
                 {newestReviews}
             </div>
-            <p id='loginToSeeReviews'>Log in to see full reviews!</p>
+            <div style={{ textAlign: 'center' }}>
+                <button id='loginToSeeReviews'>Log in to see full reviews!</button>
+            </div>
         </div>
     )
 }

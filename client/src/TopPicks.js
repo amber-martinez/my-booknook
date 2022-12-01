@@ -6,7 +6,7 @@ import CardGroup from 'react-bootstrap/CardGroup'
 function TopPicks({ allBooks }) {
 
     const books = allBooks.map(book => (
-        <Card id='homepageBookListItem' class="card text-center">
+        <Card id='homepageBookListItem' class="card text-center" key={book.id}>
             <Card.Img src={book.image_url} id='homepageBookImg'/>
             <Card.Body id='bookCardBody'>
             </Card.Body>

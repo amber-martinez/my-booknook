@@ -63,16 +63,16 @@ function Welcome({ setUser }) {
         <div id='welcomeContainer'>
             <h3 style={{ paddingTop: 30, textAlign: 'center', color: '#362c24' }}>Sign up</h3>
             <form style={{ margin: 0 }}>
-                <input type='text' placeholder='Username' class='signUpFields' onChange={handleUsernameInput}></input>
+                <input type='text' placeholder='Username' className='signUpFields' onChange={handleUsernameInput}></input>
                 <br></br>
-                <input type='password' placeholder='Password' class='signUpFields' onChange={handlePasswordInput}></input>
+                <input type='password' placeholder='Password' className='signUpFields' onChange={handlePasswordInput}></input>
                 <br></br>
-                <input type='password' placeholder='Confirm password' class='signUpFields' onChange={handlePasswordConfirmationInput}></input>
+                <input type='password' placeholder='Confirm password' className='signUpFields' onChange={handlePasswordConfirmationInput}></input>
                 <br></br>
-                <input type='text' placeholder='Bio' class='signUpBio' onChange={handleBioInput}></input>
+                <input type='text' placeholder='Bio' className='signUpBio' onChange={handleBioInput}></input>
                 <br></br>
                 <p style={{ marginTop: 11, marginBottom: 5 }}>Link a profile photo:</p>
-                <input type='text' placeholder='Profile Photo' class='signUpPhoto' onChange={handleProfilePicInput}></input>
+                <input type='text' placeholder='Profile Photo' className='signUpPhoto' onChange={handleProfilePicInput}></input>
                 <br></br>
                 {loadingStatus ? <img src='https://i.imgur.com/yqanog9.gif' style={{ height: 48 }}></img> : <input type='submit' value='Create account' id='submitSignUp' style={{ color: '#362c24' }} onSubmit={handleSignUpSubmit}></input>}       
                 <p>{errorMessages}</p>

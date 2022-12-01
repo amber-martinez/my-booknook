@@ -1,7 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useEffect, useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './NavBar'
 import HomeContent from './HomeContent'
+import Login from './Login'
 
 function App() {
 
@@ -30,8 +32,13 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar />
-      <HomeContent allBooks={allBooks} setUser={setUser} reviewsSortByNew={reviewsSortByNew}/>
+        <NavBar />
+        <Router>
+          <Routes>
+            <Route exact path='/' element={<HomeContent allBooks={allBooks} setUser={setUser} reviewsSortByNew={reviewsSortByNew}/>} />
+            <Route exact path='/login' element={<Login/>} />
+          </Routes>
+        </Router>
     </div>
   );
 }

@@ -137,12 +137,15 @@
 }
 
 #loginToSeeReviews {
-  display: fixed;
-  font-size: 20px;
-  text-align: center;
+  font-size: 19px;
   z-index: 10;
+  margin-bottom: 90px;
   margin-top: -70px;
   color: #362c24;
+  border: solid 1px #362c243b;
+  border-radius: 10px;
+  background-color: #e9e5dc6b;
+  padding: 4px 10px 4px 10px;
 }
 
 #searchButton {

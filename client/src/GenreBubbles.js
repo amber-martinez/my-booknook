@@ -14,7 +14,7 @@ function GenreBubbles({ allBooks }) {
     }
 
     const genreBubbles = genreCountArr.map(genre => (
-        <div id='bubbleContainer'>
+        <div id='bubbleContainer' key={genre.key}>
             <div id='genreBubble' style={{borderRadius: 100, width: genre.value * 85, height: genre.value * 85}}>
                 <p id="genreBubbleText">{genre.key}
                 <br></br>
