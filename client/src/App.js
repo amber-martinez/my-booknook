@@ -7,6 +7,7 @@ function App() {
 
   const [allBooks, setAllBooks] = useState([])
   const [allReviews, setAllReviews] = useState([])
+  const [user, setUser] = useState({})
 
   useEffect(() => {
     fetch('/books')
@@ -16,12 +17,19 @@ function App() {
     fetch('/reviews')
         .then(r => r.json())
         .then(data => setAllReviews(data))
-}, [])
+
+    fetch('/profile')
+        .then(r => {
+          if (r.ok) {
+            r.json().then(data => setUser(data))
+          }
+        });
+}, []);
 
   return (
     <div className="App">
       <NavBar />
-      <HomeContent allBooks={allBooks}/>
+      <HomeContent allBooks={allBooks} setUser={setUser}/>
     </div>
   );
 }
