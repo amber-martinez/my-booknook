@@ -50,9 +50,9 @@ function NavBar() {
               id='searchField'
               onChange={handleSearchField}
             />
-            <Button variant="outline-success" id='searchButton'>search</Button>
+            <Button variant="outline-success" id='searchButton'>Search</Button>
           </Form>
-          <Nav.Link href="/login" id='navbarLoginButton'>Log In</Nav.Link>
+          <Nav.Link href="/login" id='navbarLoginButton'>Log in</Nav.Link>
         </Navbar.Collapse>
       </Container>
     </Navbar>
