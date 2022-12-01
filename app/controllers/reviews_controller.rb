@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-    skip_before_action :authorize, only: :index
+    skip_before_action :authorize, only: [:index, :newest]
     
     def index
         reviews = Review.all
@@ -13,6 +13,11 @@ class ReviewsController < ApplicationController
 
     def create
         review = Review.create(review_params)
+    end
+
+    def newest
+        reviews = Review.all
+        render json: reviews.order(created_at: :desc)
     end
 
     private

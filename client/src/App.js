@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <HomeContent allBooks={allBooks} allReviews={allReviews}/>
+      <HomeContent allBooks={allBooks}/>
     </div>
   );
 }

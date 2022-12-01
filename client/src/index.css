@@ -14,6 +14,7 @@
   display: inline-flex;
   align-items: center; 
   justify-content: center;
+  color: #362c24;
 }
 
 #bubbleContainer {
@@ -24,6 +25,7 @@
 #genreBubbleText {
   text-align: center;
   margin: 0;
+  color: #362c24;
 }
 
 #headerLink:hover {
@@ -38,6 +40,10 @@
   color:#362c24;
   border-color: #362c24;
 }
+
+/* .signUpPhoto {
+  margin-top: 10px;
+} */
 
 #topPicksHeader {
   padding-top: 20px;
@@ -82,6 +88,10 @@
   margin-top: 8px;
 }
 
+.checked {
+  color: rgb(255, 204, 109);
+}
+
 #homepageBookListItem {
   border-color: transparent;
 }
@@ -114,7 +124,67 @@
   padding-top: 20px;
 }
 
+#recentReviewsContainer {
+  padding: 20px 90px 20px 40px;
+  border: solid 2px #362c243b;
+  border-radius: 10px;
+  background-color: #e9e5dc3a;
+  max-width: 600px;
+  max-height: 700px;
+  overflow:hidden;
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 0%, transparent 30%);
+}
+
+#loginToSeeReviews {
+  display: fixed;
+  font-size: 20px;
+  text-align: center;
+  z-index: 10;
+  margin-top: -70px;
+  color: #362c24;
+}
+
 #searchButton {
   color: #6f5b4b;
   border-color: #6f5b4b;
 }
+
+#welcomeContainer {
+  margin: auto;
+  text-align: center;
+  margin-top: 30px;
+  padding-bottom: 50px;
+  background-image: url(https://i.imgur.com/lua902Y.png);
+  background-repeat:no-repeat;
+  background-position: bottom 105px right 20px;
+  background-size: 30%;
+  scale: 0.90;
+  background-color: #e9e5dc6b;
+  max-width: 600px;
+  border-radius: 10px;
+  border: solid 1px #362c243b;
+}
+
+.signUpFields {
+  padding: 13px 140px 13px 9px;
+  margin-top: 10px;
+  border: solid 1px #6f5b4b;
+  border-radius: 10px;
+}
+
+.signUpBio {
+  padding: 13px 140px 60px 9px;
+  margin-top: 10px;
+  border: solid 1px #6f5b4b;;
+  border-radius: 10px;
+}
+
+#submitSignUp {
+  border: solid 1px #6f5b4b;
+  background-color: #e9e5dc3a;
+  margin-top: 20px;
+  text-align: center;
+  border-radius: 5px;
+}
+
