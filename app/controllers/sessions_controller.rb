@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
         if user&.authenticate(params[:password])
             session[:user_id] = user.id 
-            render json: user, status: :created
+            render json: user, include: :reviews, status: :created
         else
             render json: { error: ['wrong email/password combo!']}, status: :unauthorized
         end

@@ -28,7 +28,9 @@ function GenreBubbles({ allBooks }) {
         <div>
             <h3 id='popGenresHeader'>Popular Genres</h3>
             <p>The genres that get people going. Venture into one outside your bubble.</p>
-            {genreBubbles}
+            <div id='genreBubblesContainer'>
+                {genreBubbles}
+            </div>
         </div>
     )
 }

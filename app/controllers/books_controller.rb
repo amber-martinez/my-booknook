@@ -17,8 +17,7 @@ class BooksController < ApplicationController
     end
 
     def random
-        random_book = Book.where.not(id: @user.books.ids).first
-
+        random_book = Book.where.not(id: @user.books.ids).order(Arel.sql('RANDOM()')).first
         render json: random_book
     end
 

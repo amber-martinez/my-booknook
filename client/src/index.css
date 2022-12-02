@@ -22,6 +22,10 @@
   padding: 8px;
 }
 
+#genreBubblesContainer {
+  text-align: center;
+}
+
 #genreBubbleText {
   text-align: center;
   margin: 0;
@@ -228,5 +232,21 @@
   display: fixed;
   text-align: center;
   border-radius: 5px;
+}
+
+#profileCardContainer {
+  text-align: center;
+  height: 650px;
+  width: 420px;
+  background-color: #e9e5dc3a;
+  border: solid 1px #6f5b4b;
+  padding-top: 40px;
+}
+
+#profileCard {
+  margin-top: 64;
+  margin: auto;
+  background-color: transparent;
+  border-color: transparent;
 }
 

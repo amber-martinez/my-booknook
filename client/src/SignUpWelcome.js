@@ -8,7 +8,7 @@ function SignUpWelcome({ setUser }) {
     const [bio, setBio] = useState('')
     const [profilePic, setProfilePic] = useState('')
     const [errors, setErrors] = useState([])
-    const [loadingStatus, setLoadingStatus] = useState(true)
+    const [loadingStatus, setLoadingStatus] = useState(false)
 
     function handleUsernameInput(e) {
         setUsername(e.target.value)

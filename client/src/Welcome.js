@@ -2,11 +2,11 @@ import React from 'react';
 import SignUpWelcome from './SignUpWelcome';
 import LoggedInWelcome from './LoggedInWelcome';
 
-function Welcome({ setUser, user }) {
+function Welcome({ setUser, user, userTruthiness }) {
 
     return (
         <div>
-            {user ? <LoggedInWelcome user={user}/> : <SignUpWelcome setUser={setUser}/>}
+            {userTruthiness ? <LoggedInWelcome user={user}/> : <SignUpWelcome setUser={setUser}/>}
         </div>
     )
 

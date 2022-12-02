@@ -32,7 +32,10 @@ function Login({ setUser }) {
         .then(r => {
             setLoadingStatus(false)
             if (r.ok) {
-                r.json().then(data => setUser(data))
+                r.json().then(data => {
+                    setUser(data)
+                    window.location.href='/profile'
+                })
             } else {
                 r.json().then(e => setErrors(e.error))
             }
@@ -41,6 +44,7 @@ function Login({ setUser }) {
 
 
     return (
+
         <div id='loginContainer'>
             <h3 style={{ paddingTop: 30, textAlign: 'center', color: '#362c24' }}>Welcome back, reader!</h3>
             <p>Don't have an account? Sign up here.</p>

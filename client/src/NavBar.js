@@ -6,12 +6,23 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-function NavBar(user) {
+function NavBar({ user, setUser, userTruthiness}) {
 
   const [searchField, setSearchField] = useState('')
 
   function handleSearchField(e) {
     setSearchField(e.target.value)
+  }
+
+  function handleLogoutClick() {
+    fetch('/logout', {
+      method: 'DELETE'
+    })
+    .then(r => {
+      if (r.ok) {
+        setUser(null)
+      }
+    })
   }
 
   return (
@@ -50,7 +61,18 @@ function NavBar(user) {
             />
             <Button variant="outline-success" id='searchButton'>Search</Button>
           </Form>
-          {user ? <Nav.Link href="/profile" id='navbarLoginButton'>My Nook</Nav.Link> : <Nav.Link href="/login" id='navbarLoginButton'>Log in</Nav.Link>}
+          {userTruthiness
+          ?
+          <Nav>
+            <Nav.Link href="/profile">My Nook</Nav.Link>
+            <Button id='navbarLoginButton' onClick={handleLogoutClick}>Logout</Button>
+          </Nav>
+          :
+          <Nav>
+          <Nav.Link href="/signup">Sign up</Nav.Link>
+          <Nav.Link href="/login" id='navbarLoginButton'>Log in</Nav.Link>
+          </Nav>
+          }
         </Navbar.Collapse>
       </Container>
     </Navbar>
