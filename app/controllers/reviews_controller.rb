@@ -20,6 +20,11 @@ class ReviewsController < ApplicationController
         render json: reviews.order(created_at: :desc)
     end
 
+    def user_reviews
+        user_reviews = Review.where(id: @user.reviews.ids)
+        render json: user_reviews
+        end
+
     private
 
     def review_params

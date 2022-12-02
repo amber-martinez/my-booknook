@@ -12,6 +12,7 @@ function App() {
   const [reviewsSortByNew, setreviewsSortByNew] = useState([]);
   const [user, setUser] = useState();
   const [userBooks, setUserBooks] = useState([]);
+  const [userReviews, setUserReviews] = useState([]);
 
   useEffect(() => {
     fetch('/profile')
@@ -34,6 +35,10 @@ function App() {
     .then(r => r.json())
     .then(data => setreviewsSortByNew(data))
 
+    fetch('/my-reviews')
+    .then(r => r.json())
+    .then(data => setUserReviews(data))
+
 }, []);
 
 
@@ -44,7 +49,7 @@ function App() {
           <Routes>
             <Route exact path='/' element={<HomeContent allBooks={allBooks} setUser={setUser} reviewsSortByNew={reviewsSortByNew} user={user}/>} />
             <Route exact path='/login' element={<Login setUser={setUser}/>} />
-            <Route exact path='/profile' element={<Profile user={user} userBooks={userBooks}/>} />
+            <Route exact path='/profile' element={<Profile user={user} userBooks={userBooks} userReviews={userReviews}/> } />
           </Routes>
         </Router>
     </div>

@@ -267,3 +267,37 @@
   color: #362c24;
 }
 
+#profileBooksTitle {
+  margin-top: 14px;
+  max-width: 200px;
+  color: #362c24;
+}
+
+#profileBook {
+  border-color: transparent;
+  display: inline-block;
+  padding: 4px;
+}
+
+#profileBookImg {
+  height: 135px;
+  width: 90px;
+  object-fit: cover;
+  margin: auto;
+  box-shadow: 0 1px 1px 0 #81665162;
+}
+
+#profileBooksHeader {
+  color: #362c24;
+  text-align: center;
+  margin-bottom: 40px;
+  background-color: #e9e5dc3a;
+  width: 102px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#profileBooksContainer {
+  margin-top: 64px;
+}
+

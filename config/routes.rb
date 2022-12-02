@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/newest-reviews', to: 'reviews#newest'
   get '/profile', to: 'users#show'
   get '/random-book', to: 'books#random'
+  get '/my-reviews', to: 'reviews#user_reviews'
   post '/login', to: 'sessions#create'
   post '/signup', to: 'users#create'
   delete '/logout', to: 'sessions#destroy'
