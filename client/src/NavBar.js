@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
-
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -8,7 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-function NavBar() {
+function NavBar(user) {
 
   const [searchField, setSearchField] = useState('')
 
@@ -52,7 +50,7 @@ function NavBar() {
             />
             <Button variant="outline-success" id='searchButton'>Search</Button>
           </Form>
-          <Nav.Link href="/login" id='navbarLoginButton'>Log in</Nav.Link>
+          {user ? <Nav.Link href="/profile" id='navbarLoginButton'>My Nook</Nav.Link> : <Nav.Link href="/login" id='navbarLoginButton'>Log in</Nav.Link>}
         </Navbar.Collapse>
       </Container>
     </Navbar>
@@ -60,13 +58,3 @@ function NavBar() {
 }
 
 export default NavBar;
-
-// function NavBar() {
-
-//     return (
-//         <div className='navbar'>
-//             <p id='headerTitle'>my booknook</p>
-//         </div>
-//     )
-
-// }

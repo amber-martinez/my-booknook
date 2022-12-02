@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :books
   get '/newest-reviews', to: 'reviews#newest'
   get '/profile', to: 'users#show'
+  get '/random-book', to: 'books#random'
+  post '/login', to: 'sessions#create'
   post '/signup', to: 'users#create'
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!

@@ -16,6 +16,12 @@ class BooksController < ApplicationController
         render json: book, status: :created
     end
 
+    def random
+        random_book = Book.where.not(id: @user.books.ids).first
+
+        render json: random_book
+    end
+
     private
 
     def book_params

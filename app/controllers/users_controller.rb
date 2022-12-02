@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     end
 
     def show
-        render json: @user
+        render json: @user, include: :reviews
     end
 
     private

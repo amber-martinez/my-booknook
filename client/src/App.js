@@ -8,7 +8,6 @@ import Login from './Login'
 function App() {
 
   const [allBooks, setAllBooks] = useState([])
-  // const [allReviews, setAllReviews] = useState([])
   const [reviewsSortByNew, setreviewsSortByNew] = useState([])
   const [user, setUser] = useState({})
 
@@ -32,10 +31,10 @@ function App() {
 
   return (
     <div className="App">
-        <NavBar />
+        <NavBar user={user}/>
         <Router>
           <Routes>
-            <Route exact path='/' element={<HomeContent allBooks={allBooks} setUser={setUser} reviewsSortByNew={reviewsSortByNew}/>} />
+            <Route exact path='/' element={<HomeContent allBooks={allBooks} setUser={setUser} reviewsSortByNew={reviewsSortByNew} user={user}/>} />
             <Route exact path='/login' element={<Login setUser={setUser}/>} />
           </Routes>
         </Router>
