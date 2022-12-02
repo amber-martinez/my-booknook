@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -6,7 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-function NavBar({ user, setUser, userTruthiness}) {
+function NavBar({ user, setUser }) {
 
   const [searchField, setSearchField] = useState('')
 
@@ -61,7 +61,7 @@ function NavBar({ user, setUser, userTruthiness}) {
             />
             <Button variant="outline-success" id='searchButton'>Search</Button>
           </Form>
-          {userTruthiness
+          {user
           ?
           <Nav>
             <Nav.Link href="/profile">My Nook</Nav.Link>

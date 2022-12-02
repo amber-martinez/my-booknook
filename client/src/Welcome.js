@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SignUpWelcome from './SignUpWelcome';
 import LoggedInWelcome from './LoggedInWelcome';
 
-function Welcome({ setUser, user, userTruthiness }) {
+function Welcome({ setUser, user }) {
 
     return (
         <div>
-            {userTruthiness ? <LoggedInWelcome user={user}/> : <SignUpWelcome setUser={setUser}/>}
+            {user ? <LoggedInWelcome user={user}/> : <SignUpWelcome setUser={setUser}/>}
         </div>
     )
 

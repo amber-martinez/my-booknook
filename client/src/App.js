@@ -8,39 +8,43 @@ import Profile from './Profile'
 
 function App() {
 
-  const [allBooks, setAllBooks] = useState([])
-  const [reviewsSortByNew, setreviewsSortByNew] = useState([])
-  const [user, setUser] = useState({})
-  const [userTruthiness, setUserTruthiness] = useState(false)
+  const [allBooks, setAllBooks] = useState([]);
+  const [reviewsSortByNew, setreviewsSortByNew] = useState([]);
+  const [user, setUser] = useState();
+  const [userBooks, setUserBooks] = useState([]);
 
   useEffect(() => {
-    fetch('/books')
-        .then(r => r.json())
-        .then(data => setAllBooks(data))
-
-    fetch('/newest-reviews')
-    .then(r => r.json())
-    .then(data => setreviewsSortByNew(data))
-
     fetch('/profile')
         .then(r => {
           if (r.ok) {
             r.json().then(data => {
               setUser(data)
-              setUserTruthiness(true)
+              setUserBooks(data.books)
             })
+          } else {
+            setUser(false)
           }
         });
+
+    fetch('/books')
+    .then(r => r.json())
+    .then(data => setAllBooks(data))
+  
+    fetch('/newest-reviews')
+    .then(r => r.json())
+    .then(data => setreviewsSortByNew(data))
+
 }, []);
+
 
   return (
     <div className="App">
-        <NavBar user={user} setUser={setUser} userTruthiness={userTruthiness}/>
+        <NavBar user={user} setUser={setUser}/>
         <Router>
           <Routes>
-            <Route exact path='/' element={<HomeContent allBooks={allBooks} setUser={setUser} reviewsSortByNew={reviewsSortByNew} user={user} userTruthiness={userTruthiness}/>} />
+            <Route exact path='/' element={<HomeContent allBooks={allBooks} setUser={setUser} reviewsSortByNew={reviewsSortByNew} user={user}/>} />
             <Route exact path='/login' element={<Login setUser={setUser}/>} />
-            <Route exact path='/profile' element={<Profile user={user} userTruthiness={userTruthiness} />} />
+            <Route exact path='/profile' element={<Profile user={user} userBooks={userBooks}/>} />
           </Routes>
         </Router>
     </div>

@@ -239,8 +239,9 @@
   height: 650px;
   width: 420px;
   background-color: #e9e5dc3a;
-  border: solid 1px #6f5b4b;
+  border: solid 1px #362c243b;
   padding-top: 40px;
+  border-radius: 5px;
 }
 
 #profileCard {
@@ -248,5 +249,21 @@
   margin: auto;
   background-color: transparent;
   border-color: transparent;
+}
+
+#profileButtonGroup {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#profileButton {
+  width: 120px;
+  height: 27px;
+  text-align: center;
+  margin: 5px;
+  border: transparent;
+  background-color: #e9e5dc3a;
+  color: #362c24;
 }
 
