@@ -5,6 +5,18 @@
   color: #362c24;
 }
 
+p {
+  color: #362c24;
+}
+
+a:link {
+  color: #362c24;;
+}
+
+#linkButton {
+  color: #6f5b4b;
+}
+
 #searchButton:hover {
   background-color: white;
 }
@@ -236,7 +248,7 @@
 
 #profileCardContainer {
   text-align: center;
-  height: 650px;
+  height: 700px;
   width: 420px;
   background-color: #e9e5dc3a;
   border: solid 1px #362c243b;
@@ -299,5 +311,25 @@
 
 #profileBooksContainer {
   margin-top: 64px;
+  height: 100px;
+  padding: 0px 50px 0px 0px;
+}
+
+#reviewsContainer {
+  padding: 0px 50px 0px 0px;
+  margin-top: 80px;
+  max-width: 600px;
+  max-height: 900px;
+  overflow: scroll;
+}
+
+#profileReviewsHeader {
+  color: #362c24;
+  text-align: center;
+  margin-bottom: 40px;
+  background-color: #e9e5dc3a;
+  width: 130px;
+  margin-left: auto;
+  margin-right: auto;
 }
 

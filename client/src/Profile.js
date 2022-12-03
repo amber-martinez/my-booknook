@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-function Profile({ user, userBooks, userReviews }) {
+function Profile({ user, setUser, userBooks, userReviews }) {
 
     const [quote, setQuote] = useState([])
 
@@ -14,8 +15,22 @@ function Profile({ user, userBooks, userReviews }) {
         .then(quote => setQuote(quote))
     }, [])
 
+    function handleLogoutClick() {
+        fetch('/logout', {
+          method: 'DELETE'
+        })
+        .then(r => {
+          if (r.ok) {
+            setUser(null)
+          }
+        })
+      }
+
     const notLoggedIn = (
-        <p>You're not logged in! Sign up or log in here.</p>
+        <div style={{ textAlign: 'center', marginTop: 91 }}>
+            <img src='https://i.gifer.com/origin/c9/c9be20ebec1e40b9e2ed8488253c44b0_w200.gif'></img>
+            <h5 style={{ textAlign: 'center', marginTop: 15 }}>Oh no, you're not logged in!<br></br>Sign up or log in <Link to='/login' id='linkButton'>here.</Link></h5>
+        </div>
     )
 
     return (
@@ -24,21 +39,90 @@ function Profile({ user, userBooks, userReviews }) {
             ?
             <Container>
                 <Row>
-                    <Col xs lg="5">
-                        <div style={{ display: 'inline-block' }}>
-                            <div>
-                                <div id='profileBooksContainer'>
-                                    <h4 id='profileBooksHeader'>My Books</h4>
-                                    {userBooks.map(book => (
-                                        <div id='profileBook' class="card text-center" key={book.id}>
-                                            <img src={book.image_url} id='profileBookImg'/>
-                                            <h5 id='profileBooksTitle'>{book.title}</h5>
-                                            <div id='bookCardBody'>
-                                            </div>
+                    <Col style={{ paddingBottom: 100 }}>
+                        <div style={{ textAlign: 'center' }}>
+                            <div id='profileBooksContainer' style={{ display: 'inline-block' }}>
+                                <h4 id='profileBooksHeader'>My Books</h4>
+                                {userBooks.map(book => (
+                                    <div id='profileBook' class="card text-center" key={book.id}>
+                                        <img src={book.image_url} id='profileBookImg'/>
+                                        <h5 id='profileBooksTitle'>{book.title}</h5>
+                                        <div id='bookCardBody'>
                                         </div>
-                                    ))}
-                                </div>
+                                    </div>
+                                ))}
                             </div>
+                        </div>
+                        <div id='reviewsContainer'>
+                            <h4 id='profileReviewsHeader'>My Reviews</h4>
+                            {userReviews.map(review => {
+                                        if (review.rating == 1) {
+                                            return (
+                                                <div key={review.id}>
+                                                    <h5>{review.book.title} – {review.book.author}</h5>
+                                                    <span className="fa fa-star checked"></span>
+                                                    <span className="fa fa-star"></span>
+                                                    <span className="fa fa-star"></span>
+                                                    <span className="fa fa-star"></span>
+                                                    <span className="fa fa-star"></span>
+                                                    <p>by {review.user.username}</p>
+                                                    <p>{review.review_body}</p>
+                                                </div>
+                                            )
+                                        } else if (review.rating == 2) {
+                                            return (
+                                                <div key={review.id}>
+                                                    <h5>{review.book.title} – {review.book.author}</h5>
+                                                    <span className="fa fa-star checked"></span>
+                                                    <span className="fa fa-star checked"></span>
+                                                    <span className="fa fa-star"></span>
+                                                    <span className="fa fa-star"></span>
+                                                    <span className="fa fa-star"></span>
+                                                    <p>by {review.user.username}</p>
+                                                    <p>{review.review_body}</p>
+                                                </div>
+                                            )
+                                        } else if (review.rating == 3) {
+                                            return (
+                                                <div key={review.id}>
+                                                    <h5>{review.book.title} – {review.book.author}</h5>
+                                                    <span className="fa fa-star checked"></span>
+                                                    <span className="fa fa-star checked"></span>
+                                                    <span className="fa fa-star checked"></span>
+                                                    <span className="fa fa-star"></span>
+                                                    <span className="fa fa-star"></span>
+                                                    <p>by {review.user.username}</p>
+                                                    <p>{review.review_body}</p>
+                                                </div>
+                                            )
+                                        } else if (review.rating == 4) {
+                                            return (
+                                                <div key={review.id}>
+                                                    <h5>{review.book.title} – {review.book.author}</h5>
+                                                    <span className="fa fa-star checked"></span>
+                                                    <span className="fa fa-star checked"></span>
+                                                    <span className="fa fa-star checked"></span>
+                                                    <span className="fa fa-star checked"></span>
+                                                    <span className="fa fa-star"></span>
+                                                    <p>by {review.user.username}</p>
+                                                    <p>{review.review_body}</p>
+                                                </div>
+                                            )
+                                        } else if (review.rating == 5) {
+                                            return (
+                                                <div key={review.id}>
+                                                    <h5>{review.book.title} – {review.book.author}</h5>
+                                                    <span className="fa fa-star checked"></span>
+                                                    <span className="fa fa-star checked"></span>
+                                                    <span className="fa fa-star checked"></span>
+                                                    <span className="fa fa-star checked"></span>
+                                                    <span className="fa fa-star checked"></span>
+                                                    <p>by {review.user.username}</p>
+                                                    <p>{review.review_body}</p>
+                                                </div>
+                                            )
+                                        }
+                            })}
                         </div>
                     </Col>
                     <Col>
@@ -55,24 +139,12 @@ function Profile({ user, userBooks, userReviews }) {
                                 <button id='profileButton'>Edit profile</button><br></br>
                                 <button id='profileButton'>Create review</button><br></br>
                                 <button id='profileButton'>Find a Book</button><br></br>
-                                <button id='profileButton'>Log out</button>
+                                <button id='profileButton' onClick={handleLogoutClick}>Log out</button>
                             </div>
-                            <div style={{ margin: '30px 0px 0px 0px' }}>
+                            <div style={{ margin: '29px 0px 0px 0px' }}>
                                 {quote ? <p style={{ fontSize: 14 }}>{quote.content} – {quote.author}</p> : null}
                             </div>
                             </Card>
-                        </div>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <div>
-                            {userReviews.map(review => (
-                                <div id='reviewsContainer'>
-                                    <h4>{review.book.title}</h4>
-                                    <p>{review.review_body}</p>
-                                </div>
-                            ))}
                         </div>
                     </Col>
                 </Row>

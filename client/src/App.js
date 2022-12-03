@@ -49,7 +49,7 @@ function App() {
           <Routes>
             <Route exact path='/' element={<HomeContent allBooks={allBooks} setUser={setUser} reviewsSortByNew={reviewsSortByNew} user={user}/>} />
             <Route exact path='/login' element={<Login setUser={setUser}/>} />
-            <Route exact path='/profile' element={<Profile user={user} userBooks={userBooks} userReviews={userReviews}/> } />
+            <Route exact path='/profile' element={<Profile user={user} userBooks={userBooks} userReviews={userReviews} setUser={setUser}/> } />
           </Routes>
         </Router>
     </div>

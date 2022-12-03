@@ -64,12 +64,12 @@ function NavBar({ user, setUser }) {
           {user
           ?
           <Nav>
-            <Nav.Link href="/profile">My Nook</Nav.Link>
-            <Button id='navbarLoginButton' onClick={handleLogoutClick}>Logout</Button>
+            <Nav.Link href="/profile" id='linkButton'>My Nook</Nav.Link>
+            <Button id='navbarLoginButton' onClick={handleLogoutClick}>Log out</Button>
           </Nav>
           :
           <Nav>
-          <Nav.Link href="/signup">Sign up</Nav.Link>
+          <Nav.Link href="/signup" id='linkButton'>Sign up</Nav.Link>
           <Nav.Link href="/login" id='navbarLoginButton'>Log in</Nav.Link>
           </Nav>
           }
