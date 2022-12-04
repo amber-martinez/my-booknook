@@ -21,6 +21,7 @@ function Profile({ user, setUser, userBooks, userReviews }) {
         })
         .then(r => {
           if (r.ok) {
+            window.location.href='/'
             setUser(null)
           }
         })

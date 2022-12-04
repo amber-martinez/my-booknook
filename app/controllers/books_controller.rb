@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-    skip_before_action :authorize, only: :index
+    skip_before_action :authorize, only: [:index, :books_by_genre]
 
     def index
         books = Book.all 
