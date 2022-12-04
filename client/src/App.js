@@ -5,6 +5,7 @@ import NavBar from './NavBar'
 import HomeContent from './HomeContent'
 import Login from './Login'
 import Profile from './Profile'
+import DisplayBooks from './DisplayBooks';
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
   const [user, setUser] = useState();
   const [userBooks, setUserBooks] = useState([]);
   const [userReviews, setUserReviews] = useState([]);
+  const [genre, setGenre] = useState(null);
 
   useEffect(() => {
     fetch('/profile')
@@ -29,7 +31,10 @@ function App() {
 
     fetch('/books')
     .then(r => r.json())
-    .then(data => setAllBooks(data))
+    .then(data => {
+      setAllBooks(data)
+      setGenre('All')
+    })
   
     fetch('/newest-reviews')
     .then(r => r.json())
@@ -44,12 +49,19 @@ function App() {
 
   return (
     <div className="App">
-        <NavBar user={user} setUser={setUser}/>
+        <NavBar user={user} setUser={setUser} setGenre={setGenre} genre={genre}/>
         <Router>
           <Routes>
             <Route exact path='/' element={<HomeContent allBooks={allBooks} setUser={setUser} reviewsSortByNew={reviewsSortByNew} user={user}/>} />
             <Route exact path='/login' element={<Login setUser={setUser}/>} />
             <Route exact path='/profile' element={<Profile user={user} userBooks={userBooks} userReviews={userReviews} setUser={setUser}/> } />
+            <Route exact path='/books' element={<DisplayBooks allBooks={allBooks} setGenre={setGenre}/>}></Route>
+            <Route exact path='/Classics' element={<DisplayBooks allBooks={allBooks} setGenre={setGenre}/>}></Route>
+            <Route exact path='/Fantasy' element={<DisplayBooks allBooks={allBooks} setGenre={setGenre}/>}></Route>
+            <Route exact path='/Fiction' element={<DisplayBooks allBooks={allBooks} setGenre={setGenre}/>}></Route>
+            <Route exact path='/Poetry' element={<DisplayBooks allBooks={allBooks} setGenre={setGenre}/>}></Route>
+            <Route exact path='/Romance' element={<DisplayBooks allBooks={allBooks} setGenre={setGenre}/>}></Route>
+            <Route exact path='/Science-Fiction' element={<DisplayBooks allBooks={allBooks} setGenre={setGenre} genre={genre}/>}></Route>
           </Routes>
         </Router>
     </div>

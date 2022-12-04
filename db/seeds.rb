@@ -13,8 +13,8 @@ Review.destroy_all
 User.destroy_all
 
 #books
-Book.create(title: 'Midnight Library', author: 'Matt Haig', genre: 'Science fiction', image_url: 'https://m.media-amazon.com/images/I/41ATfFjhelL._AC_SY780_.jpg')
-Book.create(title: 'Severance', author: 'Ling Ma', genre: 'Science fiction', image_url: 'https://m.media-amazon.com/images/I/31mPYQxX73L._AC_SY780_.jpg')
+Book.create(title: 'Midnight Library', author: 'Matt Haig', genre: 'Science-Fiction', image_url: 'https://m.media-amazon.com/images/I/41ATfFjhelL._AC_SY780_.jpg')
+Book.create(title: 'Severance', author: 'Ling Ma', genre: 'Science-Fiction', image_url: 'https://m.media-amazon.com/images/I/31mPYQxX73L._AC_SY780_.jpg')
 Book.create(title: 'The Invisible Life of Addie LaRue', author: 'V. E. Schwab', genre: 'Fantasy', image_url: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1584633432l/50623864.jpg')
 Book.create(title: 'Love & Misadventure', author: 'Lang Leav', genre: 'Poetry', image_url: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1370084153l/18003300.jpg')
 Book.create(title: 'Cover Story', author: 'Susan Rigetti', genre: 'Fiction', image_url: 'https://m.media-amazon.com/images/I/41cgksGPsUL._AC_SY780_.jpg')

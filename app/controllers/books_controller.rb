@@ -21,6 +21,11 @@ class BooksController < ApplicationController
         render json: random_book
     end
 
+    def books_by_genre
+        books = Book.where(genre: params[:genre])
+        render json: books
+    end
+
     private
 
     def book_params

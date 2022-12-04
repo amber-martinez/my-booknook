@@ -41,13 +41,14 @@ function NavBar({ user, setUser }) {
                 <Nav.Link href="#action1" id='headerLink'>Leaderboard</Nav.Link>
                 <Nav.Link href="#action2" id='headerLink'>My Books</Nav.Link>
                 <NavDropdown title="Genres" id="navbarScrollingDropdown">
-                {/* <NavDropdown.Divider /> */}
-                <NavDropdown.Item href="#action3" id='headerLink'>Classics</NavDropdown.Item>
-                <NavDropdown.Item href="#action4" id='headerLink'>Fantasy</NavDropdown.Item>
-                <NavDropdown.Item href="#action5" id='headerLink'>Fiction</NavDropdown.Item>
-                <NavDropdown.Item href="#action6" id='headerLink'>Poetry</NavDropdown.Item>
-                <NavDropdown.Item href="#action7" id='headerLink'>Romance</NavDropdown.Item>
-                <NavDropdown.Item href="#action7" id='headerLink'>Science-Fiction</NavDropdown.Item>
+                <NavDropdown.Item href="/books" id='headerLink' name='All'>All Books</NavDropdown.Item>
+                <NavDropdown.Divider></NavDropdown.Divider>
+                <NavDropdown.Item href="/Classics" id='headerLink' name='Classics'>Classics</NavDropdown.Item>
+                <NavDropdown.Item href="/Fantasy" id='headerLink' name='Fantasy'>Fantasy</NavDropdown.Item>
+                <NavDropdown.Item href="/Fiction" id='headerLink' name='Fiction'>Fiction</NavDropdown.Item>
+                <NavDropdown.Item href="/Poetry" id='headerLink' name='Poetry'>Poetry</NavDropdown.Item>
+                <NavDropdown.Item href="/Romance" id='headerLink' name='Romance'>Romance</NavDropdown.Item>
+                <NavDropdown.Item href="/Science-Fiction" id='headerLink' name='Science-Fiction'>Science-Fiction</NavDropdown.Item>
                 </NavDropdown>
           </Nav>
           <Form className="d-flex">

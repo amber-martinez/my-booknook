@@ -9,6 +9,10 @@ p {
   color: #362c24;
 }
 
+.dropdown-item:active {
+  background-color: #e9e5dc6b !important;
+}
+
 a:link {
   color: #362c24;;
 }
@@ -331,5 +335,11 @@ a:link {
   width: 130px;
   margin-left: auto;
   margin-right: auto;
+}
+
+#actionButton {
+  background-color: #e9e5dc69;
+  border-color: transparent;
+  border-radius: 5px;
 }
 

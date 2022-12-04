@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/profile', to: 'users#show'
   get '/random-book', to: 'books#random'
   get '/my-reviews', to: 'reviews#user_reviews'
+  get '/:genre', to: 'books#books_by_genre'
   post '/login', to: 'sessions#create'
   post '/signup', to: 'users#create'
   delete '/logout', to: 'sessions#destroy'
