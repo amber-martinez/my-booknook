@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function SignUpWelcome({ setUser }) {
+function SignUpForm({ setUser }) {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
@@ -86,4 +86,4 @@ function SignUpWelcome({ setUser }) {
     )
 }
 
-export default SignUpWelcome;
+export default SignUpForm;
