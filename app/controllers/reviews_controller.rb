@@ -23,7 +23,18 @@ class ReviewsController < ApplicationController
     def user_reviews
         user_reviews = Review.where(id: @user.reviews.ids)
         render json: user_reviews
-        end
+    end
+
+    def reviews_by_rating
+        # reviews = Review.all 
+        #book.reviews.average(:rating)
+        books = Book.all
+
+        avg = books.flat_map { |book| [avg_rating: book.reviews.average(:rating), title: book.title, author: book.author, image_url: book.image_url, genre: book.genre] }
+
+
+        render json: avg
+    end
 
     private
 

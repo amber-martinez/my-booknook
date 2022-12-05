@@ -60,7 +60,7 @@ function Profile({ user, setUser, userBooks, userReviews }) {
                                         if (review.rating == 1) {
                                             return (
                                                 <div key={review.id}>
-                                                    <h5>{review.book.title} – {review.book.author}</h5>
+                                                    <h5 style={{ fontSize: 16 }}>{review.book.title} – {review.book.author}</h5>
                                                     <span className="fa fa-star checked"></span>
                                                     <span className="fa fa-star"></span>
                                                     <span className="fa fa-star"></span>

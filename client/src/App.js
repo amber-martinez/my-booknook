@@ -9,6 +9,7 @@ import DisplayBooks from './DisplayBooks';
 import SignUpForm from './SignUpForm';
 import Search from './Search';
 import MyBooks from './MyBooks';
+import Leaderboard from './Leaderboard';
 
 function App() {
 
@@ -18,6 +19,8 @@ function App() {
   const [userBooks, setUserBooks] = useState([]);
   const [userReviews, setUserReviews] = useState([]);
   const [genre, setGenre] = useState(null);
+  const [reviewsByRating, setReviewsByRating] = useState([]);
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     fetch('/profile')
@@ -43,9 +46,15 @@ function App() {
     .then(r => r.json())
     .then(data => setreviewsSortByNew(data))
 
+    fetch('/top-rated-books')
+    .then(r => r.json())
+    .then(data => setReviewsByRating(data))
+
     fetch('/my-reviews')
     .then(r => r.json())
     .then(data => setUserReviews(data))
+
+    setLoading(false)
 
 }, []);
 
@@ -60,6 +69,7 @@ function App() {
             <Route exact path='/signup' element={<SignUpForm setUser={setUser}/>} />
             <Route exact path='/search' element={<Search allBooks={allBooks}/>} />
             <Route exact path='/my-books' element={<MyBooks userBooks={userBooks} user={user}/>} />
+            <Route exact path='/leaderboard' element={<Leaderboard reviewsByRating={reviewsByRating} loading={loading}/>} />
             <Route exact path='/profile' element={<Profile user={user} userBooks={userBooks} userReviews={userReviews} setUser={setUser}/> } />
             <Route exact path='/books' element={<DisplayBooks allBooks={allBooks} setGenre={setGenre}/>}></Route>
             <Route exact path='/Classics' element={<DisplayBooks allBooks={allBooks} setGenre={setGenre}/>}></Route>
