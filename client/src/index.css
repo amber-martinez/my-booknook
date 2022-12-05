@@ -18,6 +18,10 @@ a:link {
   text-decoration: none;
 }
 
+.link {
+  color: #362c24;
+}
+
 a:link:hover {
   color: #362c24;
 }
@@ -289,14 +293,15 @@ a:link:hover {
 
 #profileBooksTitle {
   margin-top: 14px;
-  max-width: 200px;
+  max-width: 190px;
   color: #362c24;
 }
 
 #profileBook {
   border-color: transparent;
   display: inline-block;
-  padding: 4px;
+  margin: 0px 10px 24px 10px;
+  width: 190px;
 }
 
 #profileBookImg {
@@ -321,6 +326,9 @@ a:link:hover {
   margin-top: 64px;
   height: 100px;
   padding: 0px 50px 0px 0px;
+  vertical-align: 'top';
+  text-align: left;
+  width: 472px;
 }
 
 #reviewsContainer {

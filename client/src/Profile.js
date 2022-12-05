@@ -139,7 +139,7 @@ function Profile({ user, setUser, userBooks, userReviews }) {
                             <div id='profileButtonGroup'>
                                 <button id='profileButton'>Edit profile</button><br></br>
                                 <button id='profileButton'>Create review</button><br></br>
-                                <button id='profileButton'><Link to='/search'>Find a Book</Link></button><br></br>
+                                <button id='profileButton'><Link to='/search' id='profileButton'>Find a Book</Link></button><br></br>
                                 <button id='profileButton' onClick={handleLogoutClick}>Log out</button>
                             </div>
                             <div style={{ margin: '29px 0px 0px 0px' }}>
