@@ -30,6 +30,13 @@ a:link:hover {
   border-color: transparent;
 }
 
+#inlineLinkButton {
+  color: #6f5b4b;
+  margin-bottom: auto;
+  background: transparent;
+  border-color: transparent;
+}
+
 #searchButton:hover {
   background-color: white;
 }

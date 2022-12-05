@@ -5,11 +5,6 @@ function Search({ allBooks }) {
     const [search, setSearch] = useState(null)
     const [results, setResults] = useState([])
 
-    // function onSearchInput(e) {
-    //     setSearch(e.target.value)
-    //     handleEnterClick(e)
-    // }
-
     function onSearchInput(e) {
         e.preventDefault()
 
@@ -23,8 +18,6 @@ function Search({ allBooks }) {
             setSearch(true)
         setResults(allBooks.filter(book => {
             if (book.title.replace(/\s+/g, '').toLowerCase().includes(search.toLowerCase())) {
-                // console.log(search.toLowerCase())
-                // console.log(book.title.replace(/\s+/g, '').toLowerCase())
                 return book
             } else {
                 setResults(<p>No results yet</p>)
@@ -41,7 +34,6 @@ function Search({ allBooks }) {
             <div>
                 <form style={{ marginBottom: 34 }}>
                     <input type='text' onChange={onSearchInput} id='searchBox' placeholder='Find books'></input>
-                    {/* <button type='submit' id='searchEnter'>Enter</button> */}
                 </form>
             </div>
             <div>

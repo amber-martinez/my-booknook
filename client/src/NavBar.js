@@ -34,8 +34,8 @@ function NavBar({ user, setUser }) {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-                <Nav.Link href="#action1" id='headerLink'>Leaderboard</Nav.Link>
-                <Nav.Link href="#action2" id='headerLink'>My Books</Nav.Link>
+                <Nav.Link href="/leaderboard" id='headerLink'>Leaderboard</Nav.Link>
+                <Nav.Link href="/my-books" id='headerLink'>My Books</Nav.Link>
                 <NavDropdown title="Genres" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="/books" id='headerLink' name='All'>All Books</NavDropdown.Item>
                 <NavDropdown.Divider></NavDropdown.Divider>
