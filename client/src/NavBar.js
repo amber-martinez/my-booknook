@@ -1,26 +1,22 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function NavBar({ user, setUser }) {
 
-  const [searchField, setSearchField] = useState('')
-
-  function handleSearchField(e) {
-    setSearchField(e.target.value)
-  }
-
-  function handleLogoutClick() {
+  function handleLogoutClick(e) {
+    e.preventDefault()
     fetch('/logout', {
       method: 'DELETE'
     })
     .then(r => {
       if (r.ok) {
         setUser(null)
+        window.location.href='/'
       }
     })
   }
@@ -51,27 +47,18 @@ function NavBar({ user, setUser }) {
                 <NavDropdown.Item href="/Science-Fiction" id='headerLink' name='Science-Fiction'>Science-Fiction</NavDropdown.Item>
                 </NavDropdown>
           </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="Search"
-              placeholder="Search for books"
-              className="me-2"
-              aria-label="Search"
-              id='searchField'
-              onChange={handleSearchField}
-            />
-            <Button variant="outline-success" id='searchButton'>Search</Button>
-          </Form>
           {user
           ?
           <Nav>
+            <Nav.Link href="/search" id='linkButton'>Search</Nav.Link>
             <Nav.Link href="/profile" id='linkButton'>My Nook</Nav.Link>
-            <Button id='navbarLoginButton' onClick={handleLogoutClick}>Log out</Button>
+            <Nav.Link id='linkButton' onClick={handleLogoutClick}>Log out</Nav.Link>
           </Nav>
           :
           <Nav>
+          <Nav.Link href="/search" id='linkButton'>Search</Nav.Link>
           <Nav.Link href="/signup" id='linkButton'>Sign up</Nav.Link>
-          <Nav.Link href="/login" id='navbarLoginButton'>Log in</Nav.Link>
+          <Nav.Link href="/login" id='linkButton'>Log in</Nav.Link>
           </Nav>
           }
         </Navbar.Collapse>

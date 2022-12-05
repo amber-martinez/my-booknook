@@ -24,6 +24,10 @@ a:link:hover {
 
 #linkButton {
   color: #6f5b4b;
+  padding: 11px; 
+  margin-bottom: auto;
+  background: transparent;
+  border-color: transparent;
 }
 
 #searchButton:hover {
@@ -124,18 +128,6 @@ a:link:hover {
 #navbar {
   padding: 18px;
   background-color: #e9e5dc;
-}
-
-#navbarLoginButton {
-  color: white;
-  margin-left: 10px;
-  border: solid 1px #6f5b4b;
-  border-radius: 5px;
-  padding-left: 11px;
-  padding-right: 11px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  background-color: #6f5b4b;
 }
 
 #headerTitle {
@@ -365,5 +357,29 @@ a:link:hover {
 
 input:focus {
   outline: transparent;
+}
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: #0087ca;
+}
+
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
