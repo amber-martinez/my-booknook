@@ -14,7 +14,12 @@ p {
 }
 
 a:link {
-  color: #362c24;;
+  color: #362c24;
+  text-decoration: none;
+}
+
+a:link:hover {
+  color: #362c24;
 }
 
 #linkButton {
@@ -341,5 +346,24 @@ a:link {
   background-color: #e9e5dc69;
   border-color: transparent;
   border-radius: 5px;
+}
+
+#searchEnter {
+  font-weight: 400;
+  padding: 2px 7px 2px 7px;
+  border: solid 1px transparent;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+#searchBox {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #362c24;
+  width: 400px;
+}
+
+input:focus {
+  outline: transparent;
 }
 

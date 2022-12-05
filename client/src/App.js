@@ -7,6 +7,7 @@ import Login from './Login'
 import Profile from './Profile'
 import DisplayBooks from './DisplayBooks';
 import SignUpForm from './SignUpForm';
+import Search from './Search'
 
 function App() {
 
@@ -56,6 +57,7 @@ function App() {
             <Route exact path='/' element={<HomeContent allBooks={allBooks} setUser={setUser} reviewsSortByNew={reviewsSortByNew} user={user}/>} />
             <Route exact path='/login' element={<Login setUser={setUser}/>} />
             <Route exact path='/signup' element={<SignUpForm setUser={setUser}/>} />
+            <Route exact path='/search' element={<Search allBooks={allBooks}/>} />
             <Route exact path='/profile' element={<Profile user={user} userBooks={userBooks} userReviews={userReviews} setUser={setUser}/> } />
             <Route exact path='/books' element={<DisplayBooks allBooks={allBooks} setGenre={setGenre}/>}></Route>
             <Route exact path='/Classics' element={<DisplayBooks allBooks={allBooks} setGenre={setGenre}/>}></Route>
