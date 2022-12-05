@@ -15,9 +15,10 @@ function Leaderboard({ reviewsByRating, loading }) {
             </div>
             :
             <div>
-                <h3 style={{ padding: 5, fontWeight: 600, backgroundColor: '#e9e5dc3a', textAlign: 'left', display: 'inline-block', margin: '50px 0px 0px 100px' }}>Top Rated Books</h3>
+                <h3 style={{ padding: 5, fontWeight: 600, backgroundColor: '#e9e5dc3a', textAlign: 'left', display: 'inline-block', margin: '50px 0px 0px 100px' }}>Books Leaderboard</h3>
+                <p style={{ margin: '8px 0px 0px 105px' }}>Books from A to Z, starting with the highest rated.</p>
                 <div style={{ margin: '34px 100px 100px 105px' }}>
-                    {reviewsByRating.map(review => (
+                    {reviewsByRating.sort((a, b) => b.avg_rating - a.avg_rating).map(review => (
                         <div key={review.id}>
                             <div style={{ display: 'inline-block', verticalAlign: 'top', marginBottom: 15 }}>
                                 <img src={review.image_url} style={{ height: 120, width: 80, objectFit: 'cover' }}></img>
