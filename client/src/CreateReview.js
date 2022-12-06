@@ -74,9 +74,9 @@ function CreateReview({ user, allBooks }) {
                     <br></br>
                 </div>
                 <div>
-                    <button id='actionButton' style={{ marginTop: 70 }} >Save</button>
+                    <button id='actionButton' style={{ marginTop: 70 }} onClick={onReviewSubmit}>Save</button>
                     <br></br>
-                    {/* {errors.map(e => <p style={{ marginTop: 20 }}>{e}</p>)} */}
+                    {errors.map(e => <p style={{ marginTop: 20 }}>{e}</p>)}
                 </div>
             </div>
         </div>
