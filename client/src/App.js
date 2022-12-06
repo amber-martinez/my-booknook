@@ -10,6 +10,7 @@ import SignUpForm from './SignUpForm';
 import Search from './Search';
 import MyBooks from './MyBooks';
 import Leaderboard from './Leaderboard';
+import DisplayReviews from './DisplayReviews';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
   const [genre, setGenre] = useState(null);
   const [reviewsByRating, setReviewsByRating] = useState([]);
   const [loading, setLoading] = useState(true)
+  const [users, setUsers] = useState([])
 
   useEffect(() => {
     fetch('/profile')
@@ -54,6 +56,7 @@ function App() {
     .then(r => r.json())
     .then(data => setUserReviews(data))
 
+
     setLoading(false)
 
 }, []);
@@ -61,7 +64,7 @@ function App() {
 
   return (
     <div className="App">
-        <NavBar user={user} setUser={setUser} setGenre={setGenre} genre={genre}/>
+        <NavBar user={user} setUser={setUser} setGenre={setGenre} genre={genre} loading={loading}/>
         <Router>
           <Routes>
             <Route exact path='/' element={<HomeContent allBooks={allBooks} setUser={setUser} reviewsSortByNew={reviewsSortByNew} user={user}/>} />

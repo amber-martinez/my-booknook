@@ -6,7 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-function NavBar({ user, setUser }) {
+function NavBar({ user, setUser, loading }) {
 
   function handleLogoutClick(e) {
     e.preventDefault()
@@ -47,8 +47,10 @@ function NavBar({ user, setUser }) {
                 <NavDropdown.Item href="/Science-Fiction" id='headerLink' name='Science-Fiction'>Science-Fiction</NavDropdown.Item>
                 </NavDropdown>
           </Nav>
-          {user
-          ?
+          {loading ?
+          <p>Loading</p>
+          :
+          user ?
           <Nav>
             <Nav.Link href="/search" id='linkButton'>Search</Nav.Link>
             <Nav.Link href="/profile" id='linkButton'>My Nook</Nav.Link>
@@ -56,9 +58,9 @@ function NavBar({ user, setUser }) {
           </Nav>
           :
           <Nav>
-          <Nav.Link href="/search" id='linkButton'>Search</Nav.Link>
-          <Nav.Link href="/signup" id='linkButton'>Sign up</Nav.Link>
-          <Nav.Link href="/login" id='linkButton'>Log in</Nav.Link>
+            <Nav.Link href="/search" id='linkButton'>Search</Nav.Link>
+            <Nav.Link href="/signup" id='linkButton'>Sign up</Nav.Link>
+            <Nav.Link href="/login" id='linkButton'>Log in</Nav.Link>
           </Nav>
           }
         </Navbar.Collapse>

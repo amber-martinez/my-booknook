@@ -44,6 +44,7 @@ function Profile({ user, setUser, userBooks, userReviews }) {
                         <div style={{ textAlign: 'center' }}>
                             <div id='profileBooksContainer' style={{ display: 'inline-block' }}>
                                 <h4 id='profileBooksHeader'>My Books</h4>
+
                                 {userBooks.map(book => (
                                     <div id='profileBook' class="card text-center" key={book.id}>
                                         <img src={book.image_url} id='profileBookImg'/>
@@ -52,6 +53,7 @@ function Profile({ user, setUser, userBooks, userReviews }) {
                                         </div>
                                     </div>
                                 ))}
+                                
                             </div>
                         </div>
                         <div id='reviewsContainer'>
