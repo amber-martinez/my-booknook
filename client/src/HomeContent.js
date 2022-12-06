@@ -16,7 +16,7 @@ function HomeContent({ allBooks, setUser, reviewsSortByNew, user }) {
                 <Col><Welcome setUser={setUser} user={user}/></Col>
             </Row>
             <Row>
-                <Col><RecentReviews reviewsSortByNew={reviewsSortByNew}/></Col>
+                <Col><RecentReviews reviewsSortByNew={reviewsSortByNew} user={user}/></Col>
                 <Col><GenreBubbles allBooks={allBooks}/></Col>
             </Row>
         </Container>

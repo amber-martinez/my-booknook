@@ -152,7 +152,7 @@ a:link:hover {
   padding-top: 20px;
 }
 
-#recentReviewsContainer {
+div#recentReviewsContainerNonUser {
   padding: 20px 90px 20px 40px;
   border: solid 2px #362c243b;
   border-radius: 10px;
@@ -162,6 +162,17 @@ a:link:hover {
   overflow:hidden;
   -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 0%, transparent 30%);
+}
+
+div#recentReviewsContainerUser {
+  padding: 20px 90px 20px 40px;
+  border: solid 2px #362c243b;
+  border-radius: 10px;
+  background-color: #e9e5dc3a;
+  max-width: 600px;
+  max-height: 700px;
+  overflow: scroll;
+  margin-bottom: 90px;
 }
 
 #loginToSeeReviews {

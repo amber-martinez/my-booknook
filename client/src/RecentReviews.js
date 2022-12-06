@@ -1,6 +1,6 @@
 import React from 'react';
 
-function RecentReviews({ reviewsSortByNew }) {
+function RecentReviews({ reviewsSortByNew, user }) {
 
     const newestReviews = reviewsSortByNew.map(review => {
         if (review.rating == 1) {
@@ -73,14 +73,26 @@ function RecentReviews({ reviewsSortByNew }) {
 
     return (
         <div>
-            <div id='recentReviewsContainer'>
+            {user ?
+            <div id='recentReviewsContainerUser'>
                 <h3 id='popGenresHeader'>Recent Reviews</h3>
                 <p>Quite the critic makes quite the taste.</p>
                 {newestReviews}
             </div>
+            :
+            <div id='recentReviewsContainerNonUser'>
+                <h3 id='popGenresHeader'>Recent Reviews</h3>
+                <p>Quite the critic makes quite the taste.</p>
+                {newestReviews}
+            </div>
+            }
+            {user ?
+            null
+            :
             <div style={{ textAlign: 'center' }}>
                 <button id='loginToSeeReviews'>Log in to see full reviews!</button>
             </div>
+            }
         </div>
     )
 }
