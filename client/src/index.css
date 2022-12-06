@@ -398,3 +398,19 @@ input:focus {
   transform-origin: bottom left;
 }
 
+#signUpInputs {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #362c24;
+  width: 350px;
+  margin-bottom: 40px;
+}
+
+#editProfileHeader {
+  display: inline-block;
+  color: #362c24;
+  text-align: center;
+  margin-bottom: 40px;
+  background-color: #e9e5dc3a;
+}
+

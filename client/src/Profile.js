@@ -139,7 +139,7 @@ function Profile({ user, setUser, userBooks, userReviews }) {
                                 </Card.Text>
                             </Card.Body>
                             <div id='profileButtonGroup'>
-                                <button id='profileButton'>Edit profile</button><br></br>
+                                <button id='profileButton'><Link to='/edit-profile' id='profileButton'>Edit profile</Link></button><br></br>
                                 <button id='profileButton'>Create review</button><br></br>
                                 <button id='profileButton'><Link to='/search' id='profileButton'>Find a Book</Link></button><br></br>
                                 <button id='profileButton' onClick={handleLogoutClick}>Log out</button>
