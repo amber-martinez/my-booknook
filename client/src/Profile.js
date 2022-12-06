@@ -57,7 +57,7 @@ function Profile({ user, setUser, userBooks, userReviews }) {
                 <Row>
                     <Col style={{ paddingBottom: 100 }}>
                         <div style={{ textAlign: 'center' }}>
-                            <div id='profileBooksContainer' style={{ display: 'inline-block' }}>
+                            <div id='profileBooksContainer' style={{ display: 'inline-block', height: 500, overflow: 'scroll' }}>
                                 <h4 id='profileBooksHeader'>My Books</h4>
 
                                 {userBooks.length ?
