@@ -45,20 +45,29 @@ function Profile({ user, setUser, userBooks, userReviews }) {
                             <div id='profileBooksContainer' style={{ display: 'inline-block' }}>
                                 <h4 id='profileBooksHeader'>My Books</h4>
 
-                                {userBooks.map(book => (
+                                {userBooks.length ?
+                                userBooks.map(book => (
                                     <div id='profileBook' class="card text-center" key={book.id}>
                                         <img src={book.image_url} id='profileBookImg'/>
                                         <h5 id='profileBooksTitle'>{book.title}</h5>
                                         <div id='bookCardBody'>
                                         </div>
                                     </div>
-                                ))}
-                                
+                                ))
+                                :
+                                <div style={{ textAlign: 'center' }}>
+                                    <h5>You don't have any books yet!</h5>
+                                    <p><Link to='/new-review' id='inlineLinkButton'>Create a review</Link> to add books to your nook.</p>
+                                </div>
+                                }
+
                             </div>
                         </div>
                         <div id='reviewsContainer'>
                             <h4 id='profileReviewsHeader'>My Reviews</h4>
-                            {userReviews.map(review => {
+                            
+                            {userReviews.length ?
+                            userReviews.map(review => {
                                         if (review.rating == 1) {
                                             return (
                                                 <div key={review.id}>
@@ -125,7 +134,13 @@ function Profile({ user, setUser, userBooks, userReviews }) {
                                                 </div>
                                             )
                                         }
-                            })}
+                            })
+                            :
+                            <div style={{ textAlign: 'center' }}>
+                                <h5>You don't have any reviews yet!</h5>
+                                <p><Link to='/new-review' id='inlineLinkButton'>Create a review</Link> to add reviews and books to your nook.</p>
+                            </div>
+                            }
                         </div>
                     </Col>
                     <Col>
