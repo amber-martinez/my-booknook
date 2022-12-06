@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   #books
   get '/random-book', to: 'books#random'
   get '/top-rated-books', to: 'books#books_with_average_ratings'
+  get '/newest-books', to: 'books#newest'
   get '/:genre', to: 'books#books_by_genre'
 
   #sessions

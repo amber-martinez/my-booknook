@@ -32,6 +32,11 @@ class BooksController < ApplicationController
         render json: avg
     end
 
+    def newest
+        books = Book.all
+        render json: books.order(created_at: :desc).limit(9)
+    end
+
     private
 
     def book_params

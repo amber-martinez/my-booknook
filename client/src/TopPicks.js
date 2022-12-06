@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 
-function TopPicks({ allBooks }) {
+function TopPicks({ newestBooks }) {
 
-    const books = allBooks.map(book => (
+    const books = newestBooks.map(book => (
         <Card id='homepageBookListItem' class="card text-center" key={book.id}>
             <Card.Img src={book.image_url} id='homepageBookImg'/>
             <Card.Body id='bookCardBody'>
@@ -15,8 +15,8 @@ function TopPicks({ allBooks }) {
 
     return (
         <div id='topPicksContainer'>
-            <h3 id='topPicksHeader'>Trending</h3>
-            <p>These books are all the rage. Have you caught on yet?</p>
+            <h3 id='topPicksHeader'>Newly Added</h3>
+            <p>These books are fresh on the shelf.</p>
             <CardGroup class="row row-cols-3 row-cols-md-5 g-2" id='bookCardGroup'>
                 {books}
                 <Card id='homepageBookListItem' class="card text-center">

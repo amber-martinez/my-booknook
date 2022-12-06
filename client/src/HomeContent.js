@@ -8,7 +8,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-function HomeContent({ allBooks, setUser, reviewsSortByNew, user }) {
+function HomeContent({ allBooks, setUser, reviewsSortByNew, user, newestBooks }) {
 
     const [loading, setLoading] = useState(false)
 
@@ -29,7 +29,7 @@ function HomeContent({ allBooks, setUser, reviewsSortByNew, user }) {
             :
             <Container>
                 <Row>
-                    <Col xs lg="5" style={{ marginRight: 70 }}><TopPicks allBooks={allBooks}/></Col>
+                    <Col xs lg="5" style={{ marginRight: 70 }}><TopPicks allBooks={allBooks} newestBooks={newestBooks}/></Col>
                     <Col>{user ? <LoggedInWelcome user={user}/> : <SignUpForm setUser={setUser}/>}</Col>
                 </Row>
                 <Row>

@@ -23,7 +23,7 @@ function App() {
   const [userReviews, setUserReviews] = useState([]);
   const [genre, setGenre] = useState(null);
   const [reviewsByRating, setReviewsByRating] = useState([]);
-  const [loading, setLoading] = useState(true)
+  const [newestBooks, setNewestBooks] = useState([]);
 
   useEffect(() => {
 
@@ -45,6 +45,10 @@ function App() {
       setAllBooks(data)
       setGenre('All')
     })
+
+    fetch('/newest-books')
+    .then(r => r.json())
+    .then(data => setNewestBooks(data))
   
     fetch('/newest-reviews')
     .then(r => r.json())
@@ -58,9 +62,6 @@ function App() {
     .then(r => r.json())
     .then(data => setUserReviews(data))
 
-
-    setLoading(false)
-
 }, []);
 
 
@@ -69,7 +70,7 @@ function App() {
         <NavBar user={user} setUser={setUser} setGenre={setGenre} genre={genre}/>
         <Router>
           <Routes>
-            <Route exact path='/' element={<HomeContent allBooks={allBooks} setUser={setUser} reviewsSortByNew={reviewsSortByNew} user={user}/>} />
+            <Route exact path='/' element={<HomeContent allBooks={allBooks} setUser={setUser} reviewsSortByNew={reviewsSortByNew} user={user} newestBooks={newestBooks}/>} />
             <Route exact path='/login' element={<Login setUser={setUser}/>} />
             <Route exact path='/signup' element={<SignUpForm setUser={setUser}/>} />
             <Route exact path='/search' element={<Search allBooks={allBooks}/>} />
