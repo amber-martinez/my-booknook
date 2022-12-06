@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function LoggedInWelcome({ user }) {
     
@@ -44,8 +45,8 @@ function LoggedInWelcome({ user }) {
             <div>
                 <h3 style={{ marginTop: 44, textAlign: 'center', color: '#362c24' }}>Howdy, {user.username}</h3>
                 <p>Read anything new lately?</p>
-                <button id='loggedInWelcomeButtons' style={{ marginRight: 15 }} >Add a book</button>
-                <button id='loggedInWelcomeButtons' style={{ marginLeft: 15 }} >Write a review</button>
+                <button id='loggedInWelcomeButtons' style={{ marginRight: 15 }}>Add a book</button>
+                <button id='loggedInWelcomeButtons' style={{ marginLeft: 15 }}><Link to='/new-review' id='linkButton'>Write a review</Link></button>
                 <div style={{ marginTop: 10 }}>
                     {bookRec}
                 </div>
