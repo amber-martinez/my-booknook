@@ -2,8 +2,6 @@ import React from 'react'
 
 function Leaderboard({ reviewsByRating, loading }) {
 
-    console.log(loading)
-
     return (
         <div>
             {loading            
@@ -27,7 +25,7 @@ function Leaderboard({ reviewsByRating, loading }) {
                                 <div style={{ display: 'inline-block', marginLeft: 10, verticalAlign: 'top' }}>
                                     <h6 style={{ fontWeight: 600, color: '#362c24' }} id='bookTitle'>{review.title}</h6>
                                     <p>{review.avg_rating}/5</p>
-                                    <button id='actionButton' style={{ fontSize: 14 }}>Read Reviews</button>
+                                    {/* <button id='actionButton' style={{ fontSize: 14 }}>Read Reviews</button> */}
                                 </div>
                                 </div>
                                 </div>

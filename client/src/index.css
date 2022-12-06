@@ -254,7 +254,10 @@ div#recentReviewsContainerUser {
 }
 
 .signUpBio {
-  padding: 13px 140px 60px 9px;
+  /* padding: 13px 140px 60px 9px; */
+  padding: 9px;
+  width: 309px;
+  height: 80px;
   margin-top: 10px;
   border: solid 1px #6f5b4b;;
   border-radius: 10px;

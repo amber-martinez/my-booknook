@@ -47,17 +47,19 @@ function SignUpForm({ setUser }) {
             }),
         }).then(r => {
             if (r.ok) {
-                r.json().then(user => setUser(user));
+                r.json().then(user => {
+                    setUser(user)
+                    window.location.href='/profile'
+                });
             } else {
-                r.json().then(error => setErrors(error.errors))
+                r.json().then(error => {
+                    setErrors(error.errors)
+                    setLoadingStatus(false)
+                })
             }
 
         });
     }
-
-    const errorMessages = errors.map(error => (
-        <p>{error}</p>
-    ))
 
     return (
         <div id='welcomeContainer'>
@@ -69,18 +71,20 @@ function SignUpForm({ setUser }) {
             <br></br>
             <input type='password' placeholder='Confirm password' className='signUpFields' onChange={handlePasswordConfirmationInput}></input>
             <br></br>
-            <input type='text' placeholder='Bio' className='signUpBio' onChange={handleBioInput}></input>
+            <textarea type='paragraph_text' placeholder='Bio' className='signUpBio' onChange={handleBioInput}></textarea>
             <br></br>
             <p style={{ marginTop: 11, marginBottom: 5 }}>Link a profile photo:</p>
-            <input type='text' placeholder='Profile Photo' className='signUpPhoto' onChange={handleProfilePicInput}></input>
+            <input type='text' placeholder='Profile Photo' className='signUpPhoto' onChange={handleProfilePicInput} style={{ marginTop: 2 }}></input>
             <br></br>
             {loadingStatus 
             ?
             <img src='https://i.imgur.com/yqanog9.gif' style={{ height: 48 }}></img>
             :
-            <input type='submit' value='Create account' id='submitSignUp' style={{ color: '#362c24' }} onSubmit={handleSignUpSubmit}></input>
+            <button id='submitSignUp' style={{ color: '#362c24' }} onClick={handleSignUpSubmit}>Create account</button>
             }       
-            <p>{errorMessages}</p>
+            <div style={{ marginTop: 30 }}>
+                {errors.map(e => <p>{e}</p>)}
+            </div>
         </form>
     </div>
     )

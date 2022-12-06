@@ -140,7 +140,7 @@ function Profile({ user, setUser, userBooks, userReviews }) {
                             </Card.Body>
                             <div id='profileButtonGroup'>
                                 <button id='profileButton'><Link to='/edit-profile' id='profileButton'>Edit profile</Link></button><br></br>
-                                <button id='profileButton'><Link to='/new-review'>Create review</Link></button><br></br>
+                                <button id='profileButton'><Link to='/new-review' id='profileButton'>Create review</Link></button><br></br>
                                 <button id='profileButton'><Link to='/search' id='profileButton'>Find a Book</Link></button><br></br>
                                 <button id='profileButton' onClick={handleLogoutClick}>Log out</button>
                             </div>

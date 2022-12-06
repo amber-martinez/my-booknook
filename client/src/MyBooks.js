@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom';
 
 function MyBooks({ user }) {
 
-    console.log(user)
-
-
     return (
         <div>
             {user
@@ -17,7 +14,7 @@ function MyBooks({ user }) {
                     <div id='profileBook' class="card text-center" key={book.id}>
                         <img src={book.image_url} id='profileBookImg'/>
                         <h5 id='profileBooksTitle'>{book.title}</h5>
-                        <button id='actionButton' style={{ fontSize: 14 }}>Read Reviews</button>
+                        {/* <button id='actionButton' style={{ fontSize: 14 }}>Read Reviews</button> */}
                     </div>
                     ))}
                 </div>

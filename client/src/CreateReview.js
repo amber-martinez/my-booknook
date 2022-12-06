@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 
 function CreateReview({ user, allBooks }) {
 
-    const [bookId, setBookId] = useState()
-    const [rating, setRating] = useState()
-    const [reviewBody, setReviewBody] = useState()
-    const [errors, setErrors] = useState([])
+    const [bookId, setBookId] = useState();
+    const [rating, setRating] = useState();
+    const [reviewBody, setReviewBody] = useState();
+    const [errors, setErrors] = useState([]);
+    const [characterCount, setCharacterCount] = useState(0);
+    const [post, setPost] = useState(false)
 
     function onBookIdChange(e) {
         setBookId(parseInt(e.target.value))
@@ -17,6 +19,7 @@ function CreateReview({ user, allBooks }) {
 
     function onReviewBodyChange(e) {
         setReviewBody(e.target.value)
+        setCharacterCount(e.target.value.length)
     }
 
     function onReviewSubmit() {
@@ -35,15 +38,23 @@ function CreateReview({ user, allBooks }) {
         })
         .then(r => {
             if (r.ok) {
-                r.json(data => console.log(data))
+                r.json().then(setPost(true))
             } else {
-                r.json(e => setErrors(e.errors))
+                r.json().then(e => setErrors(e.errors))
             }
         })
     }
 
+
     return (
         <div style={{ textAlign: 'center' }}>
+            {post ?
+            <div style={{ marginTop: 64 }}>
+                <img src='https://images.squarespace-cdn.com/content/v1/59c5803080bd5e5bb9c03e23/136d4d0a-d68e-4e5e-aee9-58769eadd670/BM_CHeckmark.png?format=1000w' style={{ textAlign: 'center', height: 100, marginBottom: 10 }}></img>
+                <br></br>
+                <h5 id='editProfileHeader'>Your review was posted!</h5>
+            </div>
+            : 
             <div>
                 <div style={{ marginTop: 64 }}>
                     <h4 id='editProfileHeader'>New Review</h4>
@@ -70,15 +81,21 @@ function CreateReview({ user, allBooks }) {
                         </select>
                         <br></br>
                         <textarea type='paragraph_text' style={{ width: 370, height: 350 }} onChange={onReviewBodyChange}></textarea>
+                        <div>
+                            <p style={{ textAlign: 'right', fontSize: 13 }}>{characterCount} Characters</p>
+                        </div>
                     </div>
                     <br></br>
                 </div>
                 <div>
                     <button id='actionButton' style={{ marginTop: 70 }} onClick={onReviewSubmit}>Save</button>
                     <br></br>
-                    {errors.map(e => <p style={{ marginTop: 20 }}>{e}</p>)}
+                    <div style={{ marginTop: 35 }}>
+                        {errors.map(e => <p>{e}</p>)}
+                    </div>
                 </div>
             </div>
+            }
         </div>
     )
 }

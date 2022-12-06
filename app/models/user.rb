@@ -7,7 +7,7 @@ class User < ApplicationRecord
     validates :username, :password, :bio, :profile_pic_url, presence: true, on: :create
 
     validates :username, uniqueness: true
-    validates :username, length: { minimum: 6, maximum: 15 }
+    validates :username, length: { minimum: 6, maximum: 30 }
 
     validates :password, length: { minimum: 8, maximum: 30 }, on: :create
     validates :password, confirmation: true, on: :create
