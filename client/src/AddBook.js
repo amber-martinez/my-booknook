@@ -4,9 +4,48 @@ function AddBook() {
 
     const [post, setPost] = useState(false);
     const [errors, setErrors] = useState([]);
+    const [title, setTitle] = useState('');
+    const [author, setAuthor] = useState('');
+    const [genre, setGenre] = useState('');
+    const [coverImg, setCoverImg] = useState('');
 
-    function onBookSubmit(e) {
-        console.log(e)
+    function onTitleChange(e) {
+        setTitle(e.target.value)
+    }
+
+    function onAuthorChange(e) {
+        setAuthor(e.target.value)
+    }
+
+    function onGenreChange(e) {
+        setGenre(e.target.value)
+    }
+
+    function onCoverImgChange(e) {
+        setCoverImg(e.target.value)
+    }
+
+    function onBookSubmit() {
+        
+        fetch('/books', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                title,
+                author,
+                image_url: coverImg,
+                genre
+            }),
+        })
+        .then(r => {
+            if (r.ok) {
+                r.json().then(setPost(true))
+            } else {
+                r.json().then(e => setErrors(e.errors))
+            }
+        })
     }
 
     return (
@@ -31,13 +70,21 @@ function AddBook() {
                 </div>
                 <div style={{ display: 'inline-block', verticalAlign: 'top' }}>
                     <div style={{ display: 'inline-block', textAlign: 'left' }}>
-                        <input type='text' id='signUpInputs' style={{ marginBottom: 35 }}></input>
+                        <input type='text' id='signUpInputs' style={{ marginBottom: 35 }} onChange={onTitleChange}></input>
                         <br></br>
-                        <input type='text' id='signUpInputs' style={{ marginBottom: 35 }}></input>
+                        <input type='text' id='signUpInputs' style={{ marginBottom: 35 }} onChange={onAuthorChange}></input>
                         <br></br>
-                        <input type='text' id='signUpInputs' style={{ marginBottom: 35 }}></input>
+                        <select style={{ marginBottom: 35 }} onChange={onGenreChange}>
+                            <option>Classics</option>
+                            <option>Fantasy</option>
+                            <option>Fiction</option>
+                            <option>Poetry</option>
+                            <option>Romance</option>
+                            <option>Science-Fiction</option>
+                        </select>
+                        {/* <input type='text' id='signUpInputs' style={{ marginBottom: 35 }}></input> */}
                         <br></br>
-                        <input type='text' id='signUpInputs' style={{ marginBottom: 35 }}></input>
+                        <input type='text' id='signUpInputs' style={{ marginBottom: 35 }} onChange={onCoverImgChange}></input>
                     </div>
                     <br></br>
                 </div>

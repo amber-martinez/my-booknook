@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
@@ -16,6 +17,15 @@ function DisplayBooks() {
         fetch(`/books/${bookId}`)
         .then(r => r.json())
         .then(book => {
+            if (book.reviews.length == 0) {
+                setReviews(
+                    <div style={{ textAlign: 'center' }}>
+                        <h5 style={{ backgroundColor: '#e9e5dc3a', textAlign: 'center', display: 'inline-block', marginBottom: 18 }}>Reviews for <strong>{book.title}</strong></h5>
+                        <p style={{ marginBottom: 7 }}>This book doesn't have any reviews yet.</p>
+                        <p>Read it? Create a review<Link to='/new-review' id='inlineLinkButton'> here</Link>.</p>
+                    </div>
+                )
+            } else {
             setReviews(
                 <div>
                     <h5 style={{ backgroundColor: '#e9e5dc3a', textAlign: 'center', display: 'inline-block', marginBottom: 18 }}>Reviews for <strong>{book.title}</strong></h5>
@@ -91,7 +101,9 @@ function DisplayBooks() {
                     </div>
                 </div>
             )
+            }
         })
+        
     }
 
 

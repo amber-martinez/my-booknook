@@ -28,7 +28,7 @@ function MyBooks({ user }) {
                     <h4 id='profileBooksHeader'>My Books</h4>
                         {user.books.length ?
                         user.books.map(book => (
-                            <div id='profileBook' class="card text-center" key={book.id}>
+                            <div id='profileBook' class="card text-center" key={book.id} style={{ verticalAlign: 'top' }}>
                                 <img src={book.image_url} id='profileBookImg'/>
                                 <h5 id='profileBooksTitle'>{book.title}</h5>
                                 {/* <button id='actionButton' style={{ fontSize: 14 }}>Read Reviews</button> */}
