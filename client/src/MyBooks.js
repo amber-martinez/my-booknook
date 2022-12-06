@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-function MyBooks({ loading, user }) {
+function MyBooks({ user }) {
+
+    const [loading, setLoading] = useState(false)
+
+    useEffect(() => {
+        if (user == null) {
+            setLoading(true)
+        } else {
+            setLoading(false)
+        }
+    }, [user])
 
 
     return (

@@ -8,6 +8,15 @@ import Col from 'react-bootstrap/Col';
 function Profile({ user, setUser, userBooks, userReviews }) {
 
     const [quote, setQuote] = useState([])
+    const [loading, setLoading] = useState(false)
+
+    useEffect(() => {
+        if (user == null) {
+            setLoading(true)
+        } else {
+            setLoading(false)
+        }
+    }, [user])
 
     useEffect(() => {
         fetch('https://api.quotable.io/random')
@@ -36,7 +45,13 @@ function Profile({ user, setUser, userBooks, userReviews }) {
 
     return (
         <div>
-            {user
+            {loading ?
+            <div style={{ textAlign: 'center', marginTop: 245 }}>
+	            <img src='https://i.imgur.com/yqanog9.gif' style={{ height: 100 }}></img> 
+            </div>
+            :
+            
+            user
             ?
             <Container>
                 <Row>
@@ -168,7 +183,8 @@ function Profile({ user, setUser, userBooks, userReviews }) {
                 </Row>
             </Container>
             :
-            notLoggedIn}
+            notLoggedIn
+        }
         </div>
     )
 }

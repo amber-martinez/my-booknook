@@ -25,6 +25,7 @@ function App() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+
     fetch('/profile')
         .then(r => {
           if (r.ok) {
@@ -67,7 +68,7 @@ function App() {
         <NavBar user={user} setUser={setUser} setGenre={setGenre} genre={genre} loading={loading}/>
         <Router>
           <Routes>
-            <Route exact path='/' element={<HomeContent allBooks={allBooks} setUser={setUser} reviewsSortByNew={reviewsSortByNew} user={user}/>} />
+            <Route exact path='/' element={<HomeContent allBooks={allBooks} setUser={setUser} reviewsSortByNew={reviewsSortByNew} user={user} loading={loading}/>} />
             <Route exact path='/login' element={<Login setUser={setUser}/>} />
             <Route exact path='/signup' element={<SignUpForm setUser={setUser}/>} />
             <Route exact path='/search' element={<Search allBooks={allBooks}/>} />

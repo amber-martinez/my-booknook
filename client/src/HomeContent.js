@@ -1,25 +1,44 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import TopPicks from './TopPicks'
 import GenreBubbles from './GenreBubbles'
 import RecentReviews from './RecentReviews';
-import Welcome from './Welcome'
+import LoggedInWelcome from './LoggedInWelcome'
+import SignUpForm from './SignUpForm'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 function HomeContent({ allBooks, setUser, reviewsSortByNew, user }) {
 
+    const [loading, setLoading] = useState(false)
+
+    useEffect(() => {
+        if (user == null) {
+            setLoading(true)
+        } else {
+            setLoading(false)
+        }
+    }, [user])
+
     return (
-        <Container>
-            <Row>
-                <Col xs lg="5"><TopPicks allBooks={allBooks}/></Col>
-                <Col><Welcome setUser={setUser} user={user}/></Col>
-            </Row>
-            <Row>
-                <Col><RecentReviews reviewsSortByNew={reviewsSortByNew} user={user}/></Col>
-                <Col><GenreBubbles allBooks={allBooks}/></Col>
-            </Row>
-        </Container>
+        <div>
+            {loading ?
+            <div style={{ textAlign: 'center', marginTop: 245 }}>
+                <img src='https://i.imgur.com/yqanog9.gif' style={{ height: 100 }}></img> 
+            </div>
+            :
+            <Container>
+                <Row>
+                    <Col xs lg="5"><TopPicks allBooks={allBooks}/></Col>
+                    <Col>{user ? <LoggedInWelcome user={user}/> : <SignUpForm setUser={setUser}/>}</Col>
+                </Row>
+                <Row>
+                    <Col><RecentReviews reviewsSortByNew={reviewsSortByNew} user={user}/></Col>
+                    <Col><GenreBubbles allBooks={allBooks}/></Col>
+                </Row>
+            </Container>
+            }
+        </div>
     )
 }
 
