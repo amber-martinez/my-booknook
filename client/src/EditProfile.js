@@ -1,10 +1,47 @@
 import React, { useState } from 'react';
 
-function EditProfile({ loading, user }) {
+function EditProfile({ loading, user, setUser }) {
 
     const [username, setUsername] = useState(user.username)
     const [bio, setBio] = useState(user.bio)
     const [profilePicLink, setProfilePicLink] = useState(user.profile_pic_url)
+    const [error, setErrors] = useState([])
+
+    function onUsernameChange(e) {
+        setUsername(e.target.value)
+    }
+
+    function onBioChange(e) {
+        setBio(e.target.value)
+    }
+
+    function onProfilePicChange(e) {
+        setProfilePicLink(e.target.value)
+    }
+
+    function onEditProfileSubmit(e) {
+        e.preventDefault()
+
+        fetch(`/users/${user.id}`, {
+            method: "PATCH",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                username,
+                bio,
+                profile_pic_url: profilePicLink,
+                password: user.password_digest
+            }),
+        }).then(r => {
+            if (r.ok) {
+                r.json().then(user => setUser(user));
+                window.location.href='/profile'
+            } else {
+                r.json().then(error => setErrors(error.errors))
+            }
+        })
+    }
 
     return (
         <div style={{ textAlign: 'center' }}>
@@ -22,13 +59,15 @@ function EditProfile({ loading, user }) {
                 </div>
                 <div style={{ display: 'inline-block', verticalAlign: 'top' }}>
                     <form style={{ display: 'inline-block' }}>
-                        <input id='signUpInputs' type='text' value={username}></input>
+                        <input id='signUpInputs' type='text' onChange={onUsernameChange} value={username}></input>
                         <br></br>
-                        <input id='signUpInputs' type='text' value={bio}></input>
+                        <input id='signUpInputs' type='text' onChange={onBioChange} value={bio}></input>
                         <br></br>
-                        <input id='signUpInputs' type='text' value={profilePicLink}></input>
+                        <input id='signUpInputs' type='text' onChange={onProfilePicChange} value={profilePicLink}></input>
                         <br></br>
-                        <img src={profilePicLink} style={{ height: 120, overflow: 'hidden', borderRadius: 100, objectFit: 'cover' }}></img>
+                        <img src={profilePicLink} style={{ height: 120, width: 120, overflow: 'hidden', borderRadius: 100, objectFit: 'cover' }}></img>
+                        <br></br>
+                        <button id='actionButton' style={{ marginTop: 70 }} onClick={onEditProfileSubmit}>Save</button>
                     </form>
                 </div>
             </div>

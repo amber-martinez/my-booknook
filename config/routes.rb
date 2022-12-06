@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/:genre', to: 'books#books_by_genre'
   post '/login', to: 'sessions#create'
   post '/signup', to: 'users#create'
+  patch '/users/:id', to: 'users#update'
   delete '/logout', to: 'sessions#destroy'
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!

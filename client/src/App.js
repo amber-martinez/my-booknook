@@ -74,7 +74,7 @@ function App() {
             <Route exact path='/my-books' element={<MyBooks userBooks={userBooks} user={user}/>} />
             <Route exact path='/leaderboard' element={<Leaderboard reviewsByRating={reviewsByRating} loading={loading}/>} />
             <Route exact path='/profile' element={<Profile user={user} userBooks={userBooks} userReviews={userReviews} setUser={setUser}/> } />
-            <Route exact path='/edit-profile' element={<EditProfile user={user} loading={loading}/>}/>
+            <Route exact path='/edit-profile' element={<EditProfile user={user} setUser={setUser} loading={loading}/>}/>
             <Route exact path='/books' element={<DisplayBooks allBooks={allBooks} setGenre={setGenre}/>}></Route>
             <Route exact path='/Classics' element={<DisplayBooks allBooks={allBooks} setGenre={setGenre}/>}></Route>
             <Route exact path='/Fantasy' element={<DisplayBooks allBooks={allBooks} setGenre={setGenre}/>}></Route>
