@@ -48,8 +48,9 @@ function SignUpForm({ setUser }) {
         }).then(r => {
             if (r.ok) {
                 r.json().then(user => {
+                    setLoadingStatus(false)
                     setUser(user)
-                    window.location.href='/profile'
+                    // window.location.href='/profile'
                 });
             } else {
                 r.json().then(error => {

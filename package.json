@@ -1,5 +1,5 @@
 {
-  "name": "phase-4-deploying-app-demo",
+  "name": "my-booknook-app",
   "description": "Build scripts for Heroku",
   "engines": {
     "node": "16.x"
@@ -13,5 +13,22 @@
   "dependencies": {
     "bootstrap": "^5.2.3",
     "react-bootstrap": "^2.6.0"
-  }
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amber-martinez/my-booknook.git"
+  },
+  "keywords": [],
+  "author": "Amber Martinez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amber-martinez/my-booknook/issues"
+  },
+  "homepage": "https://github.com/amber-martinez/my-booknook#readme"
 }
