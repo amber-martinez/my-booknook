@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/:genre', to: 'books#books_by_genre'
   post '/login', to: 'sessions#create'
   post '/signup', to: 'users#create'
+  post '/reviews', to: 'reviews#create'
   patch '/users/:id', to: 'users#update'
   delete '/logout', to: 'sessions#destroy'
   delete '/users/:id', to: 'users#destroy'
