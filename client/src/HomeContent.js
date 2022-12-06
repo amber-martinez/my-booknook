@@ -29,11 +29,11 @@ function HomeContent({ allBooks, setUser, reviewsSortByNew, user }) {
             :
             <Container>
                 <Row>
-                    <Col xs lg="5"><TopPicks allBooks={allBooks}/></Col>
+                    <Col xs lg="5" style={{ marginRight: 70 }}><TopPicks allBooks={allBooks}/></Col>
                     <Col>{user ? <LoggedInWelcome user={user}/> : <SignUpForm setUser={setUser}/>}</Col>
                 </Row>
                 <Row>
-                    <Col><RecentReviews reviewsSortByNew={reviewsSortByNew} user={user}/></Col>
+                    <Col style={{ marginRight: 50 }}><RecentReviews reviewsSortByNew={reviewsSortByNew} user={user}/></Col>
                     <Col><GenreBubbles allBooks={allBooks}/></Col>
                 </Row>
             </Container>

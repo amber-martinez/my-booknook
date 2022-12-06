@@ -12,6 +12,7 @@ import MyBooks from './MyBooks';
 import Leaderboard from './Leaderboard';
 import EditProfile from './EditProfile'
 import CreateReview from './CreateReview';
+import AddBook from './AddBook';
 
 function App() {
 
@@ -65,18 +66,19 @@ function App() {
 
   return (
     <div className="App">
-        <NavBar user={user} setUser={setUser} setGenre={setGenre} genre={genre} loading={loading}/>
+        <NavBar user={user} setUser={setUser} setGenre={setGenre} genre={genre}/>
         <Router>
           <Routes>
-            <Route exact path='/' element={<HomeContent allBooks={allBooks} setUser={setUser} reviewsSortByNew={reviewsSortByNew} user={user} loading={loading}/>} />
+            <Route exact path='/' element={<HomeContent allBooks={allBooks} setUser={setUser} reviewsSortByNew={reviewsSortByNew} user={user}/>} />
             <Route exact path='/login' element={<Login setUser={setUser}/>} />
             <Route exact path='/signup' element={<SignUpForm setUser={setUser}/>} />
             <Route exact path='/search' element={<Search allBooks={allBooks}/>} />
             <Route exact path='/my-books' element={<MyBooks userBooks={userBooks} user={user}/>} />
-            <Route exact path='/leaderboard' element={<Leaderboard reviewsByRating={reviewsByRating} loading={loading}/>} />
+            <Route exact path='/leaderboard' element={<Leaderboard reviewsByRating={reviewsByRating}/>} />
             <Route exact path='/profile' element={<Profile user={user} userBooks={userBooks} userReviews={userReviews} setUser={setUser}/> } />
             <Route exact path='/new-review' element={<CreateReview allBooks={allBooks} user={user}/>}/>
-            <Route exact path='/edit-profile' element={<EditProfile user={user} setUser={setUser} loading={loading}/>}/>
+            <Route exact path='/edit-profile' element={<EditProfile user={user} setUser={setUser}/>}/>
+            <Route exact path='/add-book' element={<AddBook />} />
             <Route exact path='/books' element={<DisplayBooks allBooks={allBooks} setGenre={setGenre}/>}></Route>
             <Route exact path='/Classics' element={<DisplayBooks allBooks={allBooks} setGenre={setGenre}/>}></Route>
             <Route exact path='/Fantasy' element={<DisplayBooks allBooks={allBooks} setGenre={setGenre}/>}></Route>

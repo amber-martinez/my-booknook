@@ -1,7 +1,7 @@
 import React from 'react';
-// import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
-import CardGroup from 'react-bootstrap/CardGroup'
+import CardGroup from 'react-bootstrap/CardGroup';
 
 function TopPicks({ allBooks }) {
 
@@ -21,10 +21,7 @@ function TopPicks({ allBooks }) {
                 {books}
                 <Card id='homepageBookListItem' class="card text-center">
                 <Card.Body id='bookCardBody'>
-                    {/* <Card.Text id='homepageGenreBubbles'>{book.genre}</Card.Text> */}
-                    {/* <Card.Title id='bookCardTitle'>{book.title}</Card.Title> */}
-                    <Card.Text>Discover more books here</Card.Text>
-                {/* <Button variant="primary">read reviews</Button> */}
+                    <Card.Text><Link to='/books' id='inlineLinkButton'>Discover more books here</Link></Card.Text>
                 </Card.Body>
         </Card>
             </CardGroup>

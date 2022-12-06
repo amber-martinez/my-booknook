@@ -338,6 +338,7 @@ div#recentReviewsContainerUser {
 
 #profileBooksContainer {
   margin-top: 64px;
+  margin-bottom: 400px;
   height: 100px;
   padding: 0px 50px 0px 0px;
   vertical-align: 'top';

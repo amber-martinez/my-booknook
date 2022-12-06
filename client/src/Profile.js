@@ -62,7 +62,7 @@ function Profile({ user, setUser, userBooks, userReviews }) {
 
                                 {userBooks.length ?
                                 userBooks.map(book => (
-                                    <div id='profileBook' class="card text-center" key={book.id}>
+                                    <div id='profileBook' class="card text-center" key={book.id} style={{ verticalAlign: 'top' }}>
                                         <img src={book.image_url} id='profileBookImg'/>
                                         <h5 id='profileBooksTitle'>{book.title}</h5>
                                         <div id='bookCardBody'>
@@ -171,7 +171,7 @@ function Profile({ user, setUser, userBooks, userReviews }) {
                             <div id='profileButtonGroup'>
                                 <button id='profileButton'><Link to='/edit-profile' id='profileButton'>Edit profile</Link></button><br></br>
                                 <button id='profileButton'><Link to='/new-review' id='profileButton'>Create review</Link></button><br></br>
-                                <button id='profileButton'><Link to='/search' id='profileButton'>Find a Book</Link></button><br></br>
+                                <button id='profileButton'><Link to='/add-book' id='profileButton'>Add a Book</Link></button><br></br>
                                 <button id='profileButton' onClick={handleLogoutClick}>Log out</button>
                             </div>
                             <div style={{ margin: '29px 0px 0px 0px' }}>
