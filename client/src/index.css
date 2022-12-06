@@ -337,6 +337,7 @@ a:link:hover {
   max-width: 600px;
   max-height: 900px;
   overflow: scroll;
+
 }
 
 #profileReviewsHeader {
@@ -353,6 +354,7 @@ a:link:hover {
   background-color: #e9e5dc69;
   border-color: transparent;
   border-radius: 5px;
+  color: #362c24;
 }
 
 #searchEnter {

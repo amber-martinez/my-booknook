@@ -22,7 +22,6 @@ function App() {
   const [genre, setGenre] = useState(null);
   const [reviewsByRating, setReviewsByRating] = useState([]);
   const [loading, setLoading] = useState(true)
-  const [users, setUsers] = useState([])
 
   useEffect(() => {
     fetch('/profile')

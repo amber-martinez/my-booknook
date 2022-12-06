@@ -30,7 +30,7 @@ function Profile({ user, setUser, userBooks, userReviews }) {
     const notLoggedIn = (
         <div style={{ textAlign: 'center', marginTop: 91 }}>
             <img src='https://i.gifer.com/origin/c9/c9be20ebec1e40b9e2ed8488253c44b0_w200.gif'></img>
-            <h5 style={{ textAlign: 'center', marginTop: 15 }}>Oh no, you're not logged in!<br></br>Sign up or log in <Link to='/login' id='linkButton'>here.</Link></h5>
+            <h5 style={{ textAlign: 'center', marginTop: 15 }}>Oh no, you're not logged in!<br></br>Sign up or log in<Link to='/login' id='linkButton'>here.</Link></h5>
         </div>
     )
 
