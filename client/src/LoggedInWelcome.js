@@ -11,7 +11,7 @@ function LoggedInWelcome({ user }) {
         if (user.username != null) {
             setLoadingStatus(false)
 
-            fetch('/random-book', {
+            fetch('/api/random-book', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'

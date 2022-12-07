@@ -27,7 +27,7 @@ function AddBook() {
 
     function onBookSubmit() {
         
-        fetch('/books', {
+        fetch('/api/books', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

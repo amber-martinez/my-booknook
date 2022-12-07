@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # namespace :api do
+  namespace :api do
     resources :users
     resources :reviews, only: [:create]
     resources :books, only: [:index, :show, :create, :destroy]
@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     #sessions
     post '/login-user', to: 'sessions#create'
     delete '/logout', to: 'sessions#destroy'
-  # end
+  end
 
 
   # Routing logic: fallback requests for React Router.

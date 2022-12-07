@@ -25,7 +25,7 @@ function Profile({ user, setUser, userBooks, userReviews }) {
     }, [])
 
     function handleLogoutClick() {
-        fetch('/logout', {
+        fetch('/api/logout', {
           method: 'DELETE'
         })
         .then(r => {

@@ -27,7 +27,7 @@ function App() {
 
   useEffect(() => {
 
-    fetch('/user-profile')
+    fetch('/api/user-profile')
         .then(r => {
           if (r.ok) {
             r.json().then(data => {
@@ -39,26 +39,26 @@ function App() {
           }
         });
 
-    fetch('/books')
+    fetch('/api/books')
     .then(r => r.json())
     .then(data => {
       setAllBooks(data)
       setGenre('All')
     })
 
-    fetch('/newest-books')
+    fetch('/api/newest-books')
     .then(r => r.json())
     .then(data => setNewestBooks(data))
   
-    fetch('/newest-reviews')
+    fetch('/api/newest-reviews')
     .then(r => r.json())
     .then(data => setreviewsSortByNew(data))
 
-    fetch('/top-rated-books')
+    fetch('/api/top-rated-books')
     .then(r => r.json())
     .then(data => setReviewsByRating(data))
 
-    fetch('/my-reviews')
+    fetch('/api/my-reviews')
     .then(r => r.json())
     .then(data => setUserReviews(data))
 

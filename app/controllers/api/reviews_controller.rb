@@ -1,4 +1,4 @@
-class ReviewsController < ApplicationController
+class Api::ReviewsController < ApplicationController
     skip_before_action :authorize, only: [:index, :newest]
     
     def index

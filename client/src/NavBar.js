@@ -8,7 +8,7 @@ function NavBar({ user, setUser, loading }) {
 
   function handleLogoutClick(e) {
     e.preventDefault()
-    fetch('/logout', {
+    fetch('/api/logout', {
       method: 'DELETE'
     })
     .then(r => {

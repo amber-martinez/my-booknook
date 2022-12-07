@@ -36,7 +36,7 @@ function Search({ allBooks }) {
         console.log(bookId)
         setShow(true)
 
-        fetch(`/books/${bookId}`)
+        fetch(`/api/books/${bookId}`)
         .then(r => r.json())
         .then(book => {
             if (book.reviews.length == 0) {

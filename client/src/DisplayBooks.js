@@ -14,7 +14,7 @@ function DisplayBooks() {
         const bookId = parseInt(e.target.className)
         setShow(true)
 
-        fetch(`/books/${bookId}`)
+        fetch(`/api/books/${bookId}`)
         .then(r => r.json())
         .then(book => {
             if (book.reviews.length == 0) {
@@ -108,7 +108,7 @@ function DisplayBooks() {
 
 
     useEffect(() => {
-        fetch(`${window.location.pathname}`)
+        fetch(`/api/${window.location.pathname}`)
         .then(r => r.json())
         .then(books => {
 

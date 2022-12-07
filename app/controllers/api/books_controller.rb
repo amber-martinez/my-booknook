@@ -1,4 +1,4 @@
-class BooksController < ApplicationController
+class Api::BooksController < ApplicationController
     skip_before_action :authorize, only: [:index, :books_by_genre, :newest, :books_with_average_ratings, :show]
 
     def index

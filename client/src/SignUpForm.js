@@ -33,7 +33,7 @@ function SignUpForm({ setUser }) {
     function handleSignUpSubmit(e) {
         e.preventDefault()
         setLoadingStatus(true)
-        fetch('/user-signup', {
+        fetch('/api/user-signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -50,7 +50,7 @@ function SignUpForm({ setUser }) {
                 r.json().then(user => {
                     setLoadingStatus(false)
                     setUser(user)
-                    // window.location.href='/profile'
+                    window.location.href='/profile'
                 });
             } else {
                 r.json().then(error => {
