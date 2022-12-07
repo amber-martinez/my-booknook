@@ -33,7 +33,7 @@ function SignUpForm({ setUser }) {
     function handleSignUpSubmit(e) {
         e.preventDefault()
         setLoadingStatus(true)
-        fetch('/signup', {
+        fetch('/user-signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

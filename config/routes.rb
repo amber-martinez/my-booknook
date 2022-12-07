@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   # post '/reviews', to: 'reviews#create'
 
   #users
-  get '/profile', to: 'users#show'
-  post '/signup', to: 'users#create'
+  get '/user-profile', to: 'users#show'
+  post '/user-signup', to: 'users#create'
   # patch '/users/:id', to: 'users#update'
   # delete '/users/:id', to: 'users#destroy'
 
@@ -19,10 +19,11 @@ Rails.application.routes.draw do
   get '/random-book', to: 'books#random'
   get '/top-rated-books', to: 'books#books_with_average_ratings'
   get '/newest-books', to: 'books#newest'
+  get '/most-reviews', to: 'books#most_reviews'
   get '/:genre', to: 'books#books_by_genre'
 
   #sessions
-  post '/login', to: 'sessions#create'
+  post '/login-user', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
 

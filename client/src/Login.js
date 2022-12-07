@@ -19,7 +19,7 @@ function Login({ setUser }) {
         e.preventDefault();
         setLoadingStatus(true)
 
-        fetch('/login', {
+        fetch('/login-user', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -37,6 +37,14 @@ class BooksController < ApplicationController
         render json: books.order(created_at: :desc).limit(9)
     end
 
+    def most_reviews
+        # books = Book.all
+        byebug
+        # render json: books.includes(reviews.count)
+        render json: Book.joins(:reviews).group("reviews.book_id").order('count(reviews.book_id) desc')
+
+    end
+
     private
 
     def book_params

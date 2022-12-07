@@ -25,7 +25,7 @@ function TopPicks({ newestBooks }) {
                 }
                 <Card id='homepageBookListItem' class="card text-center">
                 <Card.Body id='bookCardBody'>
-                    <Card.Text><Link to='/books' id='inlineLinkButton'>Discover more books here</Link></Card.Text>
+                    <Card.Text><Link to='/all-books' id='inlineLinkButton'>Discover more books here</Link></Card.Text>
                 </Card.Body>
                 </Card>
             </CardGroup>
