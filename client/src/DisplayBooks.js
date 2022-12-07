@@ -113,13 +113,13 @@ function DisplayBooks() {
         .then(books => {
 
             setContent(books.map(book => (
-                <Row style={{ marginBottom: 15, display: 'inline-block', width: 180, minheight: 200, maxheight: 200, verticalAlign: 'top', borderColor: 'transparent', padding: 3, textAlign: 'center', display: 'inline-block' }} class="card text-center" key={book.id}>
+                <Row style={{ marginBottom: 15, display: 'inline-block', width: 180, height: 250, verticalAlign: 'bottom', borderColor: 'transparent', padding: 6, textAlign: 'center', display: 'inline-block' }} class="card text-center" key={book.id}>
                     <div>
                         <img src={book.image_url} style={{ height: 120, width: 80, objectFit: 'cover' }}></img>
                     </div>
                     <div style={{ paddingTop: 11, verticalAlign: 'top' }}>
                         <h6 style={{ fontWeight: 600, color: '#362c24' }} id='bookTitle'>{book.title}</h6>
-                        <p style={{ fontSize: 15, fontWeight: 400, marginTop: -5 }}>by {book.author}</p>
+                        <p style={{ fontSize: 15, fontWeight: 400, marginTop: -5, marginBottom: 5 }}>by {book.author}</p>
                         <button onClick={onClickReadReviews} id='actionButton' className={book.id} style={{ fontSize: 14 }}>Read Reviews</button>
                     </div>
                 </Row>

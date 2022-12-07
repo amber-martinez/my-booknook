@@ -33,7 +33,7 @@ function NavBar({ user, setUser, loading }) {
             navbarScroll
           >
                 <Nav.Link href="/leaderboard" id='headerLink'>Leaderboard</Nav.Link>
-                {/* <Nav.Link href="/my-books" id='headerLink'>My Books</Nav.Link> */}
+                <Nav.Link href="/my-books" id='headerLink'>My Books</Nav.Link>
                 <NavDropdown title="Genres" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="/books" id='headerLink' name='All'>All Books</NavDropdown.Item>
                 <NavDropdown.Divider></NavDropdown.Divider>
