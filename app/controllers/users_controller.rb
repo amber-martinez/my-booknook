@@ -29,6 +29,11 @@ class UsersController < ApplicationController
         head :no_content
     end
 
+    def user_reviews
+        user_reviews = Review.where(id: @user.reviews.ids)
+        render json: user_reviews
+    end
+
     private
     
     def user_params

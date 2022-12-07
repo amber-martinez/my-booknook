@@ -6,8 +6,8 @@ function AddBook() {
     const [errors, setErrors] = useState([]);
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
-    const [genre, setGenre] = useState('');
-    const [coverImg, setCoverImg] = useState('');
+    const [genre, setGenre] = useState('Classics');
+    const [coverImg, setCoverImg] = useState('https://st2.depositphotos.com/1561359/12101/v/950/depositphotos_121012076-stock-illustration-blank-photo-icon.jpg');
 
     function onTitleChange(e) {
         setTitle(e.target.value)
@@ -74,7 +74,7 @@ function AddBook() {
                         <br></br>
                         <input type='text' id='signUpInputs' style={{ marginBottom: 35 }} onChange={onAuthorChange}></input>
                         <br></br>
-                        <select style={{ marginBottom: 35 }} onChange={onGenreChange}>
+                        <select style={{ marginBottom: 35 }} onChange={onGenreChange} value={genre}>
                             <option>Classics</option>
                             <option>Fantasy</option>
                             <option>Fiction</option>
@@ -85,6 +85,8 @@ function AddBook() {
                         {/* <input type='text' id='signUpInputs' style={{ marginBottom: 35 }}></input> */}
                         <br></br>
                         <input type='text' id='signUpInputs' style={{ marginBottom: 35 }} onChange={onCoverImgChange}></input>
+                        <br></br>
+                        <img src={coverImg} style={{ height: 150, width: 100, objectFit: 'cover', borderRadius: 10 }}></img>
                     </div>
                     <br></br>
                 </div>

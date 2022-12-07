@@ -80,7 +80,7 @@ function App() {
             <Route exact path='/new-review' element={<CreateReview allBooks={allBooks} user={user}/>}/>
             <Route exact path='/edit-profile' element={<EditProfile user={user} setUser={setUser}/>}/>
             <Route exact path='/add-book' element={<AddBook />} />
-            <Route exact path='/all-books' element={<DisplayBooks allBooks={allBooks} setGenre={setGenre}/>}></Route>
+            <Route exact path='/books' element={<DisplayBooks allBooks={allBooks} setGenre={setGenre}/>}></Route>
             <Route exact path='/Classics' element={<DisplayBooks allBooks={allBooks} setGenre={setGenre}/>}></Route>
             <Route exact path='/Fantasy' element={<DisplayBooks allBooks={allBooks} setGenre={setGenre}/>}></Route>
             <Route exact path='/Fiction' element={<DisplayBooks allBooks={allBooks} setGenre={setGenre}/>}></Route>

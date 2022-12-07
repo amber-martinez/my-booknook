@@ -63,6 +63,7 @@ a:link:hover {
 }
 
 #genreBubbleText {
+  /* font-size: 12px; */
   text-align: center;
   margin: 0;
   color: #362c24;
