@@ -1,6 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-function Leaderboard({ reviewsByRating, loading }) {
+function Leaderboard({ user }) {
+
+    const [reviewsByRating, setReviewsByRating] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        fetch('/api/top-rated-books')
+        .then(r => r.json())
+        .then(data => setReviewsByRating(data))
+    }, [])
+
+    console.log(reviewsByRating)
+
+    useEffect(() => {
+        if (user == null) {
+            setLoading(true)
+        } else {
+            setLoading(false)
+        }
+    }, [user])
 
     return (
         <div>
@@ -15,7 +34,7 @@ function Leaderboard({ reviewsByRating, loading }) {
                 <p style={{ margin: '8px 0px 0px 105px' }}>Books from A to Z, starting with the highest rated.</p>
                 <div style={{ margin: '34px 100px 100px 105px' }}>
                     <ol>
-                        {reviewsByRating.sort((a, b) => b.avg_rating - a.avg_rating).map(review => (
+                        {reviewsByRating.sort((a, b) => b.avg_rating - a.avg_rating).slice(0, 10).map(review => (
                             <li>
                                 <div key={review.id}>
                                 <div style={{ display: 'inline-block', verticalAlign: 'top', marginBottom: 15, marginLeft: 6 }}>
@@ -25,7 +44,6 @@ function Leaderboard({ reviewsByRating, loading }) {
                                 <div style={{ display: 'inline-block', marginLeft: 10, verticalAlign: 'top' }}>
                                     <h6 style={{ fontWeight: 600, color: '#362c24' }} id='bookTitle'>{review.title}</h6>
                                     <p>{review.avg_rating}/5</p>
-                                    {/* <button id='actionButton' style={{ fontSize: 14 }}>Read Reviews</button> */}
                                 </div>
                                 </div>
                                 </div>

@@ -22,7 +22,6 @@ function App() {
   const [userBooks, setUserBooks] = useState([]);
   const [userReviews, setUserReviews] = useState([]);
   const [genre, setGenre] = useState(null);
-  const [reviewsByRating, setReviewsByRating] = useState([]);
   const [newestBooks, setNewestBooks] = useState([]);
 
   useEffect(() => {
@@ -54,10 +53,6 @@ function App() {
     .then(r => r.json())
     .then(data => setreviewsSortByNew(data))
 
-    fetch('/api/top-rated-books')
-    .then(r => r.json())
-    .then(data => setReviewsByRating(data))
-
     fetch('/api/my-reviews')
     .then(r => r.json())
     .then(data => setUserReviews(data))
@@ -75,7 +70,7 @@ function App() {
             <Route exact path='/signup' element={<SignUpForm setUser={setUser}/>} />
             <Route exact path='/search' element={<Search allBooks={allBooks}/>} />
             <Route exact path='/my-books' element={<MyBooks userBooks={userBooks} user={user}/>} />
-            <Route exact path='/leaderboard' element={<Leaderboard reviewsByRating={reviewsByRating}/>} />
+            <Route exact path='/leaderboard' element={<Leaderboard user={user}/>} />
             <Route exact path='/profile' element={<Profile user={user} userBooks={userBooks} userReviews={userReviews} setUser={setUser}/> } />
             <Route exact path='/new-review' element={<CreateReview allBooks={allBooks} user={user}/>}/>
             <Route exact path='/edit-profile' element={<EditProfile user={user} setUser={setUser}/>}/>
