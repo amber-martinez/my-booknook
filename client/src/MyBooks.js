@@ -26,14 +26,27 @@ function MyBooks({ user }) {
             <div style={{ textAlign: 'center' }}>
                 <div id='profileBooksContainer' style={{ display: 'inline-block' }}>
                     <h4 id='profileBooksHeader'>My Books</h4>
+                    {/* <div style={{ textAlign: 'center' }}> */}
                         {user.books.length ?
-                        user.books.map(book => (
+                        user.books.map(book => {
+                            if (user.books.length == 1) {
+                                return (
+                                <div style={{ textAlign: 'center' }}>
+                                    <div id='profileBook' class="card text-center" key={book.id} style={{ verticalAlign: 'top' }}>
+                                        <img src={book.image_url} id='profileBookImg'/>
+                                        <h5 id='profileBooksTitle'>{book.title}</h5>
+                                    </div>
+                                </div>
+                                )
+                            } else {
+                            return (
                             <div id='profileBook' class="card text-center" key={book.id} style={{ verticalAlign: 'top' }}>
                                 <img src={book.image_url} id='profileBookImg'/>
                                 <h5 id='profileBooksTitle'>{book.title}</h5>
-                                {/* <button id='actionButton' style={{ fontSize: 14 }}>Read Reviews</button> */}
                             </div>
                             )
+                            }
+                        }
                         )
                         :
                         <div style={{ textAlign: 'center' }}>
@@ -41,6 +54,7 @@ function MyBooks({ user }) {
                             <p><Link to='/new-review' id='inlineLinkButton'>Create a review</Link> to add books to your nook.</p>
                         </div>
                         }
+                    {/* </div> */}
                 </div>
             </div>
             :
