@@ -27,16 +27,23 @@ function HomeContent({ allBooks, setUser, reviewsSortByNew, user, newestBooks })
                 <img src='https://i.imgur.com/yqanog9.gif' style={{ height: 100 }}></img> 
             </div>
             :
-            <Container id='homeContentContainer'>
-                <Row>
-                    <Col md='5' lg="5" id='leftColHome'><NewestBooks allBooks={allBooks} newestBooks={newestBooks}/></Col>
-                    <Col>{user ? <LoggedInWelcome user={user}/> : <SignUpForm setUser={setUser}/>}</Col>
+            <div style={{ margin: '50px 100px 50px 100px' }}>
+                <Row className="justify-content-md-center" style={{ textAlign: 'center' }}>
+                    <Col xs lg='5' style={{ width: 800 }}>
+                        <NewestBooks allBooks={allBooks} newestBooks={newestBooks}/>
+                    </Col>
                 </Row>
-                <Row>
-                    <Col id='rightColHome'><RecentReviews reviewsSortByNew={reviewsSortByNew} user={user}/></Col>
-                    <Col><GenreBubbles allBooks={allBooks}/></Col>
-                </Row>
-            </Container>
+            </div>
+            // <Container id='homeContentContainer'>
+            //     <Row>
+            //         <Col md='5' lg="5" id='leftColHome'><NewestBooks allBooks={allBooks} newestBooks={newestBooks}/></Col>
+            //         <Col>{user ? <LoggedInWelcome user={user}/> : <SignUpForm setUser={setUser}/>}</Col>
+            //     </Row>
+            //     <Row>
+            //         <Col id='rightColHome'><RecentReviews reviewsSortByNew={reviewsSortByNew} user={user}/></Col>
+            //         <Col><GenreBubbles allBooks={allBooks}/></Col>
+            //     </Row>
+            // </Container>
             }
         </div>
     )
