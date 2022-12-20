@@ -21,11 +21,11 @@ function LoggedInWelcome({ user }) {
             .then(book => {
                 setBookRec(
                     <div>
-                        <p style={{ display: 'inline-block', rightMargin: 50}}>The wise booknook recommends:</p>
+                        <p style={{ display: 'inline-block', rightMargin: 50, fontSize: 13}}>The wise booknook recommends:</p>
                         <div>
-                            <img src={book.image_url} style={{ height: 147 }}></img>
+                            <img src={book.image_url} style={{ height: 135, objectFit: 'cover', overflow: 'hidden', borderRadius: 5 }}></img>
                             <br></br>
-                            <p style={{ marginTop: 7 }}>{book.title}</p>
+                            <p style={{ marginTop: 10, fontSize: 11 }}>{book.title}</p>
                         </div>
                     </div>
                 )
@@ -40,13 +40,13 @@ function LoggedInWelcome({ user }) {
     return (
         <div id='loggedInWelcomeContainer'>
             {loadingStatus ?
-            <img src='https://i.imgur.com/yqanog9.gif' style={{ height: 60, marginTop: 210 }}></img>
+            <img src='https://i.imgur.com/yqanog9.gif' style={{ height: 60 }}></img>
             :
             <div>
-                <h3 style={{ marginTop: 44, textAlign: 'center', color: '#362c24' }}>Howdy, {user.username}</h3>
-                <p>Read anything new lately?</p>
-                <button id='loggedInWelcomeButtons' style={{ marginLeft: 15 }}><Link to='/add-book' id='linkButton'>Add a book</Link></button>
-                <button id='loggedInWelcomeButtons' style={{ marginLeft: 15 }}><Link to='/new-review' id='linkButton'>Write a review</Link></button>
+                <h3 style={{ marginTop: 44, textAlign: 'center', color: '#362c24', fontSize: 18 }}>Howdy, {user.username}</h3>
+                <p style={{ fontSize: 13 }}>Read anything new lately?</p>
+                <button style={{ marginLeft: 15, borderRadius: 5, border: '1px solid #eceae783', backgroundColor: '#eceae783', color: '#6f5b4b', fontSize: 13, padding: '3px 2px 3px 2px'  }}><Link to='/add-book' id='linkButton'>Add a book</Link></button>
+                <button style={{ marginLeft: 15, borderRadius: 5, border: '1px solid #eceae783', backgroundColor: '#eceae783', color: '#6f5b4b', fontSize: 13, padding: '3px 2px 3px 2px'  }}><Link to='/new-review' id='linkButton'>Write a review</Link></button>
                 <div style={{ marginTop: 10 }}>
                     {bookRec}
                 </div>

@@ -5,6 +5,7 @@ import RecentReviews from '../Homepage/RecentReviews';
 import LoggedInWelcome from '../Homepage/LoggedInWelcome'
 import SignUpForm from '../SignUpForm'
 import Container from 'react-bootstrap/Container';
+import Genres from '../Homepage/Genres';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
@@ -31,6 +32,11 @@ function HomeContent({ allBooks, setUser, reviewsSortByNew, user, newestBooks })
                 <Row className="justify-content-md-center" style={{ textAlign: 'center' }}>
                     <Col xs lg='5' style={{ width: 800 }}>
                         <NewestBooks allBooks={allBooks} newestBooks={newestBooks}/>
+                    </Col>
+                </Row>
+                <Row className="justify-content-md-center" style={{ marginTop: 65, textAlign: 'center' }}>
+                    <Col xs lg='3' style={{ width: 600 }}>
+                        <Genres/>
                     </Col>
                 </Row>
             </div>

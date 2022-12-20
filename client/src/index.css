@@ -28,9 +28,8 @@ a:link:hover {
 
 #linkButton {
   color: #6f5b4b;
-  padding: 11px; 
+  padding: 9px; 
   margin-bottom: auto;
-  background: transparent;
   border-color: transparent;
 }
 
@@ -85,15 +84,6 @@ a:link:hover {
   color:#362c24;
   border-color: #362c24;
 }
-
-/* .signUpPhoto {
-  margin-top: 10px;
-} */
-
-/* #topPicksHeader {
-  margin-top: 30px;
-  font-size: ;
-} */
 
 #homepageGenreBubbles {
   background-color: #e9e5dc;
@@ -624,14 +614,13 @@ a:link:hover {
 #loggedInWelcomeContainer {
   margin: auto;
   text-align: center;
-  margin-top: 30px;
   padding-bottom: 50px;
-  scale: 0.90;
-  background-color: #e9e5dc6b;
-  max-width: 600px;
-  min-height: 490px;
-  border-radius: 10px;
-  border: solid 1px #362c243b;
+  /* scale: 0.90; */
+  /* background-color: #e9e5dc6b; */
+  /* max-width: 600px;
+  min-height: 490px; */
+  /* border-radius: 10px; */
+  /* border: solid 1px #362c243b; */
 }
 
 #loggedInWelcomeButtons {

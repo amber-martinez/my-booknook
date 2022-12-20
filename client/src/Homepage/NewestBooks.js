@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
-import CardGroup from 'react-bootstrap/CardGroup';
-import Simple from './Carousel';
 
 function NewestBooks({ newestBooks }) {
 
@@ -25,11 +23,6 @@ function NewestBooks({ newestBooks }) {
                     </Card>
                     ))
                 }
-                {/* <Card id='homepageBookListItem' class="card text-center">
-                <Card.Body id='bookCardBody'>
-                    <Card.Text><Link to='/books' id='inlineLinkButton'>Discover more books here</Link></Card.Text>
-                </Card.Body>
-                </Card> */}
             </div>
         </div>
     )
