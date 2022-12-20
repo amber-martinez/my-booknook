@@ -34,7 +34,7 @@ class Api::BooksController < ApplicationController
 
     def newest
         books = Book.all
-        render json: books.order(created_at: :desc).limit(9)
+        render json: books.order(created_at: :desc).limit(6)
     end
 
     def most_reviews
