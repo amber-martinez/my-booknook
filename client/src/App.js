@@ -1,18 +1,18 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import NavBar from './NavBar'
-import HomeContent from './HomeContent'
-import Login from './Login'
-import Profile from './Profile'
-import DisplayBooks from './DisplayBooks';
+import NavBar from './CoreComponents/NavBar'
+import HomeContent from './CoreComponents/HomeContent'
+import Login from './CoreComponents/Login'
+import Profile from './CoreComponents/Profile'
+import DisplayBooks from './CoreComponents/DisplayBooks';
 import SignUpForm from './SignUpForm';
 import Search from './Search';
-import MyBooks from './MyBooks';
-import Leaderboard from './Leaderboard';
-import EditProfile from './EditProfile'
+import MyBooks from './CoreComponents/MyBooks';
+import Leaderboard from './CoreComponents/Leaderboard';
+import EditProfile from './Edit/EditProfile'
 import CreateReview from './CreateReview';
-import AddBook from './AddBook';
+import AddBook from './Edit/AddBook';
 
 function App() {
 
@@ -32,6 +32,7 @@ function App() {
             r.json().then(data => {
               setUser(data)
               setUserBooks(data.books)
+              setUserReviews(data.reviews)
             })
           } else {
             setUser(false)
@@ -53,9 +54,9 @@ function App() {
     .then(r => r.json())
     .then(data => setreviewsSortByNew(data))
 
-    fetch('/api/my-reviews')
-    .then(r => r.json())
-    .then(data => setUserReviews(data))
+    // fetch('/api/my-reviews')
+    // .then(r => r.json())
+    // .then(data => setUserReviews(data))
 
 }, []);
 

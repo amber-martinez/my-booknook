@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 
-function TopPicks({ newestBooks }) {
+function NewestBooks({ newestBooks }) {
 
     return (
         <div id='topPicksContainer'>
@@ -33,4 +33,4 @@ function TopPicks({ newestBooks }) {
     )
 }
 
-export default TopPicks;
+export default NewestBooks;

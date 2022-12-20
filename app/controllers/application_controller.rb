@@ -12,7 +12,7 @@ class ApplicationController < ActionController::API
   end
 
   def render_not_found_response(e)
-    render json: { errors: e.record.errors.full_messages }
+    render json: { errors: e.record.errors.full_messages }, status: not_found
   end
 
   def render_unprocessable_entity_response(invalid)

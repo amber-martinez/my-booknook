@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
     #reviews
     get '/newest-reviews', to: 'reviews#newest'
+    get '/three', to: 'reviews#three_stars'
     # post '/reviews', to: 'reviews#create'
 
     #users

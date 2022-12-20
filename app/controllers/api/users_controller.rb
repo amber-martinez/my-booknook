@@ -29,10 +29,11 @@ class Api::UsersController < ApplicationController
         head :no_content
     end
 
-    def user_reviews
-        user_reviews = Review.where(id: @user.reviews.ids)
-        render json: user_reviews
-    end
+    # def user_reviews
+    #     user_reviews = @user.reviews
+    #     user_reviews = Review.where(id: @user.reviews.ids)
+    #     render json: user_reviews
+    # end
 
     private
     

@@ -60,6 +60,7 @@ a:link:hover {
 
 #genreBubblesContainer {
   text-align: center;
+  margin-bottom: 60px;
 }
 
 #genreBubbleText {
@@ -89,17 +90,6 @@ a:link:hover {
 #topPicksHeader {
   padding-top: 20px;
   /* padding-bottom: 3px; */
-}
-
-#topPicksContainer {
-  margin-top: 30px;
-}
-
-#topPicksShelfImg {
-  width: 260px;
-  padding-bottom: 20px;
-  padding-left: 8px;
-  padding-right: 8px;
 }
 
 #homepageGenreBubbles {
@@ -137,43 +127,468 @@ a:link:hover {
   border-color: transparent;
 }
 
-#navbar {
-  padding: 18px;
-  background-color: #e9e5dc;
+/* phone screen */
+@media (max-width: 992px) {
+  #headerTitle {
+    color: #6f5b4b;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+  }
+
+  #headerAndImg {
+    justify-content: left;
+  }
+
+  #navbar {
+    padding: 18px;
+    background-color: #e9e5dc;
+  }
+
+  #topPicksShelfImg {
+    height: 40px;
+    width: auto;
+    margin: 0px 15px 15px -8px;
+  }
+
+  #navContainer {
+    justify-content: center;
+  }
+
+  #navbarLinks {
+    text-align: center;
+  }
+
+  #homeContentContainer {
+    text-align: center;
+  }
+
+  #leftColHome {
+    margin-right: 0px;
+  }
+
+  div#recentReviewsContainerNonUser {
+    margin: 20px 25px 20px 25px;
+    max-height: 650px;
+    overflow:hidden;
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 0%);
+    mask-image: linear-gradient(to bottom, black 0%, transparent 99%);
+  }
+
+  #reviewsHp {
+    margin: auto;
+  }
+  
+  div#recentReviewsContainerUser {
+    /* padding: 20px 90px 20px 40px; */
+    /* border: solid 2px #362c243b;
+    border-radius: 10px;
+    background-color: #e9e5dc3a; */
+    margin: 20px 25px 20px 25px;
+    max-width: 600px;
+    max-height: 600px;
+    overflow: scroll;
+    margin-bottom: 90px;
+  }
+
+  #leaderboardText {
+    text-align: center;
+    margin-top: 7px;
+  }
+
+  #leaderboardListGroup {
+    margin: 0px 100px 0px 114px;
+    /* margin: auto; */
+    text-align: center;
+    inline-size: 150px;
+    overflow-wrap: break-word;
+    hyphens: manual;
+  }
+
+  #loginContainer {
+    scale: 88%;
+    margin: auto;
+    text-align: center;
+    margin-top: 38px;
+    padding-bottom: 80px;
+    padding-top: 21px;
+    background-image: url(https://i.imgur.com/lua902Y.png);
+    background-repeat:no-repeat;
+    background-position: bottom 90px right 20px;
+    background-size: 30%;
+  }
+
+  #popupReviewsContainer {
+    position:fixed;
+    width: 340px;
+    height: 600px;
+    padding: 30px;
+    left: 50%;
+    top: 57%;
+    overflow: scroll;
+    background-color: #e9e5dc;
+    -ms-transform: translate(-50%,-50%);
+    -moz-transform:translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+     transform: translate(-50%,-50%);
+  }
+  
+  #reviewsX {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 5px;
+    margin-right: 5px;
+    background-color: transparent;
+    border: transparent;
+    color: #362c24;
+  }
+
+  #genreBooksHeader {
+    padding: 5;
+    font-weight: 600;
+    background-color: #e9e5dc3a;
+    text-align: center;
+    display: inline-block;
+    margin: auto;
+    margin: 50px 0px 30px 0px;
+  }
+
+  #displayBooksContainer {
+    text-align: center;
+    margin: 0px 0px 0px 500px;
+  }
+
 }
 
-#headerTitle {
+
+/* ipad-ish */
+@media (min-width: 768px) and (max-width: 992px) {
+
+  #headerTitle {
+    color: #6f5b4b;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+  }
+
+  #topPicksShelfImg {
+    height: 60px;
+    width: auto;
+    margin: 0px 15px 15px 0px;
+  }
+
+  #leftColHome {
+    margin-right: 40px;
+  }
+
+  div#recentReviewsContainerNonUser {
+    padding: 20px 90px 20px 40px;
+    border: solid 2px #362c243b;
+    border-radius: 10px;
+    background-color: #e9e5dc3a;
+    max-width: 600px;
+    max-height: 700px;
+    overflow:hidden;
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 0%, transparent 99%);
+  }
+  
+  div#recentReviewsContainerUser {
+    padding: 20px 90px 20px 40px;
+    border: solid 2px #362c243b;
+    border-radius: 10px;
+    background-color: #e9e5dc3a;
+    max-width: 600px;
+    max-height: 700px;
+    overflow: scroll;
+    margin-bottom: 90px;
+  }
+
+  #leaderboardText {
+    margin: 8px 0px 0px 105px
+  }
+
+  #leaderboardListGroup {
+    margin: 34px 100px 100px 105px;
+  }
+
+  #loginContainer {
+    margin: auto;
+    text-align: center;
+    margin-top: 38px;
+    padding-bottom: 80px;
+    padding-top: 21px;
+    background-image: url(https://i.imgur.com/lua902Y.png);
+    background-repeat:no-repeat;
+    background-position: bottom 105px right 20px;
+    background-size: 30%;
+    background-color: #e9e5dc6b;
+    max-width: 600px;
+    max-height: 415px;
+    border-radius: 10px;
+    border: solid 1px #362c243b;
+  }
+
+  #reviewsX {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 5px;
+    margin-right: 5px;
+    background-color: transparent;
+    border: transparent;
+    color: #362c24;
+  }
+
+  #genreBooksHeader {
+    padding: 5;
+    font-weight: 600;
+    background-color: #e9e5dc3a;
+    text-align: left;
+    display: inline-block;
+    margin: 50px 0px 0px 100px;
+  }
+
+}
+
+/* smaller laptop screen */
+@media (min-width: 993px) and (max-width: 1399px) {
+  #headerTitle {
+    color: #6f5b4b;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+  }
+
+  #topPicksShelfImg {
+    height: 60px;
+    width: auto;
+    margin: 0px 15px 15px 0px;
+  }
+
+  #leftColHome {
+    margin-right: 40px;
+  }
+
+  #rightColHome {
+    margin-right: 99px;
+  }
+
+  div#recentReviewsContainerNonUser {
+    padding: 20px 90px 20px 40px;
+    border: solid 2px #362c243b;
+    border-radius: 10px;
+    background-color: #e9e5dc3a;
+    max-width: 600px;
+    max-height: 700px;
+    overflow:hidden;
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 0%, transparent 30%);
+  }
+  
+  div#recentReviewsContainerUser {
+    padding: 20px 90px 20px 40px;
+    border: solid 2px #362c243b;
+    border-radius: 10px;
+    background-color: #e9e5dc3a;
+    max-width: 600px;
+    max-height: 700px;
+    overflow: scroll;
+    margin-bottom: 90px;
+  }
+
+  #leaderboardText {
+    margin: 8px 0px 0px 105px
+  }
+
+  #leaderboardListGroup {
+    margin: 34px 100px 100px 105px;
+  }
+
+  #loginContainer {
+    margin: auto;
+    text-align: center;
+    margin-top: 38px;
+    padding-bottom: 80px;
+    padding-top: 21px;
+    background-image: url(https://i.imgur.com/lua902Y.png);
+    background-repeat:no-repeat;
+    background-position: bottom 105px right 20px;
+    background-size: 30%;
+    background-color: #e9e5dc6b;
+    max-width: 600px;
+    max-height: 415px;
+    border-radius: 10px;
+    border: solid 1px #362c243b;
+  }
+
+  #reviewsX {
+    position:absolute;
+    top:0;
+    right:0;
+    margin: 200px 80px 0px 0px;
+    background-color: transparent;
+    border: transparent;
+    color: #362c24;
+  }
+
+  #genreBooksHeader {
+    padding: 5;
+    font-weight: 600;
+    background-color: #e9e5dc3a;
+    text-align: left;
+    display: inline-block;
+    margin: 50px 0px 0px 100px;
+  }
+
+  #popupReviewsContainer {
+    position:fixed;
+    width: 340px;
+    height: 600px;
+    padding: 30px;
+    left: 50%;
+    top: 57%;
+    overflow: scroll;
+    background-color: #e9e5dc;
+    -ms-transform: translate(-50%,-50%);
+    -moz-transform:translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+     transform: translate(-50%,-50%);
+  }
+
+  #clickReadReviews {
+    margin-right: 300px;
+    margin-top: 50px;
+    margin-left: -200px;
+  }
+
+}
+
+/* laptop */
+@media (min-width: 1400px) {
+  #headerTitle {
+    color: #6f5b4b;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 400;
+    font-size: 45px;
+  }
+
+  #navbar {
+    padding: 18px;
+    background-color: #e9e5dc;
+  }
+
+  #topPicksShelfImg {
+    width: 260px;
+    height: auto;
+    padding-bottom: 20px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  #leftColHome {
+    margin-right: 70;
+  }
+
+  div#recentReviewsContainerNonUser {
+    padding: 20px 90px 20px 40px;
+    border: solid 2px #362c243b;
+    border-radius: 10px;
+    background-color: #e9e5dc3a;
+    max-width: 600px;
+    max-height: 700px;
+    overflow:hidden;
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 0%, transparent 30%);
+  }
+  
+  div#recentReviewsContainerUser {
+    padding: 20px 90px 20px 40px;
+    border: solid 2px #362c243b;
+    border-radius: 10px;
+    background-color: #e9e5dc3a;
+    max-width: 600px;
+    max-height: 700px;
+    overflow: scroll;
+    margin-bottom: 90px;
+  }
+
+  #leaderboardText {
+    margin: 8px 0px 0px 105px
+  }
+
+  #leaderboardListGroup {
+    margin: 34px 100px 100px 105px;
+  }
+
+  #loginContainer {
+    margin: auto;
+    text-align: center;
+    margin-top: 38px;
+    padding-bottom: 80px;
+    padding-top: 21px;
+    background-image: url(https://i.imgur.com/lua902Y.png);
+    background-repeat:no-repeat;
+    background-position: bottom 105px right 20px;
+    background-size: 30%;
+    background-color: #e9e5dc6b;
+    max-width: 600px;
+    max-height: 415px;
+    border-radius: 10px;
+    border: solid 1px #362c243b;
+  }
+
+    
+  #reviewsX {
+    position:absolute;
+    top:0;
+    right:0;
+    margin: 236px 300px 0px 0px;
+    background-color: transparent;
+    border: transparent;
+    color: #362c24;
+  }
+
+  /* #displayBooksContainer {
+    text-align: center;
+    margin-top: 500px;
+  } */
+
+  #popupReviewsContainer {
+    margin-right: 300px;
+    margin-top: 50px;
+    width: 700px;
+    margin-left: -200px;
+  }
+
+  #clickReadReviews {
+    margin-right: 300px;
+    margin-top: 50px;
+    margin-left: -200px;
+  }
+
+}
+
+.headerTitle {
   color: #6f5b4b;
   font-family: 'Catamaran', sans-serif;
   font-weight: 400;
   font-size: 45px;
 }
 
+.navbar {
+  padding: 18px;
+  background-color: #e9e5dc;
+}
+
+#topPicksContainer {
+  margin-top: 30px;
+}
+
+
 #popGenresHeader {
   padding-top: 20px;
-}
-
-div#recentReviewsContainerNonUser {
-  padding: 20px 90px 20px 40px;
-  border: solid 2px #362c243b;
-  border-radius: 10px;
-  background-color: #e9e5dc3a;
-  max-width: 600px;
-  max-height: 700px;
-  overflow:hidden;
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 0%, transparent 30%);
-}
-
-div#recentReviewsContainerUser {
-  padding: 20px 90px 20px 40px;
-  border: solid 2px #362c243b;
-  border-radius: 10px;
-  background-color: #e9e5dc3a;
-  max-width: 600px;
-  max-height: 700px;
-  overflow: scroll;
-  margin-bottom: 90px;
 }
 
 #loginToSeeReviews {
@@ -186,23 +601,6 @@ div#recentReviewsContainerUser {
   border-radius: 10px;
   background-color: #e9e5dc6b;
   padding: 4px 10px 4px 10px;
-}
-
-#loginContainer {
-  margin: auto;
-  text-align: center;
-  margin-top: 38px;
-  padding-bottom: 80px;
-  padding-top: 21px;
-  background-image: url(https://i.imgur.com/lua902Y.png);
-  background-repeat:no-repeat;
-  background-position: bottom 105px right 20px;
-  background-size: 30%;
-  background-color: #e9e5dc6b;
-  max-width: 600px;
-  max-height: 415px;
-  border-radius: 10px;
-  border: solid 1px #362c243b;
 }
 
 #searchButton {

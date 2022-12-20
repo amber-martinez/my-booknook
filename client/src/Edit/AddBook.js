@@ -94,7 +94,7 @@ function AddBook() {
                     <button id='actionButton' style={{ marginTop: 70 }} onClick={onBookSubmit}>Save</button>
                     <br></br>
                     <div style={{ marginTop: 35 }}>
-                        {errors.map(e => <p>{e}</p>)}
+                        {errors ? errors.map(e => <p>{e}</p>) : null}
                     </div>
                 </div>
             </div>

@@ -9,6 +9,7 @@ function DisplayBooks() {
     const [genre, setGenre] = useState(null)
     const [show, setShow] = useState(false)
     const [reviews, setReviews] = useState(null)
+    const [popupReviews, setPopupReviews] = useState(null)
 
     function onClickReadReviews(e) {
         const bookId = parseInt(e.target.className)
@@ -19,21 +20,24 @@ function DisplayBooks() {
         .then(book => {
             if (book.reviews.length == 0) {
                 setReviews(
-                    <div style={{ textAlign: 'center' }}>
+                    <div id='popupReviewsContainer' style={{ textAlign: 'center' }}>
                         <h5 style={{ backgroundColor: '#e9e5dc3a', textAlign: 'center', display: 'inline-block', marginBottom: 18 }}>Reviews for <strong>{book.title}</strong></h5>
                         <p style={{ marginBottom: 7 }}>This book doesn't have any reviews yet.</p>
                         <p>Read it? Create a review<Link to='/new-review' id='inlineLinkButton'> here</Link>.</p>
                     </div>
                 )
             } else {
+
             setReviews(
-                <div>
+                <div id='popupReviewsContainer'>
                     <h5 style={{ backgroundColor: '#e9e5dc3a', textAlign: 'center', display: 'inline-block', marginBottom: 18 }}>Reviews for <strong>{book.title}</strong></h5>
                     <div style={{ textAlign: 'left' }}>
                         {book.reviews.map(review => {
                                         if (review.rating == 1) {
                                             return (
                                                 <div key={review.id}>
+                                                    <button id='reviewsX' onClick={(() => {setReviews(null)
+                                                        setShow(false)})}>x</button>
                                                     <h5 style={{ fontSize: 16 }}>{book.title} – {book.author}</h5>
                                                     <span className="fa fa-star checked"></span>
                                                     <span className="fa fa-star"></span>
@@ -47,6 +51,8 @@ function DisplayBooks() {
                                         } else if (review.rating == 2) {
                                             return (
                                                 <div key={review.id}>
+                                                    <button id='reviewsX' onClick={(() => {setReviews(null)
+                                                        setShow(false)})}>x</button>
                                                     <h5>{book.title} – {book.author}</h5>
                                                     <span className="fa fa-star checked"></span>
                                                     <span className="fa fa-star checked"></span>
@@ -60,6 +66,8 @@ function DisplayBooks() {
                                         } else if (review.rating == 3) {
                                             return (
                                                 <div key={review.id}>
+                                                    <button id='reviewsX' onClick={(() => {setReviews(null)
+                                                        setShow(false)})}>x</button>
                                                     <h5>{book.title} – {book.author}</h5>
                                                     <span className="fa fa-star checked"></span>
                                                     <span className="fa fa-star checked"></span>
@@ -73,6 +81,8 @@ function DisplayBooks() {
                                         } else if (review.rating == 4) {
                                             return (
                                                 <div key={review.id}>
+                                                    <button id='reviewsX' onClick={(() => {setReviews(null)
+                                                        setShow(false)})}>x</button>
                                                     <h5>{book.title} – {book.author}</h5>
                                                     <span className="fa fa-star checked"></span>
                                                     <span className="fa fa-star checked"></span>
@@ -86,6 +96,8 @@ function DisplayBooks() {
                                         } else if (review.rating == 5) {
                                             return (
                                                 <div key={review.id}>
+                                                    <button id='reviewsX' onClick={(() => {setReviews(null)
+                                                        setShow(false)})}>x</button>
                                                     <h5>{book.title} – {book.author}</h5>
                                                     <span className="fa fa-star checked"></span>
                                                     <span className="fa fa-star checked"></span>
@@ -113,6 +125,7 @@ function DisplayBooks() {
         .then(books => {
 
             setContent(books.map(book => (
+                <div style={{ textAlign: 'center' }}>
                 <Row style={{ marginBottom: 15, display: 'inline-block', width: 180, height: 250, verticalAlign: 'bottom', borderColor: 'transparent', padding: 6, textAlign: 'center', display: 'inline-block' }} class="card text-center" key={book.id}>
                     <div>
                         <img src={book.image_url} style={{ height: 120, width: 80, objectFit: 'cover' }}></img>
@@ -123,6 +136,7 @@ function DisplayBooks() {
                         <button onClick={onClickReadReviews} id='actionButton' className={book.id} style={{ fontSize: 14 }}>Read Reviews</button>
                     </div>
                 </Row>
+                </div>
             )))
 
             if (window.location.pathname != '/books') {
@@ -137,16 +151,21 @@ function DisplayBooks() {
     return (
         <div>
             {content ?
-            <div>
-                <h3 style={{ padding: 5, fontWeight: 600, backgroundColor: '#e9e5dc3a', textAlign: 'left', display: 'inline-block', margin: '50px 0px 0px 100px' }}>{genre} Books</h3>
-                <div style={{ margin: '34px 100px 100px 105px' }}>
+            <div style={{ textAlign: 'center', marginTop: 40 }}>
+                <h3 id='genreBooksHeader'>{genre} Books</h3>
+                <div style={{ textAlign: 'center' }}>
                     <Row>
                         <Col>
                             {content}
                         </Col>
                         <Col>
-                            <div style={{ display: 'inline-block', paddingLeft: 10, verticalAlign: 'top', textAlign: 'center' }}>
-                                {show ? reviews : null }
+                            <div id='displayBooksContainer' style={{ display: 'inline-block', paddingLeft: 10, verticalAlign: 'top', textAlign: 'center' }}>
+                                {show ? reviews
+                                :
+                                <div id='clickReadReviews'>
+                                    <h5 style={{ backgroundColor: '#e9e5dc3a' }}>Click 'Read Reviews' to see reviews here.</h5> 
+                                </div>
+                                }
                             </div>
                         </Col>
                     </Row>

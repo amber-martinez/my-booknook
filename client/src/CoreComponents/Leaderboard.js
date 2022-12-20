@@ -11,8 +11,6 @@ function Leaderboard({ user }) {
         .then(data => setReviewsByRating(data))
     }, [])
 
-    console.log(reviewsByRating)
-
     useEffect(() => {
         if (user == null) {
             setLoading(true)
@@ -31,8 +29,8 @@ function Leaderboard({ user }) {
             :
             <div>
                 <h3 style={{ padding: 5, fontWeight: 600, backgroundColor: '#e9e5dc3a', textAlign: 'left', display: 'inline-block', margin: '50px 0px 0px 100px' }}>Books Leaderboard</h3>
-                <p style={{ margin: '8px 0px 0px 105px' }}>Books from A to Z, starting with the highest rated.</p>
-                <div style={{ margin: '34px 100px 100px 105px' }}>
+                <p id ='leaderboardText'>Books from A to Z, starting with the highest rated.</p>
+                <div id='leaderboardListGroup'>
                     <ol>
                         {reviewsByRating.sort((a, b) => b.avg_rating - a.avg_rating).slice(0, 10).map(review => (
                             <li>

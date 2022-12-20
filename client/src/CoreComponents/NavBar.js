@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-function NavBar({ user, setUser, loading }) {
+function NavBar({ user, setUser }) {
+
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    if (user == null) {
+        setLoading(true)
+    } else {
+        setLoading(false)
+    }
+}, [user])
 
   function handleLogoutClick(e) {
     e.preventDefault()
@@ -20,16 +30,17 @@ function NavBar({ user, setUser, loading }) {
   }
 
   return (
-    <Navbar id='navbar'>
+    <Navbar id='navbar' expand='lg'>
       <Container fluid>
+        <div id='headerAndImg'>
         <Navbar.Brand href="/" id='headerTitle'>my booknook</Navbar.Brand>
         <img src='https://i.imgur.com/J7udTqO.png' id='topPicksShelfImg'/>
+        </div>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
             id='navbarLinks'
             className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
             navbarScroll
           >
                 <Nav.Link href="/leaderboard" id='headerLink'>Leaderboard</Nav.Link>

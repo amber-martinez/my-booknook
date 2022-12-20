@@ -91,7 +91,7 @@ function Profile({ user, setUser, userBooks, userReviews }) {
                                     <div id='reviewsContainer'>
                                         <h4 id='profileReviewsHeader'>My Reviews</h4>
                                         
-                                        {userReviews.length ?
+                                        {userReviews.length > 0 ?
                                         userReviews.map(review => {
                                                     if (review.rating == 1) {
                                                         return (
@@ -146,6 +146,8 @@ function Profile({ user, setUser, userBooks, userReviews }) {
                                                             </div>
                                                         )
                                                     } else if (review.rating == 5) {
+                                                        // debugger;
+                                                        console.log('hello')
                                                         return (
                                                             <div key={review.id}>
                                                                 <h5>{review.book.title} – {review.book.author}</h5>
@@ -169,7 +171,7 @@ function Profile({ user, setUser, userBooks, userReviews }) {
                                     </div>
                                 </Col>
                                 <Col>
-                                    <div id='profileCardContainer' class="float-end" style={{marginRight: 130, marginTop: 80, display: 'inline-block'}}>
+                                    <div id='profileCardContainer' class="float-end" style={{marginRight: 130, marginTop: 80, display: 'inline-block' }}>
                                         <Card id='profileCard' style={{ width: '18rem' }}>
                                         <Card.Img variant="top" src={user.profile_pic_url} style={{ borderRadius: 300, height: 200, width: 200, objectFit: 'cover', margin: 'auto' }}/>
                                         <Card.Body style={{ marginTop: 17 }}>

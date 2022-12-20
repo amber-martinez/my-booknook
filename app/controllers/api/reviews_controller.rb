@@ -21,6 +21,11 @@ class Api::ReviewsController < ApplicationController
         render json: reviews.order(created_at: :desc)
     end
 
+    def three_stars
+        reviews = @user.reviews.where(rating: 3)
+        render json: reviews
+    end
+
     private
 
     def review_params

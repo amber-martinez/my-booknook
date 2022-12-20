@@ -54,6 +54,7 @@ function SignUpForm({ setUser }) {
                 });
             } else {
                 r.json().then(error => {
+                    console.log(error)
                     setErrors(error.errors)
                     setLoadingStatus(false)
                 })
@@ -84,7 +85,7 @@ function SignUpForm({ setUser }) {
             <button id='submitSignUp' style={{ color: '#362c24' }} onClick={handleSignUpSubmit}>Create account</button>
             }       
             <div style={{ marginTop: 30 }}>
-                {errors.map(e => <p>{e}</p>)}
+                {errors ? errors.map(e => <p>{e}</p>) : null}
             </div>
         </form>
     </div>

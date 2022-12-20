@@ -72,7 +72,7 @@ function RecentReviews({ reviewsSortByNew, user }) {
     })
 
     return (
-        <div>
+        <div id='reviewsHp'>
             {user ?
             <div id='recentReviewsContainerUser'>
                 <h3 id='popGenresHeader'>Recent Reviews</h3>
