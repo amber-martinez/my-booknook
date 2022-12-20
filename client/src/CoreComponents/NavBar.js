@@ -33,8 +33,8 @@ function NavBar({ user, setUser }) {
     <Navbar id='navbar' expand='lg'>
       <Container fluid>
         <div id='headerAndImg'>
-        <Navbar.Brand href="/" id='headerTitle'>my booknook</Navbar.Brand>
-        <img src='https://i.imgur.com/J7udTqO.png' id='topPicksShelfImg'/>
+        <img src='https://cdn-icons-png.flaticon.com/128/3771/3771417.png' id='topPicksShelfImg'/>
+        <Navbar.Brand href="/" id='headerTitle'>My Booknook</Navbar.Brand>
         </div>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -45,7 +45,7 @@ function NavBar({ user, setUser }) {
           >
                 <Nav.Link href="/leaderboard" id='headerLink'>Leaderboard</Nav.Link>
                 <Nav.Link href="/my-books" id='headerLink'>My Books</Nav.Link>
-                <NavDropdown title="Genres" id="navbarScrollingDropdown">
+                <NavDropdown title="Genres" id="headerLink" >
                 <NavDropdown.Item href="/books" id='headerLink' name='All'>All Books</NavDropdown.Item>
                 <NavDropdown.Divider></NavDropdown.Divider>
                 <NavDropdown.Item href="/Classics" id='headerLink' name='Classics'>Classics</NavDropdown.Item>
@@ -61,15 +61,15 @@ function NavBar({ user, setUser }) {
           :
           user ?
           <Nav>
-            <Nav.Link href="/search" id='linkButton'>Search</Nav.Link>
-            <Nav.Link href="/profile" id='linkButton'>My Nook</Nav.Link>
-            <Nav.Link id='linkButton' onClick={handleLogoutClick}>Log out</Nav.Link>
+            <Nav.Link href="/search" id='headerLink'>Search</Nav.Link>
+            <Nav.Link href="/profile" id='headerLink'>My Nook</Nav.Link>
+            <Nav.Link id='headerLink' onClick={handleLogoutClick}>Log out</Nav.Link>
           </Nav>
           :
           <Nav>
-            <Nav.Link href="/search" id='linkButton'>Search</Nav.Link>
-            <Nav.Link href="/signup" id='linkButton'>Sign up</Nav.Link>
-            <Nav.Link href="/login" id='linkButton'>Log in</Nav.Link>
+            <Nav.Link href="/search" id='headerLink'>Search</Nav.Link>
+            <Nav.Link href="/signup" id='headerLink'>Sign up</Nav.Link>
+            <Nav.Link href="/login" id='headerLink'>Log in</Nav.Link>
           </Nav>
           }
         </Navbar.Collapse>
