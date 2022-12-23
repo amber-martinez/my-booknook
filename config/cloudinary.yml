@@ -1,0 +1,11 @@
+development: 
+  cloud_name: "amber-martinez-cloud"
+  api_key: "177887761995866"
+  api_secret: "fUzt5VHfyCJca4-Op11eZusCxss"
+  secure: true
+
+production:
+  cloud_name: "amber-martinez-cloud"
+  api_key: "177887761995866"
+  api_secret: "fUzt5VHfyCJca4-Op11eZusCxss"
+  secure: true

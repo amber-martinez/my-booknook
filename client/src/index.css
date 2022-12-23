@@ -3,6 +3,9 @@
 .App {
   font-family: 'Catamaran', sans-serif;
   color: #362c24;
+  background-color: #fbf9f760;
+  width: 100vw;
+  min-height: 100vh;
 }
 
 p {
@@ -351,7 +354,7 @@ a:link:hover {
 
   #navbar {
     padding: 18px;
-    background-color: #eceae7;
+    background-color: #eceae795;
   }
 
   #topPicksShelfImg {
@@ -471,7 +474,7 @@ a:link:hover {
 
   #navbar {
     padding: 18px;
-    background-color: #e9e3dc;
+    background-color: #f6f2ef;
   }
 
   #topPicksShelfImg {
@@ -594,23 +597,6 @@ a:link:hover {
   border-color: #6f5b4b;
 }
 
-#welcomeContainer {
-  margin: auto;
-  text-align: center;
-  margin-top: 30px;
-  padding-bottom: 50px;
-  background-image: url(https://i.imgur.com/lua902Y.png);
-  background-repeat:no-repeat;
-  background-position: bottom 105px right 20px;
-  background-size: 30%;
-  scale: 0.90;
-  background-color: #e9e5dc6b;
-  max-width: 600px;
-  min-height: 490px;
-  border-radius: 10px;
-  border: solid 1px #362c243b;
-}
-
 #loggedInWelcomeContainer {
   margin: auto;
   text-align: center;
@@ -636,25 +622,6 @@ a:link:hover {
   margin-top: 10px;
   border: solid 1px #6f5b4b;
   border-radius: 10px;
-}
-
-.signUpBio {
-  /* padding: 13px 140px 60px 9px; */
-  padding: 9px;
-  width: 309px;
-  height: 80px;
-  margin-top: 10px;
-  border: solid 1px #6f5b4b;;
-  border-radius: 10px;
-}
-
-#submitSignUp {
-  border: solid 1px #6f5b4b;
-  background-color: #e9e5dc3a;
-  margin-top: 20px;
-  display: fixed;
-  text-align: center;
-  border-radius: 5px;
 }
 
 #profileCardContainer {
@@ -766,6 +733,10 @@ a:link:hover {
   border: solid 1px transparent;
   border-radius: 5px;
   margin-left: 10px;
+}
+
+textarea {
+  white-space: pre-line;
 }
 
 #searchBox {

@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import BeforeReviewPost from './BeforeReviewPost';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 function CreateReview({ user, allBooks }) {
 
@@ -18,19 +21,6 @@ function CreateReview({ user, allBooks }) {
             setLoading(false)
         }
     }, [user])
-
-    function onBookIdChange(e) {
-        setBookId(parseInt(e.target.value))
-    }
-
-    function onRatingChange(e) {
-        setRating(e.target.value)
-    }
-
-    function onReviewBodyChange(e) {
-        setReviewBody(e.target.value)
-        setCharacterCount(e.target.value.length)
-    }
 
     function onReviewSubmit() {
         
@@ -71,48 +61,7 @@ function CreateReview({ user, allBooks }) {
                 <h5 id='editProfileHeader'>Your review was posted!</h5>
             </div>
             : 
-            <div>
-                <div style={{ marginTop: 64 }}>
-                    <h4 id='editProfileHeader'>New Review</h4>
-                </div>
-                <div style={{ display: 'inline-block', verticalAlign: 'top', marginRight: 30 }}>
-                    <p style={{ textAlign: 'left', marginBottom: 40 }}>Book</p>
-                    <p style={{ textAlign: 'left', marginBottom: 40 }}>Rating</p>
-                    <p style={{ textAlign: 'left', marginBottom: 40 }}>Review</p>
-                </div>
-                <div style={{ display: 'inline-block', verticalAlign: 'top' }}>
-                    <div style={{ display: 'inline-block', textAlign: 'left' }}>
-                        <select style={{ marginBottom: 30 }} onChange={onBookIdChange}>
-                            {allBooks.map(book => (
-                                <option value={book.id}>{book.title}</option>
-                            ))}
-                        </select>
-                        <br></br>
-                        <select style={{ marginBottom: 35 }} onChange={onRatingChange}>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                        <br></br>
-                        <textarea type='paragraph_text' style={{ width: 370, height: 350 }} onChange={onReviewBodyChange}></textarea>
-                        <div>
-                            <p style={{ textAlign: 'right', fontSize: 13 }}>{characterCount} Characters</p>
-                        </div>
-                    </div>
-                    <br></br>
-                </div>
-                <div>
-                    <button id='actionButton' style={{ marginTop: 70 }} onClick={onReviewSubmit}>Save</button>
-                    <br></br>
-                    {errors.length > 0 ?
-                    <div style={{ marginTop: 35 }}>
-                        {errors.map(e => <p>{e}</p>)}
-                    </div>
-                    : null}
-                </div>
-            </div>
+            <BeforeReviewPost setBookId={setBookId} allBooks={allBooks} setRating={setRating} setReviewBody={setReviewBody} setCharacterCount={setCharacterCount} characterCount={characterCount} onReviewSubmit={onReviewSubmit} errors/>
             
             :
             <div style={{ textAlign: 'center', marginTop: 91 }}>

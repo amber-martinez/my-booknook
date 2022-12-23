@@ -6,12 +6,12 @@ import HomeContent from './CoreComponents/HomeContent'
 import Login from './CoreComponents/Login'
 import Profile from './CoreComponents/Profile'
 import DisplayBooks from './CoreComponents/DisplayBooks';
-import SignUpForm from './SignUpForm';
+import SignUpForm from './Homepage/SignUpForm';
 import Search from './Search';
 import MyBooks from './CoreComponents/MyBooks';
 import Leaderboard from './CoreComponents/Leaderboard';
 import EditProfile from './Edit/EditProfile'
-import CreateReview from './CreateReview';
+import CreateReview from './Reviews/CreateReview';
 import AddBook from './Edit/AddBook';
 
 function App() {
