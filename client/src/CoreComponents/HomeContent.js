@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import NewestBooks from '../Homepage/NewestBooks'
-import GenreBubbles from '../Homepage/GenreBubbles'
-import RecentReviews from '../Homepage/RecentReviews';
 import LoggedInWelcome from '../Homepage/LoggedInWelcome'
 import SignUpForm from '../Homepage/SignUpForm';
 import BookRec from '../Homepage/BookRec';
@@ -33,9 +31,15 @@ function HomeContent({ allBooks, setUser, reviewsSortByNew, user, newestBooks })
                     <Col xs lg='5' style={{ width: 750, marginRight: 40, justifyContent: 'left', padding: 0 }}>
                         <NewestBooks allBooks={allBooks} newestBooks={newestBooks}/>
                     </Col>
-                    <Col xs lg='5' style={{ width: 480, marginLeft: 40 }}>
-                        {user ? <LoggedInWelcome user={user}/> : <SignUpForm setUser={setUser}/>}
+                    {user ?
+                    <Col xs lg='5' style={{ width: 400, marginLeft: 40 }}>
+                        <LoggedInWelcome user={user}/>
                     </Col>
+                    :
+                    <Col xs lg='5' style={{ width: 480, marginLeft: 40 }}>
+                        <SignUpForm setUser={setUser}/>
+                    </Col>
+                    }
                 </Row>
                 <Row style={{ marginTop: 30, justifyContent: 'left', marginLeft: 0 }}>
                     <Col xs lg='3' style={{ width: 750, justifyContent: 'left', padding: 0, marginRight: 40 }}>
