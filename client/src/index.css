@@ -520,23 +520,6 @@ a:link:hover {
     margin: 34px 100px 100px 105px;
   }
 
-  #loginContainer {
-    margin: auto;
-    text-align: center;
-    margin-top: 38px;
-    padding-bottom: 80px;
-    padding-top: 21px;
-    background-image: url(https://i.imgur.com/lua902Y.png);
-    background-repeat:no-repeat;
-    background-position: bottom 105px right 20px;
-    background-size: 30%;
-    background-color: #e9e5dc6b;
-    max-width: 600px;
-    max-height: 415px;
-    border-radius: 10px;
-    border: solid 1px #362c243b;
-  }
-
     
   #reviewsX {
     position:absolute;
