@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Login({ setUser }) {
 
@@ -34,12 +35,14 @@ function Login({ setUser }) {
         })
     }
 
+    console.log(username, password)
+
 
     return (
 
         <div style={{ textAlign: 'center', backgroundColor: '#f7f4f1', borderRadius: 10, padding: '10px 30px 10px 30px', border: 'solid 1px #f2efeb', fontSize: 13, width: 400, margin: 'auto', marginTop: 64 }}>
             <h3 style={{ paddingTop: 30, textAlign: 'center', color: '#362c24', fontSize: 18 }}>Welcome back, reader!</h3>
-            <p>Don't have an account? Sign up here.</p>
+            <p>Don't have an account? Sign up <Link to='/signup' style={{ color: '#362c24', textDecoration: 'underline' }}>here.</Link></p>
             <form style={{ marginTop: -10 }} onSubmit={handleLoginSubmit}>
                 <input type='text' placeholder='Username' className='signUpFields' onChange={((e) => setUsername(e.target.value))} style={{ border: '.95px solid #362c24', padding: '5px 6px 5px 6px', borderRadius: 3, width: 170 }}></input>
                 <br></br>
