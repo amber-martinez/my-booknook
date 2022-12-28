@@ -35,9 +35,6 @@ function Login({ setUser }) {
         })
     }
 
-    console.log(username, password)
-
-
     return (
 
         <div style={{ textAlign: 'center', backgroundColor: '#f7f4f1', borderRadius: 10, padding: '10px 30px 10px 30px', border: 'solid 1px #f2efeb', fontSize: 13, width: 400, margin: 'auto', marginTop: 64 }}>

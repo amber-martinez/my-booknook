@@ -6,7 +6,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function NavBar({ user, setUser }) {
 
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (user == null) {
@@ -14,7 +14,7 @@ function NavBar({ user, setUser }) {
     } else {
         setLoading(false)
     }
-}, [user])
+  }, [user])
 
   function handleLogoutClick(e) {
     e.preventDefault()

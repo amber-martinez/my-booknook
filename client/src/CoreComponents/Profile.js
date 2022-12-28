@@ -13,14 +13,6 @@ function Profile({ user, setUser, userBooks, userReviews }) {
     const [showSettings, setShowSettings] = useState(false);
 
     useEffect(() => {
-        if (user == null) {
-            setLoading(true)
-        } else {
-            setLoading(false)
-        }
-    }, [user])
-
-    useEffect(() => {
         fetch('https://api.quotable.io/random')
         .then(r => r.json())
         .then(quote => setQuote(quote))
@@ -58,7 +50,7 @@ function Profile({ user, setUser, userBooks, userReviews }) {
             <div>
                 <Row className="justify-content-md-center" id='profileRow'>
                     <Col xs lg="5" style={{ textAlign: 'center' }}>
-                        <MyBooks user={user} userBooks={userBooks}/>
+                        <MyBooks userBooks={userBooks}/>
                         <Row className="justify-content-md-center">
                             <Col xs lg="5" style={{ textAlign: 'center' }}>
                                 <MyReviews userReviews={userReviews}/>

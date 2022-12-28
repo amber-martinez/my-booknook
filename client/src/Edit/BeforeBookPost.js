@@ -1,14 +1,25 @@
 import React, { useState } from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Axios from 'axios';
 
 function BeforeBookPost({ setPost }) {
-
     const [errors, setErrors] = useState([]);
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
     const [genre, setGenre] = useState(null);
     const [coverImg, setCoverImg] = useState('https://st2.depositphotos.com/1561359/12101/v/950/depositphotos_121012076-stock-illustration-blank-photo-icon.jpg');
+
+    function photoUploadHandler(e) {
+        const formData = new FormData()
+        formData.append('file', e.target.files[0])
+        formData.append('upload_preset', 'hf6x2oay ')
+
+        Axios.post('https://api.cloudinary.com/v1_1/amber-martinez-cloud/image/upload', formData)
+        .then(r => {
+            setCoverImg(r.data.secure_url)
+        });
+    }
 
     function onBookSubmit() {
         fetch('/api/books', {
@@ -38,7 +49,6 @@ function BeforeBookPost({ setPost }) {
                 <h4 style={{ marginBottom: 10, fontSize: 18,   display: 'inline-block', backgroundColor:'#f7f4f1', padding: 5, borderRadius: 5 }}>New Book</h4>
                 <p style={{ fontSize: 14 }}>Add a non-existing book to the database</p>
             </div>
-
             <div style={{ width: '30rem', display: 'inline-block' }}>
                 <Row>
                     <Col>
@@ -65,11 +75,10 @@ function BeforeBookPost({ setPost }) {
                             </select>
                         </Row>
                         <Row style={{ justifyContent: 'center', fontSize: 13, marginBottom: 12 }}>
-                            <input type='text' placeholder='Book Cover Image URL' style={{ backgroundColor: 'transparent', border: '.95px solid #362c24', padding: '5px 6px 5px 6px', borderRadius: 3, marginBottom: 30 }} onChange={((e) => setCoverImg(e.target.value))}></input>
+                            <input type='file' placeholder='Book Cover Image URL' style={{ color: '#362c24', marginLeft: 0, padding: 0 }} onChange={photoUploadHandler}></input>
                             <br></br>
                         </Row>
                     </Col>
-
                     <Col>
                         <Row style={{ justifyContent: 'center', fontSize: 13, marginBottom: 12 }}>
                             <figure style={{ maxWidth: '8rem', wordBreak: 'break-word', textAlign: 'center' }}>

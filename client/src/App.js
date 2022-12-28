@@ -10,7 +10,7 @@ import SignUpForm from './Homepage/SignUpForm';
 import Search from './Search';
 import MyBooks from './CoreComponents/MyBooks';
 import Leaderboard from './CoreComponents/Leaderboard';
-import EditProfile from './Edit/EditProfile'
+import EditProfile from './Profile/EditProfile'
 import CreateReview from './Reviews/CreateReview';
 import AddBook from './Edit/AddBook';
 
@@ -59,7 +59,6 @@ function App() {
     // .then(data => setUserReviews(data))
 
 }, []);
-
 
   return (
     <div className="App">

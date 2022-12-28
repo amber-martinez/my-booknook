@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 function LoggedInWelcome({ user }) {
     
-    const [loadingStatus, setLoadingStatus] = useState(true)
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        if (user.username != null) {
-            setLoadingStatus(false)
+        if (user == null) {
+            setLoading(true)
+        } else {
+            setLoading(false)
         }
-
     }, [user])
-    
     
     return (
         <div style={{ textAlign: 'center', backgroundColor: '#f7f4f1', borderRadius: 10, padding: '30px 30px 30px 30px', border: 'solid 1px #f2efebee' }}>
-            {loadingStatus ?
-            <img src='https://i.imgur.com/yqanog9.gif' style={{ height: 60 }}></img>
+            {loading ?
+            null
             :
             <div>
                 <h3 style={{ color: '#362c24', fontSize: 18 }}>Howdy, {user.username}</h3>

@@ -1,29 +1,20 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import BeforeReviewPost from './BeforeReviewPost';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
-function CreateReview({ user, allBooks }) {
+function CreateReview({ allBooks, user }) {
 
+    //  add redux for user 
     const [bookId, setBookId] = useState();
     const [rating, setRating] = useState();
     const [reviewBody, setReviewBody] = useState();
     const [errors, setErrors] = useState([]);
     const [characterCount, setCharacterCount] = useState(0);
-    const [post, setPost] = useState(false)
-    const [loading, setLoading] = useState(false)
-
-    useEffect(() => {
-        if (user == null) {
-            setLoading(true)
-        } else {
-            setLoading(false)
-        }
-    }, [user])
+    const [post, setPost] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     function onReviewSubmit() {
-        
         fetch('/api/reviews', {
             method: 'POST',
             headers: {

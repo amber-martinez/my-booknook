@@ -1,30 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
-function EditProfile({ loading, user, setUser }) {
+function EditProfile({ user, setUser }) {
 
-    const [username, setUsername] = useState()
-    const [bio, setBio] = useState()
-    const [profilePicLink, setProfilePicLink] = useState()
-    const [errors, setErrors] = useState([])
-    const [delAccPopup, setDelAccPopup] = useState(false)
-
-    useEffect(() => {
-        setUsername(user.username)
-        setBio(user.bio)
-        setProfilePicLink(user.profile_pic_url)
-    }, [loading])
-
-    function onUsernameChange(e) {
-        setUsername(e.target.value)
-    }
-
-    function onBioChange(e) {
-        setBio(e.target.value)
-    }
-
-    function onProfilePicChange(e) {
-        setProfilePicLink(e.target.value)
-    }
+    const [username, setUsername] = useState(user.username);
+    const [bio, setBio] = useState(user.bio);
+    const [profilePicLink, setProfilePicLink] = useState(user.profile_pic_url);
+    const [errors, setErrors] = useState([]);
+    const [delAccPopup, setDelAccPopup] = useState(false);
 
     function onEditProfileSubmit(e) {
         e.preventDefault()
@@ -51,7 +33,6 @@ function EditProfile({ loading, user, setUser }) {
     }
 
     function onDeleteAccount() {
-
         fetch(`users/${user.id}`, {
             method: 'DELETE'
         })
@@ -64,7 +45,6 @@ function EditProfile({ loading, user, setUser }) {
                 console.log('problem')
             }
         })
-
     }
 
     return (
@@ -82,22 +62,15 @@ function EditProfile({ loading, user, setUser }) {
             // regular edit profile screen
             <div>
                 <div style={{ marginTop: 64 }}>
-                    <h4 id='editProfileHeader'>Edit Profile</h4>
+                    <h4 style={{ fontSize: 18, backgroundColor:'#f7f4f1', display: 'inline-block', padding: '4px 6px 4px 6px', borderRadius: 4 }}>Edit Profile</h4>
                 </div>
-                <div style={{ display: 'inline-block', verticalAlign: 'top', marginRight: 15 }}>
-                    <p style={{ textAlign: 'left' }}>Username</p>
-                    <br></br>
-                    <p style={{ textAlign: 'left' }} >Bio</p>
-                    <br></br>
-                    <p style={{ textAlign: 'left' }}>Profile Photo</p>
-                </div>
-                <div style={{ display: 'inline-block', verticalAlign: 'top' }}>
+                <div style={{ display: 'inline-block', verticalAlign: 'top', fontSize: 13 }}>
                     <form style={{ display: 'inline-block' }}>
-                        <input id='signUpInputs' type='text' onChange={onUsernameChange} value={username}></input>
+                        <input type='text' placeholder='Username' onChange={((e) => setUsername(e.target.value))} value={username} style={{ border: '.95px solid #362c24', width: 200, padding: 5, borderRadius: 3, marginTop: 10, backgroundColor: 'transparent', color: '#362c24' }}></input>
                         <br></br>
-                        <input id='signUpInputs' type='text' onChange={onBioChange} value={bio}></input>
+                        <textarea placeholder='Bio' onChange={((e) => setBio(e.target.value))} value={bio} style={{ border: '.95px solid #362c24', width: 200, height: 100, padding: 5, borderRadius: 3, marginTop: 10, backgroundColor: 'transparent', textAlign: 'left', resize: 'none', color: '#362c24'  }}></textarea>
                         <br></br>
-                        <input id='signUpInputs' type='text' onChange={onProfilePicChange} value={profilePicLink}></input>
+                        <input id='signUpInputs' type='text' placeholder='Profile photo' onChange={((e) => setProfilePicLink(e.target.value))} value={profilePicLink}></input>
                         <br></br>
                         <img src={profilePicLink} style={{ height: 120, width: 120, overflow: 'hidden', borderRadius: 100, objectFit: 'cover' }}></img>
                         <br></br>

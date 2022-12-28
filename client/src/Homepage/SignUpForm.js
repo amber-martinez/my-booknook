@@ -17,7 +17,6 @@ function SignUpForm({ setUser }) {
         const formData = new FormData()
         formData.append('file', e.target.files[0])
         formData.append('upload_preset', 'hf6x2oay ')
-        
 
         Axios.post('https://api.cloudinary.com/v1_1/amber-martinez-cloud/image/upload', formData)
         .then(r => {
