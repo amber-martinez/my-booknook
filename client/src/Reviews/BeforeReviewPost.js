@@ -73,7 +73,7 @@ function BeforeReviewPost({ allBooks, user, setPost }) {
                                 <option>5</option>
                             </select>
                         </Row>
-                        <Row style={{ justifyContent: 'center', fontSize: 13, marginBottom: 12, width: '10rem' }}>
+                        {/* <Row style={{ justifyContent: 'center', fontSize: 13, marginBottom: 12, width: '10rem' }}>
                             <select style={{ backgroundColor: 'transparent', border: '.95px solid #362c24', padding: '3px 6px 3px 2px', borderRadius: 3, fontSize: 13 }}>
                                 <option selected="true" disabled="disabled">Select genre</option>
                                 <option>Art</option>
@@ -88,9 +88,9 @@ function BeforeReviewPost({ allBooks, user, setPost }) {
                                 <option>Romance</option>
                                 <option>Science-Fiction</option>
                             </select>
-                        </Row>
+                        </Row> */}
                         <Row style={{ justifyContent: 'left', fontSize: 13, marginBottom: 12, textAlign: 'left' }}>
-                            <textarea type='paragraph_text' placeholder='Your review here' style={{ width: 370, height: 295, textAlign: 'left', padding: 6, whiteSpace: 'pre-line', borderRadius: 5, border: '.95px solid #362c24' }} onChange={((e) => {
+                            <textarea type='paragraph_text' placeholder='Your review here' style={{ width: 400, height: 340, textAlign: 'left', padding: 6, whiteSpace: 'pre-line', borderRadius: 5, border: '.95px solid #362c24', resize: 'none' }} onChange={((e) => {
                                 setReviewBody(e.target.value)
                                 setCharacterCount(e.target.value.length)
                                 })}>
@@ -101,11 +101,13 @@ function BeforeReviewPost({ allBooks, user, setPost }) {
                     <Col style={{ width: '22rem', height: 492.17 }}>
                         <Row style={{ justifyContent: 'center', fontSize: 13, marginBottom: 12, paddingBottom: 6 }}>
                             <div style={{ maxWidth: '30rem', wordBreak: 'break-word', textAlign: 'left', overflow: 'scroll', backgroundColor: '#f7f4f1', borderRadius: 10, padding: 30, whiteSpace: 'pre-line', height: 430 }}>
-                                {/* {selectedBook.title} */}
+                                {selectedBook ? <h3 style={{ fontSize: 17 }}>{selectedBook.title} – Review</h3> : <h3 style={{ fontSize: 17 }}>Review</h3>}
+                                <p style={{ marginTop: -5 }}>{rating}/5<br></br>
+                                by {user.username}</p>
                                 {reviewBody}
                             </div>
                         </Row>
-                        <Row style={{ justifyContent: 'right', textAlign: 'right' }}>
+                        <Row style={{ justifyContent: 'right', textAlign: 'right', paddingRight: 16 }}>
                             <div>
                                 <button style={{ backgroundColor: '#6f5b4b', color: 'white', borderColor: 'transparent', borderRadius: 5, fontSize: 13, padding: '3px 8px 3px 8px', marginTop: 10 }} onClick={onReviewSubmit}>Save review</button>
                             </div>
