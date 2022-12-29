@@ -1,16 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import MyBooks from '../Profile/MyBooks'
 import MyReviews from '../Profile/MyReviews';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Books from './Books';
 
-function Profile({ user, setUser, userBooks, userReviews }) {
+function Profile({ user, setUser }) {
 
     const [quote, setQuote] = useState([]);
     const [loading, setLoading] = useState(false);
     const [showSettings, setShowSettings] = useState(false);
+
+    useEffect(() => {
+        if (user === null) {
+            setLoading(true)
+        } else {
+            setLoading(false)
+        }
+    }, [user])
 
     useEffect(() => {
         fetch('https://api.quotable.io/random')
@@ -48,17 +56,17 @@ function Profile({ user, setUser, userBooks, userReviews }) {
             user
             ?
             <div>
-                <Row className="justify-content-md-center" id='profileRow'>
+                <Row className="justify-content-md-center" id='profileRow' style={{ marginTop: 80 }}>
                     <Col xs lg="5" style={{ textAlign: 'center' }}>
-                        <MyBooks userBooks={userBooks}/>
+                        <Books user={user}/>
                         <Row className="justify-content-md-center">
-                            <Col xs lg="5" style={{ textAlign: 'center' }}>
-                                <MyReviews userReviews={userReviews}/>
+                            <Col xs lg="9" style={{ textAlign: 'center' }}>
+                                <MyReviews user={user}/>
                             </Col>
                         </Row>
                     </Col>
                     <Col xs lg="5" style={{ textAlign: 'center' }}>
-                    <div style={{ backgroundColor: '#f7f4f1', marginTop: 80, padding: 30, borderRadius: 10, textAlign: 'center', display: 'inline-block' }}>
+                    <div style={{ backgroundColor: '#f7f4f1', padding: 30, borderRadius: 10, textAlign: 'center', display: 'inline-block' }}>
                             <Card id='profileCard' style={{ width: '18rem' }}>
                             <Card.Img variant="top" src={user.profile_pic_url} style={{ borderRadius: 300, height: 200, width: 200, objectFit: 'cover', margin: 'auto', border: 'solid 1px white' }}/>
                             <Card.Body style={{ marginTop: 17 }}>

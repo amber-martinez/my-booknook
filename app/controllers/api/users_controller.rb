@@ -13,7 +13,7 @@ class Api::UsersController < ApplicationController
     end
 
     def show
-        render json: @user, include: :reviews
+        render json: @user, include: [:reviews, :books]
     end
 
     def update

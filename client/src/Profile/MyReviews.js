@@ -1,16 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function MyReviews({ userReviews }) {
+function MyReviews({ user }) {
 
     return (
-        <div style={{ display: 'inline-block', marginBottom: 30, overflow: 'scroll', marginTop: 80, fontSize: 13 }}>
-            <h4 style={{ fontSize: 18, backgroundColor:'#f7f4f1', display: 'inline-block', padding: '4px 6px 4px 6px', borderRadius: 4 }}>My Reviews</h4>
-            {userReviews.length > 0 ?
-            userReviews.map(review => (
-                <div key={review.id}>
+        <div style={{ display: 'inline-block', marginBottom: 50, overflow: 'scroll', marginTop: 80, fontSize: 13 }}>
+            <h4 style={{ fontSize: 18, backgroundColor:'#f7f4f1', display: 'inline-block', padding: '4px 4px 4px 4px', borderRadius: 4, marginBottom: 22 }}>My Reviews</h4>
+            {user.reviews ?
+            user.reviews.map(review => (
+                <div key={review.id} style={{ textAlign: 'left',  marginBottom: 22 }}>
                     <h5 style={{ fontSize: 16 }}>{review.book.title} – {review.book.author}</h5>
-                    <p>by {review.user.username}</p>
+                    <p style={{ marginTop: -5 }}>{review.rating}/5<br></br>
+                    by {review.user.username}</p>
                     <p>{review.review_body}</p>
                 </div>
             ))

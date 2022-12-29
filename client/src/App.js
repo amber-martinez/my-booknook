@@ -8,7 +8,7 @@ import Profile from './CoreComponents/Profile'
 import DisplayBooks from './CoreComponents/DisplayBooks';
 import SignUpForm from './Homepage/SignUpForm';
 import Search from './Search';
-import MyBooks from './CoreComponents/MyBooks';
+import Books from './CoreComponents/Books';
 import Leaderboard from './CoreComponents/Leaderboard';
 import EditProfile from './Profile/EditProfile'
 import CreateReview from './Reviews/CreateReview';
@@ -19,8 +19,6 @@ function App() {
   const [allBooks, setAllBooks] = useState([]);
   const [reviewsSortByNew, setreviewsSortByNew] = useState([]);
   const [user, setUser] = useState();
-  const [userBooks, setUserBooks] = useState([]);
-  const [userReviews, setUserReviews] = useState([]);
   const [genre, setGenre] = useState(null);
   const [newestBooks, setNewestBooks] = useState([]);
 
@@ -31,8 +29,6 @@ function App() {
           if (r.ok) {
             r.json().then(data => {
               setUser(data)
-              setUserBooks(data.books)
-              setUserReviews(data.reviews)
             })
           } else {
             setUser(false)
@@ -56,9 +52,6 @@ function App() {
 
 }, []);
 
-console.log(allBooks)
-
-
   return (
     <div className="App">
         <NavBar user={user} setUser={setUser} setGenre={setGenre} genre={genre}/>
@@ -68,9 +61,9 @@ console.log(allBooks)
             <Route exact path='/login' element={<Login setUser={setUser}/>} />
             <Route exact path='/signup' element={<SignUpForm setUser={setUser}/>} />
             <Route exact path='/search' element={<Search allBooks={allBooks}/>} />
-            <Route exact path='/my-books' element={<MyBooks userBooks={userBooks} user={user}/>} />
+            <Route exact path='/my-books' element={<Books/>} />
             <Route exact path='/leaderboard' element={<Leaderboard user={user}/>} />
-            <Route exact path='/profile' element={<Profile user={user} userBooks={userBooks} userReviews={userReviews} setUser={setUser}/> } />
+            <Route exact path='/profile' element={<Profile user={user} setUser={setUser}/> } />
             <Route exact path='/new-review' element={<CreateReview allBooks={allBooks} user={user}/>}/>
             <Route exact path='/edit-profile' element={<EditProfile user={user} setUser={setUser}/>}/>
             <Route exact path='/add-book' element={<AddBook />} />
