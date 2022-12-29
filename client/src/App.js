@@ -54,11 +54,10 @@ function App() {
     .then(r => r.json())
     .then(data => setreviewsSortByNew(data))
 
-    // fetch('/api/my-reviews')
-    // .then(r => r.json())
-    // .then(data => setUserReviews(data))
-
 }, []);
+
+console.log(allBooks)
+
 
   return (
     <div className="App">
