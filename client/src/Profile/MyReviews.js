@@ -8,7 +8,7 @@ function MyReviews({ user }) {
             <div>
                 <h4 style={{ fontSize: 18, backgroundColor:'#f7f4f1', display: 'inline-block', padding: '4px 4px 4px 4px', borderRadius: 4, marginBottom: 22 }}>My Reviews</h4>
             </div>
-            <div style={{ display: 'inline-block', marginBottom: 50, overflow: 'scroll', fontSize: 13, height: 450 }}>
+            <div style={{ display: 'inline-block', marginBottom: 50, overflow: 'scroll', fontSize: 13, height: 550 }}>
                 {user.reviews.length > 0 ?
                 user.reviews.map(review => (
                     <div key={review.id} style={{ textAlign: 'left',  marginBottom: 22 }}>

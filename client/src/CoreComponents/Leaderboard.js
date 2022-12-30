@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
+import { Rate } from 'antd';
 
 function Leaderboard({ user }) {
 
@@ -37,10 +38,11 @@ function Leaderboard({ user }) {
                     <ol style={{ textAlign: 'center', listStylePosition: 'inside', padding: 0  }}>
                         {reviewsByRating.map(review => (
                             <Card class="card text-center" key={review.id} style={{ display: 'inline-block', border: 'none', margin: 20, marginTop: 0, backgroundColor: 'transparent', maxWidth: 90, wordBreak: 'break-word', textAlign: 'center', verticalAlign: 'top', maxHeight: 161, marginRight: 30, marginLeft: 30 }}>
-                                <li style={{ margin: '10px 25px 10px 25px', fontSize: 13, backgroundColor: '#f7f4f1', borderRadius: 50, padding: 10 }}></li>
                                 <Card.Img src={review.image_url} style={{ height: 140, width: 90, objectFit: 'cover' }} />
-                                <Card.Body style={{ fontSize: 11, textAlign: 'center' }}>
-                                    <Card.Text>{review.average_rating}/5<br></br>
+                                <Card.Body style={{ fontSize: 11, textAlign: 'center', marginTop: 10 }}>
+                                {/* <li style={{ margin: '10px 25px 10px 25px', fontSize: 15, fontWeight: 600, color: '#362c24' }}></li> */}
+                                    <Rate disabled allowHalf defaultValue={review.average_rating} style={{ fontSize: 10 }} />
+                                    <Card.Text style={{ marginTop: 10 }}>{review.average_rating}/5<br></br>
                                     {review.title}</Card.Text>
                                 </Card.Body>
                             </Card>
