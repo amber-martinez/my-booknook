@@ -30,20 +30,20 @@ function Leaderboard({ user }) {
                 <img src='https://i.imgur.com/yqanog9.gif' style={{ height: 100 }}></img> 
             </div>
             :
-            <div style={{ fontSize: 13, textAlign: 'center' }}>
-                <h3 style={{ padding: 5, fontWeight: 600, backgroundColor: '#e9e5dc3a', display: 'inline-block', fontSize: 18 }}>Books Leaderboard</h3>
+            <div style={{ fontSize: 13, textAlign: 'center', justifyContent: 'center' }}>
+                <h3 style={{ padding: 5, fontWeight: 600, backgroundColor: '#f7f4f1', borderRadius: 4, display: 'inline-block', fontSize: 18 }}>Books Leaderboard</h3>
                 <p>The top 5 highest-rated books.</p>
-                <div id='leaderboardListGroup'>
-                    <ol style={{ textAlign: 'center', listStylePosition: 'inside' }}>
+                <div style={{ marginTop: 30 }}>
+                    <ol style={{ textAlign: 'center', listStylePosition: 'inside', padding: 0  }}>
                         {reviewsByRating.map(review => (
-                                <Card class="card text-center" key={review.id} style={{ display: 'inline-block', border: 'none', margin: 20, marginTop: 0, backgroundColor: 'transparent', maxWidth: 90, wordBreak: 'break-word', textAlign: 'center', verticalAlign: 'top', maxHeight: 161 }}>
-                                    <Card.Img src={review.image_url} style={{ height: 140, width: 90, objectFit: 'cover' }} />
-                                    <li style={{ margin: '10px 25px 10px 25px', fontSize: 13 }}></li>
-                                    <Card.Body style={{ fontSize: 11, textAlign: 'center' }}>
-                                        <Card.Text>{review.average_rating}/5<br></br>
-                                        {review.title}</Card.Text>
-                                    </Card.Body>
-                                </Card>
+                            <Card class="card text-center" key={review.id} style={{ display: 'inline-block', border: 'none', margin: 20, marginTop: 0, backgroundColor: 'transparent', maxWidth: 90, wordBreak: 'break-word', textAlign: 'center', verticalAlign: 'top', maxHeight: 161, marginRight: 30, marginLeft: 30 }}>
+                                <li style={{ margin: '10px 25px 10px 25px', fontSize: 13, backgroundColor: '#f7f4f1', borderRadius: 50, padding: 10 }}></li>
+                                <Card.Img src={review.image_url} style={{ height: 140, width: 90, objectFit: 'cover' }} />
+                                <Card.Body style={{ fontSize: 11, textAlign: 'center' }}>
+                                    <Card.Text>{review.average_rating}/5<br></br>
+                                    {review.title}</Card.Text>
+                                </Card.Body>
+                            </Card>
                         ))}
                     </ol>
                 </div>

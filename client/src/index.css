@@ -186,15 +186,14 @@ a:link:hover {
     text-align: center;
     margin-top: 7px;
   }
-
+/* 
   #leaderboardListGroup {
     margin: 0px 100px 0px 114px;
-    /* margin: auto; */
     text-align: center;
     inline-size: 150px;
     overflow-wrap: break-word;
     hyphens: manual;
-  }
+  } */
 
   #loginContainer {
     scale: 88%;
