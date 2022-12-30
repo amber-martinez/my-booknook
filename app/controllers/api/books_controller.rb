@@ -27,22 +27,19 @@ class Api::BooksController < ApplicationController
     end
 
     def books_with_average_ratings
-        books = Book.all
-        avg = books.flat_map { |book| [avg_rating: book.reviews.average(:rating), title: book.title, author: book.author, image_url: book.image_url, genre: book.genre] }
-        render json: avg
+        books = Book.where.not(average_rating: nil)
+        top = books.order(average_rating: :desc)
+        # # calculates all of averages of each book
+        # top = books.map { |book| book.reviews.average(:rating) }
+
+        # # books = Book.all
+        # avg = books.flat_map { |book| [avg_rating: book.reviews.average(:rating), title: book.title, author: book.author, image_url: book.image_url, genre: book.genre] }
+        render json: top
     end
 
     def newest
         books = Book.all
         render json: books.order(created_at: :desc).limit(6)
-    end
-
-    def most_reviews
-        # books = Book.all
-        byebug
-        # render json: books.includes(reviews.count)
-        render json: Book.joins(:reviews).group("reviews.book_id").order('count(reviews.book_id) desc')
-
     end
 
     private

@@ -1,5 +1,9 @@
 class Api::ReviewsController < ApplicationController
     skip_before_action :authorize, only: [:index, :newest]
+    after_action do 
+        book = Book.find(params[:book_id])
+        book.update_attribute(:average_rating, book.reviews.average(:rating))
+    end
     
     def index
         reviews = Review.all

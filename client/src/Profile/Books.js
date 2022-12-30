@@ -6,7 +6,7 @@ function Books({ user }) {
     return (
         <div style={{ textAlign: 'center' }}>
             <h4 style={{ fontSize: 18, backgroundColor:'#f7f4f1', display: 'inline-block', padding: '4px 4px 4px 4px', borderRadius: 4, marginBottom: 22 }}>My Books</h4>
-            {user.books ?
+            {user.books.length > 0 ?
             user.books.map(book => (
                 <div style={{ textAlign: 'center' }}>
                     <div class="card text-center" key={book.id} style={{ verticalAlign: 'top', borderColor: 'transparent', display: 'inline-block', margin: '0px 10px 24px 10px', width: 190, backgroundColor: 'transparent' }}>

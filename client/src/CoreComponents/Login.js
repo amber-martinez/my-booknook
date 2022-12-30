@@ -37,7 +37,7 @@ function Login({ setUser }) {
 
     return (
 
-        <div style={{ textAlign: 'center', backgroundColor: '#f7f4f1', borderRadius: 10, padding: '10px 30px 10px 30px', border: 'solid 1px #f2efeb', fontSize: 13, width: 400, margin: 'auto', marginTop: 64 }}>
+        <div style={{ textAlign: 'center', backgroundColor: '#f7f4f1', borderRadius: 10, padding: '10px 30px 10px 30px', border: 'solid 1px #f2efeb', fontSize: 13, width: 400, margin: 'auto' }}>
             <h3 style={{ paddingTop: 30, textAlign: 'center', color: '#362c24', fontSize: 18 }}>Welcome back, reader!</h3>
             <p>Don't have an account? Sign up <Link to='/signup' style={{ color: '#362c24', textDecoration: 'underline' }}>here.</Link></p>
             <form style={{ marginTop: -10 }} onSubmit={handleLoginSubmit}>

@@ -6,7 +6,7 @@ function MyReviews({ user }) {
     return (
         <div style={{ display: 'inline-block', marginBottom: 50, overflow: 'scroll', marginTop: 80, fontSize: 13 }}>
             <h4 style={{ fontSize: 18, backgroundColor:'#f7f4f1', display: 'inline-block', padding: '4px 4px 4px 4px', borderRadius: 4, marginBottom: 22 }}>My Reviews</h4>
-            {user.reviews ?
+            {user.reviews.length > 0 ?
             user.reviews.map(review => (
                 <div key={review.id} style={{ textAlign: 'left',  marginBottom: 22 }}>
                     <h5 style={{ fontSize: 16 }}>{review.book.title} – {review.book.author}</h5>

@@ -26,7 +26,7 @@ function HomeContent({ allBooks, setUser, reviewsSortByNew, user, newestBooks })
                 <img src='https://i.imgur.com/yqanog9.gif' style={{ height: 100 }}></img> 
             </div>
             :
-            <div style={{ marginTop: 65 }}>
+            <div>
                 <Row style={{ justifyContent: 'left', marginLeft: 0, marginBottom: 0 }} >
                     <Col xs lg='5' style={{ width: 750, marginRight: 40, justifyContent: 'left', padding: 0 }}>
                         <NewestBooks allBooks={allBooks} newestBooks={newestBooks}/>

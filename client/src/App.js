@@ -8,7 +8,6 @@ import Profile from './CoreComponents/Profile'
 import DisplayBooks from './CoreComponents/DisplayBooks';
 import SignUpForm from './Homepage/SignUpForm';
 import Search from './Search';
-import Books from './CoreComponents/Books';
 import Leaderboard from './CoreComponents/Leaderboard';
 import EditProfile from './Profile/EditProfile'
 import CreateReview from './Reviews/CreateReview';
@@ -61,7 +60,6 @@ function App() {
             <Route exact path='/login' element={<Login setUser={setUser}/>} />
             <Route exact path='/signup' element={<SignUpForm setUser={setUser}/>} />
             <Route exact path='/search' element={<Search allBooks={allBooks}/>} />
-            <Route exact path='/my-books' element={<Books/>} />
             <Route exact path='/leaderboard' element={<Leaderboard user={user}/>} />
             <Route exact path='/profile' element={<Profile user={user} setUser={setUser}/> } />
             <Route exact path='/new-review' element={<CreateReview allBooks={allBooks} user={user}/>}/>

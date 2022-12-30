@@ -30,7 +30,7 @@ function NavBar({ user, setUser }) {
   }
 
   return (
-    <Navbar id='navbar' expand='lg'>
+    <Navbar id='navbar' expand='lg' style={{ marginBottom: 70 }}>
       <Container fluid>
         <div id='headerAndImg'>
         <img src='https://cdn-icons-png.flaticon.com/128/3771/3771417.png' id='topPicksShelfImg'/>
@@ -63,7 +63,7 @@ function NavBar({ user, setUser }) {
           <Nav>
             <Nav.Link href="/search" id='headerLink'>Search</Nav.Link>
             <Nav.Link href="/profile" id='headerLink'>My Nook</Nav.Link>
-            <Nav.Link id='headerLink' onClick={handleLogoutClick}>Log out</Nav.Link>
+            <Nav.Link id='headerLink' href='/' onClick={handleLogoutClick}>Log out</Nav.Link>
           </Nav>
           :
           <Nav>

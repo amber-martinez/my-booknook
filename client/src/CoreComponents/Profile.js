@@ -4,7 +4,7 @@ import MyReviews from '../Profile/MyReviews';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Books from './Books';
+import Books from '../Profile/Books';
 
 function Profile({ user, setUser }) {
 
@@ -56,7 +56,7 @@ function Profile({ user, setUser }) {
             user
             ?
             <div>
-                <Row className="justify-content-md-center" id='profileRow' style={{ marginTop: 80 }}>
+                <Row className="justify-content-md-center" id='profileRow'>
                     <Col xs lg="5" style={{ textAlign: 'center' }}>
                         <Books user={user}/>
                         <Row className="justify-content-md-center">
