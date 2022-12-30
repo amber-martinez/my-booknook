@@ -21,8 +21,6 @@ function Leaderboard({ user }) {
         }
     }, [user])
 
-    // find way to populate stars in a shorter way
-
     return (
         <div>
             {loading            
