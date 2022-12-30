@@ -12,6 +12,8 @@ import Leaderboard from './CoreComponents/Leaderboard';
 import EditProfile from './Profile/EditProfile'
 import CreateReview from './Reviews/CreateReview';
 import AddBook from './Edit/AddBook';
+import ShowBooks from './CoreComponents/ShowBooks';
+// import BookPage from './CoreComponents/BookPage';
 
 function App() {
 
@@ -51,6 +53,8 @@ function App() {
 
 }, []);
 
+console.log(allBooks)
+
   return (
     <div className="App">
         <NavBar user={user} setUser={setUser} setGenre={setGenre} genre={genre}/>
@@ -64,14 +68,8 @@ function App() {
             <Route exact path='/profile' element={<Profile user={user} setUser={setUser}/> } />
             <Route exact path='/new-review' element={<CreateReview allBooks={allBooks} user={user}/>}/>
             <Route exact path='/edit-profile' element={<EditProfile user={user} setUser={setUser}/>}/>
-            <Route exact path='/add-book' element={<AddBook />} />
-            <Route exact path='/books' element={<DisplayBooks allBooks={allBooks} setGenre={setGenre}/>}></Route>
-            <Route exact path='/Classics' element={<DisplayBooks allBooks={allBooks} setGenre={setGenre}/>}></Route>
-            <Route exact path='/Fantasy' element={<DisplayBooks allBooks={allBooks} setGenre={setGenre}/>}></Route>
-            <Route exact path='/Fiction' element={<DisplayBooks allBooks={allBooks} setGenre={setGenre}/>}></Route>
-            <Route exact path='/Poetry' element={<DisplayBooks allBooks={allBooks} setGenre={setGenre}/>}></Route>
-            <Route exact path='/Romance' element={<DisplayBooks allBooks={allBooks} setGenre={setGenre}/>}></Route>
-            <Route exact path='/Science-Fiction' element={<DisplayBooks allBooks={allBooks} setGenre={setGenre} genre={genre}/>}></Route>
+            <Route exact path='/add-book' element={<AddBook/>}/>
+            <Route path='/all_books/:genre' element={<ShowBooks/>}/>
           </Routes>
         </Router>
     </div>

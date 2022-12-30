@@ -29,11 +29,6 @@ class Api::BooksController < ApplicationController
     def books_with_average_ratings
         books = Book.where.not(average_rating: nil)
         top = books.order(average_rating: :desc)
-        # # calculates all of averages of each book
-        # top = books.map { |book| book.reviews.average(:rating) }
-
-        # # books = Book.all
-        # avg = books.flat_map { |book| [avg_rating: book.reviews.average(:rating), title: book.title, author: book.author, image_url: book.image_url, genre: book.genre] }
         render json: top
     end
 

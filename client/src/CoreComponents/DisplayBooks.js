@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { Rate } from 'antd';
 
 function DisplayBooks() {
 
@@ -18,6 +19,7 @@ function DisplayBooks() {
         fetch(`/api/books/${bookId}`)
         .then(r => r.json())
         .then(book => {
+            console.log(book.reviews)
             if (book.reviews.length == 0) {
                 setReviews(
                     <div id='popupReviewsContainer' style={{ textAlign: 'center' }}>
@@ -33,83 +35,16 @@ function DisplayBooks() {
                     <h5 style={{ backgroundColor: '#e9e5dc3a', textAlign: 'center', display: 'inline-block', marginBottom: 18 }}>Reviews for <strong>{book.title}</strong></h5>
                     <div style={{ textAlign: 'left' }}>
                         {book.reviews.map(review => {
-                                        if (review.rating == 1) {
-                                            return (
-                                                <div key={review.id}>
-                                                    <button id='reviewsX' onClick={(() => {setReviews(null)
-                                                        setShow(false)})}>x</button>
-                                                    <h5 style={{ fontSize: 16 }}>{book.title} – {book.author}</h5>
-                                                    <span className="fa fa-star checked"></span>
-                                                    <span className="fa fa-star"></span>
-                                                    <span className="fa fa-star"></span>
-                                                    <span className="fa fa-star"></span>
-                                                    <span className="fa fa-star"></span>
-                                                    {/* <p>by {review.user.username}</p> */}
-                                                    <p>{review.review_body}</p>
-                                                </div>
-                                            )
-                                        } else if (review.rating == 2) {
-                                            return (
-                                                <div key={review.id}>
-                                                    <button id='reviewsX' onClick={(() => {setReviews(null)
-                                                        setShow(false)})}>x</button>
-                                                    <h5>{book.title} – {book.author}</h5>
-                                                    <span className="fa fa-star checked"></span>
-                                                    <span className="fa fa-star checked"></span>
-                                                    <span className="fa fa-star"></span>
-                                                    <span className="fa fa-star"></span>
-                                                    <span className="fa fa-star"></span>
-                                                    {/* <p>by {review.user.username}</p> */}
-                                                    <p>{review.review_body}</p>
-                                                </div>
-                                            )
-                                        } else if (review.rating == 3) {
-                                            return (
-                                                <div key={review.id}>
-                                                    <button id='reviewsX' onClick={(() => {setReviews(null)
-                                                        setShow(false)})}>x</button>
-                                                    <h5>{book.title} – {book.author}</h5>
-                                                    <span className="fa fa-star checked"></span>
-                                                    <span className="fa fa-star checked"></span>
-                                                    <span className="fa fa-star checked"></span>
-                                                    <span className="fa fa-star"></span>
-                                                    <span className="fa fa-star"></span>
-                                                    {/* <p>by {review.user.username}</p> */}
-                                                    <p>{review.review_body}</p>
-                                                </div>
-                                            )
-                                        } else if (review.rating == 4) {
-                                            return (
-                                                <div key={review.id}>
-                                                    <button id='reviewsX' onClick={(() => {setReviews(null)
-                                                        setShow(false)})}>x</button>
-                                                    <h5>{book.title} – {book.author}</h5>
-                                                    <span className="fa fa-star checked"></span>
-                                                    <span className="fa fa-star checked"></span>
-                                                    <span className="fa fa-star checked"></span>
-                                                    <span className="fa fa-star checked"></span>
-                                                    <span className="fa fa-star"></span>
-                                                    {/* <p>by {review.user.username}</p> */}
-                                                    <p>{review.review_body}</p>
-                                                </div>
-                                            )
-                                        } else if (review.rating == 5) {
-                                            return (
-                                                <div key={review.id}>
-                                                    <button id='reviewsX' onClick={(() => {setReviews(null)
-                                                        setShow(false)})}>x</button>
-                                                    <h5>{book.title} – {book.author}</h5>
-                                                    <span className="fa fa-star checked"></span>
-                                                    <span className="fa fa-star checked"></span>
-                                                    <span className="fa fa-star checked"></span>
-                                                    <span className="fa fa-star checked"></span>
-                                                    <span className="fa fa-star checked"></span>
-                                                    {/* <p>by {review.user.username}</p> */}
-                                                    <p>{review.review_body}</p>
-                                                </div>
-                                            )
-                                        }
-                            })}
+                            <div key={review.id}>
+                                <button id='reviewsX' onClick={(() => {
+                                    setReviews(null)
+                                    setShow(false)})}>x
+                                </button>
+                                <h5 style={{ fontSize: 16 }}>{book.title} – {book.author}</h5>
+                                <Rate disabled allowHalf defaultValue={book.average_rating} style={{ fontSize: 10, marginTop: -5 }} />
+                                <p>{review.review_body}</p>
+                            </div>
+                        })}
                     </div>
                 </div>
             )
@@ -160,7 +95,8 @@ function DisplayBooks() {
                         </Col>
                         <Col>
                             <div id='displayBooksContainer' style={{ display: 'inline-block', paddingLeft: 10, verticalAlign: 'top', textAlign: 'center' }}>
-                                {show ? reviews
+                                {show ?
+                                reviews
                                 :
                                 <div id='clickReadReviews'>
                                     <h5 style={{ backgroundColor: '#e9e5dc3a' }}>Click 'Read Reviews' to see reviews here.</h5> 

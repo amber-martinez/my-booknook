@@ -44,15 +44,20 @@ function NavBar({ user, setUser }) {
             navbarScroll
           >
                 <Nav.Link href="/leaderboard" id='headerLink'>Leaderboard</Nav.Link>
-                <NavDropdown title="Genres" id="headerLink" >
-                  <NavDropdown.Item href="/books" id='headerLink' name='All'>All Books</NavDropdown.Item>
+                <NavDropdown title="Genres" id="headerLink" style={{ display: 'flex !important' }}>
+                  <NavDropdown.Item href="/all_books/books" id='headerLink' name='All'>All Books</NavDropdown.Item>
                   <NavDropdown.Divider></NavDropdown.Divider>
-                  <NavDropdown.Item href="/Classics" id='headerLink' name='Classics'>Classics</NavDropdown.Item>
-                  <NavDropdown.Item href="/Fantasy" id='headerLink' name='Fantasy'>Fantasy</NavDropdown.Item>
-                  <NavDropdown.Item href="/Fiction" id='headerLink' name='Fiction'>Fiction</NavDropdown.Item>
-                  <NavDropdown.Item href="/Poetry" id='headerLink' name='Poetry'>Poetry</NavDropdown.Item>
-                  <NavDropdown.Item href="/Romance" id='headerLink' name='Romance'>Romance</NavDropdown.Item>
-                  <NavDropdown.Item href="/Science-Fiction" id='headerLink' name='Science-Fiction'>Science-Fiction</NavDropdown.Item>
+                  <NavDropdown.Item href="/all_books/Art" id='headerLink' name='Art'>Art</NavDropdown.Item>
+                  <NavDropdown.Item href="/all_books/Business" id='headerLink' name='Business'>Business</NavDropdown.Item>
+                  <NavDropdown.Item href="/all_books/Classics" id='headerLink' name='Classics'>Classics</NavDropdown.Item>
+                  <NavDropdown.Item href="/all_books/Fantasy" id='headerLink' name='Fantasy'>Fantasy</NavDropdown.Item>
+                  <NavDropdown.Item href="/all_books/Fiction" id='headerLink' name='Fiction'>Fiction</NavDropdown.Item>
+                  <NavDropdown.Item href="/all_books/Horror" id='headerLink' name='Horror'>Horror</NavDropdown.Item>
+                  <NavDropdown.Item href="/all_books/Manga" id='headerLink' name='Manga'>Manga</NavDropdown.Item>
+                  <NavDropdown.Item href="/all_books/Mystery" id='headerLink' name='Mystery'>Mystery</NavDropdown.Item>
+                  <NavDropdown.Item href="/all_books/Poetry" id='headerLink' name='Poetry'>Poetry</NavDropdown.Item>
+                  <NavDropdown.Item href="/all_books/Romance" id='headerLink' name='Romance'>Romance</NavDropdown.Item>
+                  <NavDropdown.Item href="/all_books/Science-Fiction" id='headerLink' name='Science-Fiction'>Science-Fiction</NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link href="https://github.com/amber-martinez/my-booknook" id='headerLink'>Github</Nav.Link>
           </Nav>

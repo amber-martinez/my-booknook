@@ -7,14 +7,11 @@ Rails.application.routes.draw do
     #reviews
     get '/newest-reviews', to: 'reviews#newest'
     get '/three', to: 'reviews#three_stars'
-    # post '/reviews', to: 'reviews#create'
 
     #users
     get '/user-profile', to: 'users#show'
     get '/my-reviews', to: 'users#user_reviews'
     post '/user-signup', to: 'users#create'
-    # patch '/users/:id', to: 'users#update'
-    # delete '/users/:id', to: 'users#destroy'
 
     #books
     get '/random-book', to: 'books#random'
