@@ -20,7 +20,6 @@ function App() {
   const [allBooks, setAllBooks] = useState([]);
   const [reviewsSortByNew, setreviewsSortByNew] = useState([]);
   const [user, setUser] = useState();
-  const [genre, setGenre] = useState(null);
   const [newestBooks, setNewestBooks] = useState([]);
 
   useEffect(() => {
@@ -40,7 +39,6 @@ function App() {
     .then(r => r.json())
     .then(data => {
       setAllBooks(data)
-      setGenre('All')
     })
 
     fetch('/api/newest-books')
@@ -53,11 +51,9 @@ function App() {
 
 }, []);
 
-console.log(allBooks)
-
   return (
     <div className="App">
-        <NavBar user={user} setUser={setUser} setGenre={setGenre} genre={genre}/>
+        <NavBar user={user} setUser={setUser}/>
         <Router>
           <Routes>
             <Route exact path='/' element={<HomeContent allBooks={allBooks} setUser={setUser} reviewsSortByNew={reviewsSortByNew} user={user} newestBooks={newestBooks}/>} />
