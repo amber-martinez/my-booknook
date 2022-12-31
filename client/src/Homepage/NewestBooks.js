@@ -15,12 +15,14 @@ function NewestBooks({ newestBooks }) {
                     </div>
                 :
                 newestBooks.map(book => (
-                    <Card id='homepageBookListItem' class="card text-center" key={book.id} style={{ display: 'inline-block', border: 'none', margin: 10, marginLeft: 0, backgroundColor: 'transparent', maxWidth: 90, wordBreak: 'break-word', textAlign: 'center', verticalAlign: 'top', maxHeight: 161 }}>
-                        <Card.Img src={book.image_url} id='homepageBookImg'/>
-                        <Card.Body style={{ fontSize: 11, textAlign: 'center', marginTop: 10 }}>
-                            <Card.Text>{book.title}</Card.Text>
-                        </Card.Body>
-                    </Card>
+                    <Link style={{ color: '#362c24' }} to={`/books/${book.id}`}>
+                        <Card id='homepageBookListItem' class="card text-center" key={book.id} style={{ display: 'inline-block', border: 'none', margin: 10, marginLeft: 0, backgroundColor: 'transparent', maxWidth: 90, wordBreak: 'break-word', textAlign: 'center', verticalAlign: 'top', maxHeight: 161 }}>
+                            <Card.Img src={book.image_url} id='homepageBookImg'/>
+                            <Card.Body style={{ fontSize: 11, textAlign: 'center', marginTop: 10 }}>
+                                <Card.Text>{book.title}</Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Link>
                     ))
                 }
             </div>

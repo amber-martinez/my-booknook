@@ -34,17 +34,19 @@ function Search({ allBooks }) {
                 {submit ?
                 books.length ?
                 books.map(book => (
-                    <Card class="card text-center" key={book.id} style={{ display: 'inline-block', border: 'none', margin: 20, marginTop: 0, backgroundColor: 'transparent', maxWidth: 90, wordBreak: 'break-word', textAlign: 'center', verticalAlign: 'top', maxHeight: 161, marginRight: 30, marginLeft: 30 }}>
-                        <Card.Img src={book.image_url} style={{ height: 140, width: 90, objectFit: 'cover' }} />
-                        <Card.Body style={{ fontSize: 11, textAlign: 'center', marginTop: 10 }}>
-                            {book.average_rating === null ?
-                            <p style={{ marginBottom: 5 }}>No reviews yet</p>
-                            :
-                            <Rate disabled allowHalf defaultValue={book.average_rating} style={{ fontSize: 10 }} />
-                            }
-                            <Card.Text style={{ marginTop: 5 }}><Link to={`/books/${book.id}`}>{book.title}</Link></Card.Text>
-                        </Card.Body>
-                    </Card>
+                    <Link style={{ color: '#362c24' }} to={`/books/${book.id}`}>
+                        <Card class="card text-center" key={book.id} style={{ display: 'inline-block', border: 'none', margin: 20, marginTop: 0, backgroundColor: 'transparent', maxWidth: 90, wordBreak: 'break-word', textAlign: 'center', verticalAlign: 'top', maxHeight: 161, marginRight: 30, marginLeft: 30 }}>
+                            <Card.Img src={book.image_url} style={{ height: 140, width: 90, objectFit: 'cover' }} />
+                            <Card.Body style={{ fontSize: 11, textAlign: 'center', marginTop: 10 }}>
+                                {book.average_rating === null ?
+                                <p style={{ marginBottom: 5 }}>No reviews yet</p>
+                                :
+                                <Rate disabled allowHalf defaultValue={book.average_rating} style={{ fontSize: 10 }} />
+                                }
+                                <Card.Text style={{ marginTop: 5 }}>{book.title}</Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Link>
                 ))
                 :
                 <p>No results</p>

@@ -39,7 +39,6 @@ function BookPage() {
                         {book.reviews.length ?
                         book.reviews.map(review => (
                             <div key={review.id} style={{ textAlign: 'left',  marginBottom: 22 }}>
-                                {/* <h5 style={{ fontSize: 16 }}>{review.book.title} – {review.book.author}</h5> */}
                                 <Rate disabled allowHalf defaultValue={review.rating} style={{ fontSize: 13, marginTop: -5 }} />
                                 <p>by {review.user.username}</p>
                                 <p>{review.review_body}</p>
