@@ -10,44 +10,44 @@ function Genres() {
             <h3 style={{ fontSize: 18, marginBottom: 10 }}>Genres</h3>
             <Row style={{ padding: 2 }}>
                 <Col>
-                    <Link to='/books' style={{ fontSize: 13, color: '#362c24' }}>All books</Link>
+                    <Link to='/all_books/books' style={{ fontSize: 13, color: '#362c24' }}>All books</Link>
                 </Col>
                 <Col>
-                    <Link to='/books' style={{ fontSize: 13, color: '#362c24' }}>Art</Link>
+                    <Link to='/all_books/Art' style={{ fontSize: 13, color: '#362c24' }}>Art</Link>
                 </Col>
                 <Col>
-                    <Link to='/Business' style={{ fontSize: 13, color: '#362c24' }}>Business</Link>
+                    <Link to='/all_books/Business' style={{ fontSize: 13, color: '#362c24' }}>Business</Link>
                 </Col>
                 <Col>
-                    <Link to='/Classics' style={{ fontSize: 13, color: '#362c24' }}>Classics</Link>
-                </Col>
-            </Row>
-            <Row style={{ padding: 2 }}>
-                <Col>
-                    <Link to='/Fantasy' style={{ fontSize: 13, color: '#362c24' }}>Fantasy</Link>
-                </Col>
-                <Col>
-                    <Link to='/Fiction' style={{ fontSize: 13, color: '#362c24' }}>Fiction</Link>
-                </Col>
-                <Col>
-                    <Link to='/Horror' style={{ fontSize: 13, color: '#362c24' }}>Horror</Link>
-                </Col>
-                <Col>
-                    <Link to='/Manga' style={{ fontSize: 13, color: '#362c24' }}>Manga</Link>
+                    <Link to='/all_books/Classics' style={{ fontSize: 13, color: '#362c24' }}>Classics</Link>
                 </Col>
             </Row>
             <Row style={{ padding: 2 }}>
                 <Col>
-                    <Link to='/Mystery' style={{ fontSize: 13, color: '#362c24' }}>Mystery</Link>
+                    <Link to='/all_books/Fantasy' style={{ fontSize: 13, color: '#362c24' }}>Fantasy</Link>
                 </Col>
                 <Col>
-                    <Link to='/Poetry' style={{ fontSize: 13, color: '#362c24' }}>Poetry</Link>
+                    <Link to='/all_books/Fiction' style={{ fontSize: 13, color: '#362c24' }}>Fiction</Link>
                 </Col>
                 <Col>
-                    <Link to='/Romance' style={{ fontSize: 13, color: '#362c24' }}>Romance</Link>
+                    <Link to='/all_books/Horror' style={{ fontSize: 13, color: '#362c24' }}>Horror</Link>
                 </Col>
                 <Col>
-                    <Link to='/Science-Fiction' style={{ fontSize: 13, color: '#362c24' }}>Science-Fiction</Link>
+                    <Link to='/all_books/Manga' style={{ fontSize: 13, color: '#362c24' }}>Manga</Link>
+                </Col>
+            </Row>
+            <Row style={{ padding: 2 }}>
+                <Col>
+                    <Link to='/all_books/Mystery' style={{ fontSize: 13, color: '#362c24' }}>Mystery</Link>
+                </Col>
+                <Col>
+                    <Link to='/all_books/Poetry' style={{ fontSize: 13, color: '#362c24' }}>Poetry</Link>
+                </Col>
+                <Col>
+                    <Link to='/all_books/Romance' style={{ fontSize: 13, color: '#362c24' }}>Romance</Link>
+                </Col>
+                <Col>
+                    <Link to='/all_books/Science-Fiction' style={{ fontSize: 13, color: '#362c24' }}>Science-Fiction</Link>
                 </Col>
             </Row>
         </div>
