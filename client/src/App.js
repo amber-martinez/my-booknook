@@ -5,15 +5,14 @@ import NavBar from './CoreComponents/NavBar'
 import HomeContent from './CoreComponents/HomeContent'
 import Login from './CoreComponents/Login'
 import Profile from './CoreComponents/Profile'
-import DisplayBooks from './CoreComponents/DisplayBooks';
 import SignUpForm from './Homepage/SignUpForm';
-import Search from './Search';
+import Search from './CoreComponents/Search';
 import Leaderboard from './CoreComponents/Leaderboard';
 import EditProfile from './Profile/EditProfile'
 import CreateReview from './Reviews/CreateReview';
 import AddBook from './Edit/AddBook';
 import ShowBooks from './CoreComponents/ShowBooks';
-// import BookPage from './CoreComponents/BookPage';
+import BookPage from './CoreComponents/BookPage';
 
 function App() {
 
@@ -66,6 +65,7 @@ function App() {
             <Route exact path='/edit-profile' element={<EditProfile user={user} setUser={setUser}/>}/>
             <Route exact path='/add-book' element={<AddBook/>}/>
             <Route path='/all_books/:genre' element={<ShowBooks/>}/>
+            <Route path='/books/:id' element={<BookPage/>}/>
           </Routes>
         </Router>
     </div>

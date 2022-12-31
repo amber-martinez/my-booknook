@@ -128,8 +128,6 @@ function Search({ allBooks }) {
         
     }
 
-    console.log(search, results)
-
     return (
         <div style={{ margin: '50px 0px 0px 100px' }}>
             <h3 style={{ padding: 5, fontWeight: 600, backgroundColor: '#e9e5dc3a', textAlign: 'left', display: 'inline-block' }}>Search</h3>
@@ -169,4 +167,4 @@ function Search({ allBooks }) {
     )
 }
 
-export default Search;
+export default OldSearch;
