@@ -42,8 +42,8 @@ function Leaderboard({ user }) {
                                     <Card.Body style={{ fontSize: 11, textAlign: 'center', marginTop: 10 }}>
                                     {/* <li style={{ margin: '10px 25px 10px 25px', fontSize: 15, fontWeight: 600, color: '#362c24' }}></li> */}
                                         <Rate disabled allowHalf defaultValue={review.average_rating} style={{ fontSize: 10 }} />
-                                        <Card.Text style={{ marginTop: 10 }}>{review.average_rating}/5<br></br>
-                                        {review.title}</Card.Text>
+                                        <Card.Text style={{ marginTop: 5, fontWeight: 600 }}>{review.title}</Card.Text>
+                                        <Card.Text style={{ marginTop: -15, fontSize: 10 }}>by {review.author}</Card.Text>
                                     </Card.Body>
                                 </Card>
                             </Link>

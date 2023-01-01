@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col';
 
 function ShowBooks() {
 
-    const [bookData, setBookData] = useState()
+    const [bookData, setBookData] = useState([])
     const { genre } = useParams();
 
     useEffect(() => {
