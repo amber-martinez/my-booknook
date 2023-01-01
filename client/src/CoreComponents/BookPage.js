@@ -31,7 +31,19 @@ function BookPage() {
             null
             :
             <Row>
-            <Col xs lg='5'>
+                <Col xs lg='5' style={{ textAlign: 'right', marginRight: 10 }}>
+                    <Card class="card text-center" key={book.id} style={{ display: 'inline-block', border: 'none', backgroundColor: 'transparent', wordBreak: 'break-word', textAlign: 'center', verticalAlign: 'top', marginRight: 30, marginLeft: 30, alignItems: 'center' }}>
+                        <Card.Img src={book.image_url} style={{ height: 150, width: 100, objectFit: 'cover' }} />
+                        <Card.Body style={{ fontSize: 11, textAlign: 'center', marginTop: 10 }}>
+                            <Rate disabled allowHalf defaultValue={book.average_rating} style={{ fontSize: 18 }} />
+                            <Card.Text style={{ marginTop: 10, fontSize: 17 }}>{book.title}</Card.Text>
+                            <Card.Text style={{ marginTop: -16, marginBottom: 7, fontSize: 12 }}>by {book.author}</Card.Text>
+                            <Link to={`/all_books/${book.genre}`} style={{ fontSize: 12, color: '#504842' }}>{book.genre}</Link><br></br>
+                            <button style={{ width: 80, marginTop: 30, padding:'3px 0px 3px 0px', textAlign: 'center', border: 'transparent', backgroundColor: '#f7f4f1', borderRadius: 5, color: '#362c24' }}><Link to='/new-review' style={{ color: '#362c24' }}>Create review</Link></button><br></br>
+                        </Card.Body>
+                    </Card>
+            </Col>
+            <Col xs lg='5' style={{ marginLeft: 10 }}>
                     <div>
                         <h4 style={{ fontSize: 18, backgroundColor:'#f7f4f1', display: 'inline-block', padding: '4px 4px 4px 4px', borderRadius: 4, marginBottom: 22 }}>Reviews</h4>
                     </div>
@@ -50,16 +62,6 @@ function BookPage() {
                         </div>
                         }
                     </div>
-            </Col>
-            <Col xs lg='5' style={{ textAlign: 'right' }}>
-                <Card class="card text-center" key={book.id} style={{ display: 'inline-block', border: 'none', backgroundColor: 'transparent', wordBreak: 'break-word', textAlign: 'center', verticalAlign: 'top', marginRight: 30, marginLeft: 30, alignItems: 'center' }}>
-                    <Card.Img src={book.image_url} style={{ height: 150, width: 100, objectFit: 'cover' }} />
-                    <Card.Body style={{ fontSize: 11, textAlign: 'center', marginTop: 10 }}>
-                        <Rate disabled allowHalf defaultValue={book.average_rating} style={{ fontSize: 18 }} />
-                        <Card.Text style={{ marginTop: 10, fontSize: 17 }}>{book.title}</Card.Text>
-                        <button style={{ width: 80, marginTop: -3, padding:'3px 0px 3px 0px', textAlign: 'center', border: 'transparent', backgroundColor: '#f7f4f1', borderRadius: 5, color: '#362c24' }}><Link to='/new-review' style={{ color: '#362c24' }}>Create review</Link></button><br></br>
-                    </Card.Body>
-                </Card>
             </Col>
             </Row>
             }
