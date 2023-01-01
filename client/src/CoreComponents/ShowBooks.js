@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import { Rate } from 'antd';
 import { Link } from 'react-router-dom';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 function ShowBooks() {
 
@@ -16,19 +18,19 @@ function ShowBooks() {
     }, [])
 
     return (
-        <div style={{ textAlign: 'center' }}>
-            <div>
+        <Col style={{ textAlign: 'center' }}>
+            <div style={{ display: 'inline-block' }}>
                 {genre == 'books' ?
                 <h3 style={{ padding: 5, fontWeight: 600, backgroundColor: '#f7f4f1', borderRadius: 4, display: 'inline-block', fontSize: 18, marginBottom: 30 }}>All Books</h3>
                 :
                 <h3 style={{ padding: 5, fontWeight: 600, backgroundColor: '#f7f4f1', borderRadius: 4, display: 'inline-block', fontSize: 18, marginBottom: 30 }}>{genre}</h3>
                 }
             </div>
-            <div>
+            <Col style={{ textAlign: 'left', paddingRight: 300, paddingLeft: 343 }}>
                 {bookData.length ? 
                 bookData.map(book => (
                     <Link style={{ color: '#362c24' }} to={`/books/${book.id}`}>
-                        <Card class="card text-center" key={book.id} style={{ display: 'inline-block', border: 'none', margin: 20, marginTop: 0, backgroundColor: 'transparent', maxWidth: 90, wordBreak: 'break-word', textAlign: 'center', verticalAlign: 'top', maxHeight: 161, marginRight: 30, marginLeft: 30 }}>
+                        <Card class="card text-center" key={book.id} style={{ display: 'inline-block', border: 'none', backgroundColor: 'transparent', maxWidth: 90, wordBreak: 'break-word', textAlign: 'center', verticalAlign: 'top', maxHeight: 161, margin: 30 }}>
                             <Card.Img src={book.image_url} style={{ height: 140, width: 90, objectFit: 'cover' }} />
                             <Card.Body style={{ fontSize: 11, textAlign: 'center', marginTop: 10 }}>
                                 {book.average_rating === null ?
@@ -45,8 +47,8 @@ function ShowBooks() {
                 :
                 <p style={{ fontSize: 15 }}>No books for this category yet.</p>
                 }
-            </div>
-        </div>
+            </Col>
+        </Col>
     )
 }
 
