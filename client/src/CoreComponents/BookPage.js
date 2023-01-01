@@ -28,7 +28,9 @@ function BookPage() {
     return (
         <div style={{ marginLeft: 200, marginRight: 200 }}>
             {loading ?
-            null
+            <div style={{ textAlign: 'center', marginTop: 245 }}>
+                <img src='https://i.imgur.com/yqanog9.gif' style={{ height: 100 }}></img> 
+            </div>
             :
             <Row>
                 <Col xs lg='5' style={{ textAlign: 'right', marginRight: 10 }}>

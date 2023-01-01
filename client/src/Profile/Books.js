@@ -9,7 +9,7 @@ function Books({ user }) {
             {user.books.length > 0 ?
             user.books.map(book => (
                 <Link style={{ color: '#362c24' }} to={`/books/${book.id}`}>
-                    <div style={{ textAlign: 'center', display: 'inline-block', }}>
+                    <div style={{ textAlign: 'center', display: 'inline-block', marginTop: 10 }}>
                         <div class="card text-center" key={book.id} style={{ verticalAlign: 'top', borderColor: 'transparent', display: 'inline-block', margin: '0px 10px 24px 10px', width: 190, backgroundColor: 'transparent' }}>
                             <img src={book.image_url} style={{ height: 135, width: 90, objectFit: 'cover', margin: 'auto', boxShadow: '0 1px 1px 0 #81665162', borderRadius: 5 }}/>
                             <h5 style={{ marginTop: 14, maxWidth: 190, color: '#362c24', fontSize: 13 }}>{book.title}</h5>

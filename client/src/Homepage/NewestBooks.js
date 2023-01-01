@@ -10,7 +10,7 @@ function NewestBooks({ newestBooks }) {
             <p style={{ fontSize: 13, marginTop: 0 }}>These books are fresh on the shelf.</p>
             <div style={{ textAlign: 'left', marginTop: 10, paddingLeft: 0 }} id='bookCardGroup'>
                 {newestBooks.length == 0 ?
-                    <div style={{ textAlign: 'left', marginTop: 245 }}>
+                    <div style={{ textAlign: 'center', marginTop: 30 }}>
                         <img src='https://i.imgur.com/yqanog9.gif' style={{ height: 100 }}></img> 
                     </div>
                 :
