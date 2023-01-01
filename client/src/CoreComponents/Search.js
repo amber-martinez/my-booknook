@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import { Rate } from 'antd';
 import { Link } from 'react-router-dom';
@@ -12,7 +12,6 @@ function Search({ allBooks }) {
     function onSearchSubmit(e) {
         e.preventDefault();
         setSubmit(true)
-
         setBooks(allBooks.filter(book => {
         if (search === '') {
             return null
@@ -25,7 +24,7 @@ function Search({ allBooks }) {
     }
 
     return (
-        <div style={{ fontSize: 13, textAlign: 'left', justifyContent: 'center' }}>
+        <div style={{ fontSize: 13, textAlign: 'left', justifyContent: 'center', marginBottom: 20 }}>
             <Col style={{ marginLeft: 300, marginRight: 300 }}>
                 <h3 style={{ padding: 5, fontWeight: 600, backgroundColor: '#f7f4f1', borderRadius: 4, display: 'inline-block', fontSize: 18 }}>Search</h3>
                 <form style={{ marginBottom: 34 }} onSubmit={onSearchSubmit}>
