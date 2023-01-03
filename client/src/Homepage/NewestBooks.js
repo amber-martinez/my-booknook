@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 function NewestBooks({ newestBooks }) {
 
     return (
-        <div style={{ textAlign: 'left', backgroundColor: '#f7f4f1', borderRadius: 10, padding: 30, marginLeft: 0, border: 'solid 1px #f2efeb' }}>
+        <div id='newlyAdded' style={{ textAlign: 'left', backgroundColor: '#f7f4f1', borderRadius: 10, padding: 30, border: 'solid 1px #f2efeb' }}>
             <h3 id='topPicksHeader' style={{ fontSize: 18 }}>Newly Added</h3>
             <p style={{ fontSize: 13, marginTop: 0 }}>These books are fresh on the shelf.</p>
             <div style={{ textAlign: 'left', marginTop: 10, paddingLeft: 0 }} id='bookCardGroup'>

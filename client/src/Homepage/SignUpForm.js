@@ -58,7 +58,7 @@ function SignUpForm({ setUser }) {
     }
 
     return (
-        <div style={{ textAlign: 'center' }}>
+        <div id='signupForm' style={{ textAlign: 'center' }}>
             <div style={{ fontSize: 13, backgroundColor: '#f7f4f1', borderRadius: 10, padding: 10, marginLeft: 0, border: 'solid 1px #f2efeb', textAlign: 'center', display: 'inline-block' }}>
                 <h3 style={{ textAlign: 'center', color: '#362c24', fontSize: 18, marginTop: 20 }}>Sign up</h3>
                 <form style={{ marginTop: 0 }}>

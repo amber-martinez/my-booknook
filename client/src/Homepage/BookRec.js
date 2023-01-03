@@ -15,7 +15,7 @@ function BookRec() {
         .then(r => r.json())
         .then(book => {
             setBookRec(
-                <div style={{ textAlign: 'center', backgroundColor: '#f7f4f1', borderRadius: 10, padding: 19, marginLeft: 0, border: 'solid 1px #f2efeb' }}>
+                <div style={{ textAlign: 'center', backgroundColor: '#f7f4f1', borderRadius: 10, padding: 19, border: 'solid 1px #f2efeb' }}>
                     <h3 style={{ fontSize: 18, marginTop: 10 }}>Book Recommendations</h3>
                     <p style={{ display: 'inline-block', rightMargin: 50, fontSize: 13, marginBottom: 25 }}>The wise booknook recommends:</p>
                     <div>
@@ -32,7 +32,7 @@ function BookRec() {
     }, [])
 
     return (
-        <div>
+        <div id='bookRec'>
             {bookRec}
         </div>
     )

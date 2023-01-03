@@ -163,12 +163,20 @@ a:link:hover {
 }
 
 /* phone screen */
-@media (max-width: 992px) {
+@media (max-width: 861px) {
   #headerTitle {
     color: #6f5b4b;
     font-family: 'Catamaran', sans-serif;
     font-weight: 400;
     font-size: 20px;
+  }
+
+  #newlyAdded{
+    width: 30rem;
+  }
+  #genresDiv{
+    width: 30rem;
+    margin-bottom: 30px;
   }
 
   #headerAndImg {
@@ -181,9 +189,9 @@ a:link:hover {
   }
 
   #topPicksShelfImg {
-    height: 40px;
+    height: 20px;
     width: auto;
-    margin: 0px 15px 15px -8px;
+    margin: 0px 8px 5px -8px;
   }
 
   #navContainer {
@@ -215,10 +223,6 @@ a:link:hover {
   }
   
   div#recentReviewsContainerUser {
-    /* padding: 20px 90px 20px 40px; */
-    /* border: solid 2px #362c243b;
-    border-radius: 10px;
-    background-color: #e9e5dc3a; */
     margin: 20px 25px 20px 25px;
     max-width: 600px;
     max-height: 600px;
@@ -230,14 +234,6 @@ a:link:hover {
     text-align: center;
     margin-top: 7px;
   }
-/* 
-  #leaderboardListGroup {
-    margin: 0px 100px 0px 114px;
-    text-align: center;
-    inline-size: 150px;
-    overflow-wrap: break-word;
-    hyphens: manual;
-  } */
 
   #loginContainer {
     scale: 88%;
@@ -297,7 +293,7 @@ a:link:hover {
 
 
 /* ipad-ish */
-@media (min-width: 768px) and (max-width: 992px) {
+@media (min-width: 862px) and (max-width: 1296px) {
 
   #headerTitle {
     color: #6f5b4b;
@@ -312,8 +308,48 @@ a:link:hover {
     margin: 0px 15px 15px 0px;
   }
 
-  #leftColHome {
-    margin-right: 40px;
+  #headerTitle {
+    color: #6f5b4b;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+  }
+
+  #navbar {
+    padding: 18px;
+    background-color: #eceae795;
+  }
+
+  #topPicksShelfImg {
+    height: 20px;
+    width: auto;
+    margin: 0px 8px 5px 0px;
+  }
+
+  #newlyAdded {
+    /* margin-left: -100px; */
+    width: 42rem;
+  }
+  #signupForm {
+    margin-left: 100px;
+  }
+  #loggedInWelcome {
+    /* display: inline-block; */
+    margin-top: 550px;
+    width: 42rem;
+  }
+
+  #genresDiv {
+    /* margin-left: -100px; */
+    width: 42rem;
+    /* padding-left: 0; */
+  }
+  #leftHomeColumn {
+    width: 1rem;
+    margin-left: 0px;
+  }
+  #rightHomeColumn {
+    text-align: center;
   }
 
   div#recentReviewsContainerNonUser {
@@ -387,12 +423,12 @@ a:link:hover {
 }
 
 /* smaller laptop screen */
-@media (min-width: 993px) and (max-width: 1399px) {
+@media (min-width: 1297px) and (max-width: 1640px) {
   #headerTitle {
     color: #6f5b4b;
     font-family: 'Catamaran', sans-serif;
     font-weight: 400;
-    font-size: 40px;
+    font-size: 20px;
   }
 
   #navbar {
@@ -401,17 +437,32 @@ a:link:hover {
   }
 
   #topPicksShelfImg {
-    height: 60px;
+    height: 20px;
     width: auto;
-    margin: 0px 15px 15px 0px;
+    margin: 0px 8px 5px 0px;
   }
 
-  #leftColHome {
-    margin-right: 40px;
+  #newlyAdded {
+    margin-left: -100px;
+    width: 42rem;
   }
-
-  #rightColHome {
-    margin-right: 99px;
+  #signupForm {
+    margin-left: 100px;
+  }
+  #loggedInWelcome {
+    margin-left: 100px;
+  }
+  #bookRec {
+    margin-left: 100px;
+  }
+  #genresDiv {
+    margin-left: -100px;
+    width: 42rem;
+    padding-left: 0;
+  }
+  #leftHomeColumn {
+    width: 1rem;
+    margin-left: 0px;
   }
 
   div#recentReviewsContainerNonUser {

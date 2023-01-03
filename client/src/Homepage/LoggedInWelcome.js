@@ -14,7 +14,7 @@ function LoggedInWelcome({ user }) {
     }, [user])
     
     return (
-        <div style={{ textAlign: 'center', backgroundColor: '#f7f4f1', borderRadius: 10, padding: '30px 30px 30px 30px', border: 'solid 1px #f2efebee' }}>
+        <div id='loggedInWelcome' style={{ textAlign: 'center', backgroundColor: '#f7f4f1', borderRadius: 10, padding: '30px 30px 30px 30px', border: 'solid 1px #f2efebee' }}>
             {loading ?
             null
             :
