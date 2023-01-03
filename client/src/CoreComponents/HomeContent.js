@@ -17,41 +17,53 @@ function HomeContent({ allBooks, setUser, reviewsSortByNew, user, newestBooks })
         } else {
             setLoading(false)
         }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting){
+                    entry.target.classList.add('show')
+                } else {
+                    entry.target.classList.remove('show')
+                }
+            });
+        })
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el))
     }, [user])
 
     return (
-        <div style={{ textAlign: 'center', marginLeft: 200, marginRight: 200 }}>
+        <div className='hidden' style={{ textAlign: 'center', marginLeft: 200, marginRight: 200 }}>
             {loading ?
             <div style={{ textAlign: 'center', marginTop: 245 }}>
                 <img src='https://i.imgur.com/yqanog9.gif' style={{ height: 100 }}></img> 
             </div>
             :
             <div>
-                <Row style={{ justifyContent: 'left', marginLeft: 0, marginBottom: 0 }} >
-                    <Col xs lg='5' style={{ width: 750, marginRight: 40, justifyContent: 'left', padding: 0 }}>
+                <Row>
+                <Col style={{ justifyContent: 'left', marginLeft: 0, marginBottom: 0 }} >
+                    <Row style={{ width: 750, marginRight: 40, justifyContent: 'left', padding: 0, marginBottom: 30 }}>
                         <NewestBooks allBooks={allBooks} newestBooks={newestBooks}/>
-                    </Col>
-                    {user ?
-                    <Col xs lg='5' style={{ width: 400, marginLeft: 40 }}>
-                        <LoggedInWelcome user={user}/>
-                    </Col>
-                    :
-                    <Col xs lg='5' style={{ width: 480, marginLeft: 40 }}>
-                        <SignUpForm setUser={setUser}/>
-                    </Col>
-                    }
-                </Row>
-                <Row style={{ marginTop: 30, justifyContent: 'left', marginLeft: 0 }}>
-                    <Col xs lg='3' style={{ width: 750, justifyContent: 'left', padding: 0, marginRight: 40 }}>
+                    </Row>
+                    <Row style={{ width: 750, justifyContent: 'left', padding: 0, marginRight: 40 }}>
                         <Genres/>
-                    </Col>
+                    </Row>
+                </Col>
+                <Col style={{ justifyContent: 'left', marginLeft: 0 }}>
                     {user ?
-                    <Col xs lg='5' style={{ width: 400, marginLeft: 40, marginTop: -167 }}>
-                        {<BookRec/>}
-                    </Col>
+                    <div>
+                        <Row style={{ width: 400, marginLeft: 40, marginBottom: 30, padding: 0 }}>
+                            <LoggedInWelcome user={user}/>
+                        </Row>
+                        <Row style={{ width: 400, marginLeft: 40, padding: 0 }}>
+                            {<BookRec/>}
+                        </Row>
+                    </div>
                     :
-                    null
+                    <Row style={{ width: 480, marginLeft: 40 }}>
+                        <SignUpForm setUser={setUser}/>
+                    </Row>
                     }
+                </Col>
                 </Row>
             </div>
             }

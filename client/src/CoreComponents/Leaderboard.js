@@ -20,10 +20,21 @@ function Leaderboard({ user }) {
         } else {
             setLoading(false)
         }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting){
+                    entry.target.classList.add('show')
+                } else {
+                    entry.target.classList.remove('show')
+                }
+            });
+        })
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el))
     }, [user])
 
     return (
-        <div>
+        <div class='hidden'>
             {loading            
             ?
             <div style={{ textAlign: 'center', marginTop: 245 }}>

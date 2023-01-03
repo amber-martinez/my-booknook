@@ -9,6 +9,20 @@ function Search({ allBooks }) {
     const [books, setBooks] = useState([]);
     const [submit, setSubmit] = useState(false);
 
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting){
+                    entry.target.classList.add('show')
+                } else {
+                    entry.target.classList.remove('show')
+                }
+            });
+        })
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el))
+    }, [allBooks])
+
     function onSearchSubmit(e) {
         e.preventDefault();
         setSubmit(true)
@@ -24,7 +38,7 @@ function Search({ allBooks }) {
     }
 
     return (
-        <div style={{ fontSize: 13, textAlign: 'left', justifyContent: 'center', marginBottom: 20 }}>
+        <div style={{ fontSize: 13, textAlign: 'left', justifyContent: 'center', marginBottom: 20 }} class='hidden' id='softSlideIn'>
             <Col style={{ marginLeft: 300, marginRight: 300 }}>
                 <h3 style={{ padding: 5, fontWeight: 600, backgroundColor: '#f7f4f1', borderRadius: 4, display: 'inline-block', fontSize: 18 }}>Search</h3>
                 <form style={{ marginBottom: 34 }} onSubmit={onSearchSubmit}>

@@ -16,6 +16,20 @@ function ShowBooks() {
         .then(data => setBookData(data))
     }, [])
 
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting){
+                    entry.target.classList.add('show')
+                } else {
+                    entry.target.classList.remove('show')
+                }
+            });
+        })
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el))
+    }, [genre])
+
     return (
         <Col style={{ textAlign: 'left' }}>
             <div style={{ display: 'inline-block', paddingRight: 300, paddingLeft: 300 }}>
@@ -25,28 +39,30 @@ function ShowBooks() {
                 <h3 style={{ padding: 5, fontWeight: 600, backgroundColor: '#f7f4f1', borderRadius: 4, display: 'inline-block', fontSize: 18, marginBottom: 30 }}>{genre}</h3>
                 }
             </div>
-            <Col style={{ textAlign: 'left', paddingRight: 300, paddingLeft: 300 }}>
-                {bookData.length ? 
-                bookData.map(book => (
-                    <Link style={{ color: '#362c24' }} to={`/books/${book.id}`}>
-                        <Card class="card text-center" key={book.id} style={{ display: 'inline-block', border: 'none', backgroundColor: 'transparent', maxWidth: 90, wordBreak: 'break-word', textAlign: 'center', verticalAlign: 'top', maxHeight: 161, margin: '13px 55px 100px 0px' }}>
-                            <Card.Img src={book.image_url} style={{ height: 140, width: 90, objectFit: 'cover' }} />
-                            <Card.Body style={{ fontSize: 11, textAlign: 'center', marginTop: 10 }}>
-                                {book.average_rating === null ?
-                                <p style={{ marginBottom: 5 }}>No reviews</p>
-                                :
-                                <Rate disabled allowHalf defaultValue={book.average_rating} style={{ fontSize: 10 }} />
-                                }
-                                <Card.Text style={{ marginTop: 5, fontWeight: 600 }}>{book.title}</Card.Text>
-                                <Card.Text style={{ marginTop: -15, fontSize: 10 }}>by {book.author}</Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Link>
-                ))
-                :
-                <p style={{ fontSize: 15 }}>No books for this category yet.</p>
-                }
-            </Col>
+            <div class='hidden' id='softSlideIn'>
+                <Col style={{ textAlign: 'left', paddingRight: 300, paddingLeft: 300 }}>
+                    {bookData.length ? 
+                    bookData.map(book => (
+                        <Link style={{ color: '#362c24' }} to={`/books/${book.id}`}>
+                            <Card class="card text-center" key={book.id} style={{ display: 'inline-block', border: 'none', backgroundColor: 'transparent', maxWidth: 90, wordBreak: 'break-word', textAlign: 'center', verticalAlign: 'top', maxHeight: 161, margin: '13px 55px 100px 0px' }}>
+                                <Card.Img src={book.image_url} style={{ height: 140, width: 90, objectFit: 'cover' }} />
+                                <Card.Body style={{ fontSize: 11, textAlign: 'center', marginTop: 10 }}>
+                                    {book.average_rating === null ?
+                                    <p style={{ marginBottom: 5 }}>No reviews</p>
+                                    :
+                                    <Rate disabled allowHalf defaultValue={book.average_rating} style={{ fontSize: 10 }} />
+                                    }
+                                    <Card.Text style={{ marginTop: 5, fontWeight: 600 }}>{book.title}</Card.Text>
+                                    <Card.Text style={{ marginTop: -15, fontSize: 10 }}>by {book.author}</Card.Text>
+                                </Card.Body>
+                            </Card>
+                        </Link>
+                    ))
+                    :
+                    <p style={{ fontSize: 15 }}>No books for this category yet.</p>
+                    }
+                </Col>
+            </div>
         </Col>
     )
 }

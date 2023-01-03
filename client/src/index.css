@@ -16,6 +16,50 @@ p {
   background-color: #e9e5dc6b !important;
 }
 
+.hidden {
+  opacity: 0;
+  transition: all 1s;
+  /* transform: translateX(5%); */
+}
+
+.show {
+  opacity: 1;
+  /* transform: translateX(0%); */
+}
+
+.hidden#slideIn{
+  opacity: 0;
+  transition: all .6s;
+  transform: translateX(5%);
+}
+
+.show#slideIn {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.hidden#softSlideIn{
+  opacity: 0;
+  transition: all .6s;
+  transform: translateX(1%);
+}
+
+.show#softSlideIn {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.hidden#slideDown {
+  opacity: 0;
+  transition: all .6s;
+  transform: translateY(0%);
+}
+
+.show#slideDown {
+  opacity: 1;
+  transform: translateY(2%);
+}
+
 a:link {
   color: #362c24;
   text-decoration: none;
@@ -627,12 +671,12 @@ a:link:hover {
   --bs-card-spacer-y: 0 !important;
   --bs-card-spacer-x: 0 !important;
 }
-
+/* 
 #profileButtonGroup {
   justify-content: center;
   align-items: center;
   text-align: center;
-}
+} */
 
 /* #profileBooksTitle {
   margin-top: 14px;
