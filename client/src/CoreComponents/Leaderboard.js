@@ -48,10 +48,9 @@ function Leaderboard({ user }) {
                     <ol style={{ textAlign: 'center', listStylePosition: 'inside', padding: 0  }}>
                         {reviewsByRating.map(review => (
                             <Link style={{ color: '#362c24' }} to={`/books/${review.id}`}>
-                                <Card class="card text-center" key={review.id} style={{ display: 'inline-block', border: 'none', margin: 20, marginTop: 0, backgroundColor: 'transparent', maxWidth: 90, wordBreak: 'break-word', textAlign: 'center', verticalAlign: 'top', maxHeight: 161, marginRight: 30, marginLeft: 30 }}>
+                                <Card class="card text-center" key={review.id} style={{ display: 'inline-block', border: 'none', margin: 20, marginTop: 0, backgroundColor: 'transparent', maxWidth: 90, wordBreak: 'break-word', textAlign: 'center', verticalAlign: 'top', maxHeight: 161, marginRight: 30, marginLeft: 30, marginBottom: 20 }}>
                                     <Card.Img src={review.image_url} style={{ height: 140, width: 90, objectFit: 'cover' }} />
                                     <Card.Body style={{ fontSize: 11, textAlign: 'center', marginTop: 10 }}>
-                                    {/* <li style={{ margin: '10px 25px 10px 25px', fontSize: 15, fontWeight: 600, color: '#362c24' }}></li> */}
                                         <Rate disabled allowHalf defaultValue={review.average_rating} style={{ fontSize: 10 }} />
                                         <Card.Text style={{ marginTop: 5, fontWeight: 600 }}>{review.title}</Card.Text>
                                         <Card.Text style={{ marginTop: -15, fontSize: 10 }}>by {review.author}</Card.Text>
