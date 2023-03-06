@@ -43,7 +43,7 @@ function Leaderboard({ user }) {
             :
             <div style={{ fontSize: 13, textAlign: 'center', justifyContent: 'center' }}>
                 <h3 style={{ padding: 5, fontWeight: 600, backgroundColor: '#f7f4f1', borderRadius: 4, display: 'inline-block', fontSize: 18 }}>Books Leaderboard</h3>
-                <p>The top 5 highest-rated books.</p>
+                <p>Books by rating.</p>
                 <div style={{ marginTop: 30 }}>
                     <ol style={{ textAlign: 'center', listStylePosition: 'inside', padding: 0  }}>
                         {reviewsByRating.map(review => (
